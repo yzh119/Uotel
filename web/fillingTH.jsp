@@ -1,4 +1,5 @@
-<%--
+<%@ page import="acmdb.Connector" %>
+<%@ page import="acmdb.Available" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/28
@@ -11,8 +12,9 @@
     <title>Complete TH</title>
 </head>
 <body>
+
 <%
-    session.setAttribute("selectTH", request.getParameter("th_id"));
+    session.setAttribute("selectTH", Integer.valueOf(request.getParameter("th_id")));
     response.sendRedirect("reserve.jsp");
 %>
 </body>

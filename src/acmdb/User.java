@@ -37,12 +37,17 @@ public class User {
         try {
             rs = stmt.executeQuery(query);
         } catch (Exception e) {
-            System.err.println("What the fuck!");
-            System.err.flush();
             e.printStackTrace();
             throw e;
         }
         rs.next();
         return rs.getString("passwd");
+    }
+
+    public String getReservationTable(String userName, Statement stmt) throws Exception {
+        StringBuffer resultStr = new StringBuffer();
+        resultStr.append("<table>");
+        resultStr.append("</table>");
+        return resultStr.toString();
     }
 }

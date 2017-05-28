@@ -13,5 +13,12 @@
 <body>
 <a href="index.jsp">back</a>
 <h1>Similarity</h1>
+
+<form name="similarity_form" method="get">
+    User: <input type="text" name="sim_user">
+    <input type="submit" value="Submit">
+</form>
+
+<p>Your similarity with this user is .</p>
 </body>
 </html>

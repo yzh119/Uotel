@@ -15,6 +15,5 @@
 <h1>User profile</h1>
 <h2>My reservations</h2>
 <h2>My favorites</h2>
-<h2>My Phs</h2>
 </body>
 </html>

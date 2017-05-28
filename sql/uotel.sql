@@ -64,6 +64,25 @@ CREATE TABLE IF NOT EXISTS TH_category_pair (
     FOREIGN KEY     (str)   REFERENCES keyword (str)
 );
 
+CREATE TABLE IF NOT EXISTS reserve(
+    rid             INTEGER,
+    uid             INTEGER NOT NULL,
+    user_name       VARCHAR(25) NOT NULL,
+    start_date      TIMESTAMP,
+    end_date        TIMESTAMP,
+    PRIMARY KEY     (rid),
+    FOREIGN KEY     (uid)       REFERENCES TH(uid),
+    FOREIGN KEY     (user_name) REFERENCES user(login_name)
+);
+
+CREATE TABLE IF NOT EXISTS favorite(
+    uid             INTEGER NOT NULL,
+    user_name       VARCHAR(25) NOT NULL,
+    PRIMARY KEY     (uid, user_name),
+    FOREIGN KEY     (uid)       REFERENCES TH(uid),
+    FOREIGN KEY     (user_name) REFERENCES user(login_name)
+);
+
 CREATE TABLE IF NOT EXISTS visit(
     vid             integer,
     uid             integer NOT NULL,

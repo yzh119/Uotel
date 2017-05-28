@@ -14,5 +14,6 @@
 <a href="index.jsp">back</a>
 <h1>Suggestions</h1>
 <p>TH suggestions for you:</p>
+
 </body>
 </html>

@@ -35,28 +35,18 @@
         Name: <input type="text" name="name"> <br>
         Address: <input type="text" name="address"> <br>
         Url: <input type="text" name="url"> <br>
-        Telephone: <input type="text" name="phone_number"> <br>
-        Year built: <input type="number" name="year_built"> <br>
-        Price: <input type="number" name="price"> <br>
+        Telephone: <input type="text" name="telephone"> <br>
+        Year built: <input type="text" name="year_built"> <br>
+        Price: <input type="text" name="price"> <br>
         <input type="submit" value="Submit">
     </form>
 <%
     } else {
-        Connector connector = new Connector();
-        TemporaryHousing th = new TemporaryHousing();
-        th.addTH(TemporaryHousing.uid,
-                request.getParameter("name"),
-                request.getParameter("address"),
-                request.getParameter("url"),
-                request.getParameter("telephone"),
-                request.getParameter("year_built"),
-                request.getParameter("price"),
-                connector.stmt);
 %>
     <p>Add available time:</p>
     <form name="available" method="get" action="addavailable.jsp">
-        Start time: <input type="datetime" name="start_date"> <br>
-        End time: <input type="datetime" name="end_date"> <br>
+        Start time: <input type="text" name="start_date"> <br>
+        End time: <input type="text" name="end_date"> <br>
         <input type="submit" value="Submit">
     </form>
     <a href="completePH.jsp">Complete</a>

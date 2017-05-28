@@ -11,6 +11,8 @@
     <title>Cancel reserve</title>
 </head>
 <body>
-
+    <%
+        response.sendRedirect("reserve.jsp");
+    %>
 </body>
 </html>

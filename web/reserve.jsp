@@ -1,4 +1,7 @@
-<%@ page import="acmdb.TemporaryHousing" %><%--
+<%@ page import="acmdb.TemporaryHousing" %>
+<%@ page import="acmdb.Connector" %>
+<%@ page import="acmdb.Available" %>
+<%@ page import="sun.security.x509.AVA" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/28
@@ -19,25 +22,40 @@
 %>
 
 <form name="reserve_form" method="get" action="fillingTH.jsp">
-    UID of the TH you select: <input type="number" name="th_id"> <br>
+    UID of the TH you select: <input type="text" name="th_id"> <br>
     <input type="submit" value="Submit">
 </form>
 
 
 <p>All possible THs:</p>
-<%=TemporaryHousing.getAllTHs()%>
+<%
+    Connector connector = new Connector();
+%>
+<%=TemporaryHousing.getTHsTable(connector.stmt)%>
+
+<%
+    connector.closeConnection();
+%>
 
 <%
     } else {
 %>
 
+<%
+    Connector connector = new Connector();
+    Available a = new Available();
+%>
+<%=a.getAvailableTable((Integer) session.getAttribute("selectTH"), connector.stmt)%>
+
+<% connector.closeConnection(); %>
+
 <form name="choose_date" method="get">
-    Start date: <input type="datetime" name="start_date"> <br>
-    End date: <input type="datetime" name="end_date"> <br>
+    Start date: <input type="text" name="start_date"> <br>
+    End date: <input type="text" name="end_date"> <br>
     <input type="submit" value="Submit">
 </form>
 
-<a href="cancelreserve.jsp">cancel</a>
+<a href="cancelreserve.jsp">cancel</a> <br>
 <a href="finishreserve.jsp">finish</a>
 <%
     }

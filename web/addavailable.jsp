@@ -1,5 +1,6 @@
 <%@ page import="acmdb.Connector" %>
-<%@ page import="acmdb.TemporaryHousing" %><%--
+<%@ page import="acmdb.TemporaryHousing" %>
+<%@ page import="acmdb.Available" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/28
@@ -14,8 +15,12 @@
 <body>
     <%
         Connector connector = new Connector();
-        TemporaryHousing th = new TemporaryHousing();
-
+        Available available = new Available();
+        available.addAvailable(
+                (Integer) session.getAttribute("currentPH"),
+                request.getParameter("start_date"),
+                request.getParameter("end_date"),
+                connector.stmt);
         connector.closeConnection();
         response.sendRedirect("create.jsp");
     %>
