@@ -8,7 +8,29 @@ import java.sql.Statement;
  */
 public class TemporaryHousing {
     public static int uid = 0;
-    public TemporaryHousing() {++uid;}
+    public TemporaryHousing() throws Exception {
+        Connector connector = new Connector();
+        resetUidFromSQL(connector.stmt);
+        ++uid;
+        connector.closeConnection();
+    }
+
+    public static void resetUidFromSQL(Statement stmt) throws Exception {
+        String query;
+        ResultSet rs;
+        query = "SELECT MAX(th.uid) FROM TH th";
+        try {
+            rs = stmt.executeQuery(query);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+
+        if (rs.next()) {
+            uid =  rs.getInt(1);
+        }
+    }
+
     public void addPH(int uid, String name, String address,
                       String url, String telephone,
                       String yearBuilt, String price, Statement stmt) throws Exception{
@@ -30,7 +52,9 @@ public class TemporaryHousing {
         }
     }
 
-    public static String getTHsTable(Statement stmt) throws Exception {
+    public static String getTHsTable() throws Exception {
+        Connector connector = new Connector();
+        Statement stmt = connector.stmt;
         StringBuffer resultStr = new StringBuffer();
         resultStr.append("<table>");
         String query;
@@ -65,6 +89,7 @@ public class TemporaryHousing {
         }
 
         resultStr.append("</table>");
+        connector.closeConnection();
         return resultStr.toString();
     }
 }

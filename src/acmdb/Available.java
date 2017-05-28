@@ -8,8 +8,18 @@ import java.sql.Statement;
  */
 public class Available {
     public Available() {}
+
+    /*
+    public void removeAvailable(int uid,
+                                String startTime, String endTime) throws Exception {
+        Connector connector = new Connector();
+
+    }*/
+
     public void addAvailable(int uid,
-                      String startTime, String endTime, Statement stmt) throws Exception {
+                      String startTime, String endTime) throws Exception {
+        Connector connector = new Connector();
+        Statement stmt = connector.stmt;
         String statement;
         statement = "INSERT INTO period values(" +
                     "'" + startTime + "'," +
@@ -50,9 +60,13 @@ public class Available {
             e.printStackTrace();
             throw e;
         }
+
+        connector.closeConnection();
     }
 
-    public String getAvailableTable(int uid, Statement stmt) throws Exception {
+    public static String getAvailableTable(int uid) throws Exception {
+        Connector connector = new Connector();
+        Statement stmt = connector.stmt;
         StringBuffer resultStr = new StringBuffer();
         resultStr.append("<table>");
         resultStr.append("<tr> " +
@@ -81,6 +95,7 @@ public class Available {
         }
 
         resultStr.append("</table>");
+        connector.closeConnection();
         return resultStr.toString();
     }
 }

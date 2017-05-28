@@ -1,4 +1,4 @@
-<%--
+<%@ page import="acmdb.Reserve" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/28
@@ -14,6 +14,10 @@
 <a href="index.jsp">back</a>
 <h1>User profile</h1>
 <h2>My reservations</h2>
+<%
+    Reserve reservation = (Reserve) session.getAttribute("reservation");
+%>
+<%=reservation.getPermanentReservation()%>
 <h2>My favorites</h2>
 </body>
 </html>

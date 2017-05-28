@@ -1,7 +1,9 @@
 <%@ page import="acmdb.TemporaryHousing" %>
 <%@ page import="acmdb.Connector" %>
 <%@ page import="acmdb.Available" %>
-<%@ page import="sun.security.x509.AVA" %><%--
+<%@ page import="sun.security.x509.AVA" %>
+<%@ page import="acmdb.Reserve" %>
+<%@ page import="com.sun.org.apache.regexp.internal.RE" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/28
@@ -18,6 +20,11 @@
 <h1>Reserve TH</h1>
 
 <%
+
+    if (session.getAttribute("reservation") == null) {
+        Reserve reservation = new Reserve(session.getAttribute("username").toString());
+        session.setAttribute("reservation", reservation);
+    }
     if (session.getAttribute("selectTH") == null) {
 %>
 
@@ -28,38 +35,36 @@
 
 
 <p>All possible THs:</p>
-<%
-    Connector connector = new Connector();
-%>
-<%=TemporaryHousing.getTHsTable(connector.stmt)%>
 
-<%
-    connector.closeConnection();
-%>
+<%=TemporaryHousing.getTHsTable()%>
 
 <%
     } else {
 %>
 
-<%
-    Connector connector = new Connector();
-    Available a = new Available();
-%>
-<%=a.getAvailableTable((Integer) session.getAttribute("selectTH"), connector.stmt)%>
+<%=Available.getAvailableTable((Integer) session.getAttribute("selectTH"))%>
 
-<% connector.closeConnection(); %>
-
-<form name="choose_date" method="get">
+<form name="choose_date" method="get" action="submitreserve.jsp">
     Start date: <input type="text" name="start_date"> <br>
     End date: <input type="text" name="end_date"> <br>
     <input type="submit" value="Submit">
 </form>
 
-<a href="cancelreserve.jsp">cancel</a> <br>
-<a href="finishreserve.jsp">finish</a>
+<a href="finishreservation.jsp">finish</a><br>
 <%
     }
 %>
+
+<p>My reservation lists:</p>
+
+<%
+    if (session.getAttribute("reservation") != null) {
+        Reserve reservation = (Reserve) session.getAttribute("reservation");
+%>
+<%=reservation.getTemporaryReservation()%>
+<%}%>
+<br><br>
+<a href="confirm.jsp">confirm</a>
 
 </body>
 </html>

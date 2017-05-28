@@ -1,4 +1,5 @@
-<%--
+<%@ page import="acmdb.Connector" %>
+<%@ page import="acmdb.TemporaryHousing" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/26

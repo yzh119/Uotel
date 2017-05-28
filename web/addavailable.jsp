@@ -14,14 +14,11 @@
 </head>
 <body>
     <%
-        Connector connector = new Connector();
         Available available = new Available();
         available.addAvailable(
                 (Integer) session.getAttribute("currentPH"),
                 request.getParameter("start_date"),
-                request.getParameter("end_date"),
-                connector.stmt);
-        connector.closeConnection();
+                request.getParameter("end_date"));
         response.sendRedirect("create.jsp");
     %>
 </body>
