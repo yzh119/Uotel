@@ -1,5 +1,6 @@
 <%@ page import="acmdb.Connector" %>
-<%@ page import="acmdb.TemporaryHousing" %><%--
+<%@ page import="acmdb.TemporaryHousing" %>
+<%@ page import="acmdb.Reserve" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/26
@@ -41,6 +42,10 @@
   </ul>
 
   <%
+      if (session.getAttribute("reservation") == null) {
+        Reserve reserve = new Reserve(username);
+        session.setAttribute("reservation", reserve);
+      }
     }
   %>
   </body>

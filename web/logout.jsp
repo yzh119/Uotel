@@ -13,6 +13,7 @@
 <body
 <%
     session.removeAttribute("username");
+    session.removeAttribute("reservation");
     response.sendRedirect("index.jsp");
 %>
 </body>
