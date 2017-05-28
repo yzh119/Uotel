@@ -14,6 +14,8 @@
 <%
     session.removeAttribute("username");
     session.removeAttribute("reservation");
+    session.removeAttribute("selectTH");
+    session.invalidate();
     response.sendRedirect("index.jsp");
 %>
 </body>

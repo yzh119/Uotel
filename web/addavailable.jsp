@@ -14,8 +14,7 @@
 </head>
 <body>
     <%
-        Available available = new Available();
-        available.addAvailable(
+        Available.addAvailable(
                 (Integer) session.getAttribute("currentPH"),
                 request.getParameter("start_date"),
                 request.getParameter("end_date"));

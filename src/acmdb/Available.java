@@ -9,31 +9,50 @@ import java.sql.Statement;
 public class Available {
     public Available() {}
 
-    /*
-    public void removeAvailable(int uid,
+
+    public static void removeAvailable(int uid,
                                 String startTime, String endTime) throws Exception {
         Connector connector = new Connector();
-
-    }*/
-
-    public void addAvailable(int uid,
-                      String startTime, String endTime) throws Exception {
-        Connector connector = new Connector();
         Statement stmt = connector.stmt;
-        String statement;
-        statement = "INSERT INTO period values(" +
-                    "'" + startTime + "'," +
-                    "'" + endTime + "'" +
-                ")";
+        String statement = "DELETE a FROM available a WHERE a.uid = " + uid + " and " +
+                "a.start_date='" + startTime.substring(0, 10) + "' and a.end_date='" + endTime.substring(0, 10) + "'";
         try {
             stmt.execute(statement);
         } catch (Exception e) {
             e.printStackTrace();
             throw e;
         }
+        connector.closeConnection();
+    }
 
-        String query;
+    public static void addAvailable(int uid,
+                      String startTime, String endTime) throws Exception {
+        Connector connector = new Connector();
+        Statement stmt = connector.stmt;
+        String query = "SELECT * FROM period p WHERE p.start_date='" + startTime +
+                "' and " + "p.end_date='" + endTime + "'";
         ResultSet rs;
+        String statement;
+        try {
+            rs = stmt.executeQuery(query);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+
+        if (!rs.next()) {
+            statement = "INSERT INTO period values(" +
+                    "'" + startTime + "'," +
+                    "'" + endTime + "'" +
+                    ")";
+            try {
+                stmt.execute(statement);
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw e;
+            }
+        }
+
         query = "SELECT * FROM available a " +
                 "WHERE  a.uid = " + uid +
                 " and    ((a.start_date <= '" + startTime + "' and a.end_date >= '" + startTime + "')" +
@@ -47,7 +66,7 @@ public class Available {
         }
 
         if (rs.next())
-            throw new Exception("This period is not available!");
+            throw new Exception("Overlay period!");
 
         statement = "INSERT INTO available values(" +
                     uid + "," +

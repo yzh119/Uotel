@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS reserve(
     user_name       VARCHAR(25) NOT NULL,
     start_date      TIMESTAMP,
     end_date        TIMESTAMP,
-    PRIMARY KEY     (rid),
+    PRIMARY KEY     (rid, user_name),
     FOREIGN KEY     (uid)       REFERENCES TH(uid),
     FOREIGN KEY     (user_name) REFERENCES user(login_name)
 );
