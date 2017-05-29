@@ -34,10 +34,10 @@
   <ul>
     <li><a href="profile.jsp">My profile</a> </li>
     <li><a href="reserve.jsp">Add reservation</a> </li>
+    <li><a href="stay.jsp">Add stay</a> </li>
+    <li><a href="recommendations.jsp">Recommendations</a> </li>
     <li><a href="create.jsp">Add Housing</a> </li>
-    <li><a href="suggestions.jsp">TH Suggestions</a> </li>
-    <li><a href="stay.jsp">Stay</a> </li>
-    <li><a href="similarity.jsp">Similarity</a> </li>
+    <li><a href="distance.jsp">Distance between users</a> </li>
   </ul>
 
   <%

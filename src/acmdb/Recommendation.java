@@ -18,8 +18,8 @@ public class Recommendation {
                 "TH common_th, TH new_th " +
                 "WHERE " +
                 "u1.login_name = '" + username + "' and u1.login_name <> u2.login_name and " +
-                "v1.user_name = u1.login_name and v1.rid = r1.rid and r1.uid = common_th.uid and " +
-                "v2.user_name = u2.login_name and v2.rid = r2.rid and r2.uid = common_th.uid and " +
+                "v1.user_name = u1.login_name and v1.rid = r1.rid and v1.user_name = r1.user_name and r1.uid = common_th.uid and " +
+                "v2.user_name = u2.login_name and v2.rid = r2.rid and v2.user_name = r2.user_name and r2.uid = common_th.uid and " +
                 "all2.user_name = u2.login_name and all2.rid = allr2.rid and new_th.uid = allr2.uid " +
                 "ORDER by new_th.visit_count DESC";
 

@@ -39,7 +39,7 @@
 <%=stay.getTemporaryStay()%>
 <%}%>
 
-<form name="fill_stay" method="get" action="completeStay.jsp">
+<form name="fill_stay" method="get" action="completestay.jsp">
     rid: <input type="text" name="rid"> <br>
     start_date: <input type="text" name="start_date"> <br>
     end_date: <input type="text" name="end_date"> <br>
