@@ -1,4 +1,5 @@
-<%@ page import="acmdb.Reserve" %><%--
+<%@ page import="acmdb.Reservation" %>
+<%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/28
@@ -12,9 +13,9 @@
 </head>
 <body>
     <%
-        Reserve reserve =
-                (Reserve) session.getAttribute("reservation");
-        reserve.pushList();
+        Reservation reservation =
+                (Reservation) session.getAttribute("reservation");
+        reservation.pushList();
         session.removeAttribute("reservation");
         response.sendRedirect("reserve.jsp");
     %>

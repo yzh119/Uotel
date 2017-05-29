@@ -2,8 +2,9 @@
 <%@ page import="acmdb.Connector" %>
 <%@ page import="acmdb.Available" %>
 <%@ page import="sun.security.x509.AVA" %>
-<%@ page import="acmdb.Reserve" %>
-<%@ page import="com.sun.org.apache.regexp.internal.RE" %><%--
+<%@ page import="acmdb.Reservation" %>
+<%@ page import="com.sun.org.apache.regexp.internal.RE" %>
+<%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/28
@@ -22,14 +23,14 @@
 <%
 
     if (session.getAttribute("reservation") == null) {
-        Reserve reservation = new Reserve(session.getAttribute("username").toString());
+        Reservation reservation = new Reservation(session.getAttribute("username").toString());
         session.setAttribute("reservation", reservation);
     }
     if (session.getAttribute("selectTH") == null) {
 %>
 
 <form name="reserve_form" method="get" action="fillingTH.jsp">
-    UID of the TH you select: <input type="text" name="th_id"> <br>
+    UID of the TH you select: <input type="text" name="th_id">
     <input type="submit" value="Submit">
 </form>
 
@@ -59,7 +60,7 @@
 
 <%
     if (session.getAttribute("reservation") != null) {
-        Reserve reservation = (Reserve) session.getAttribute("reservation");
+        Reservation reservation = (Reservation) session.getAttribute("reservation");
 %>
 <%=reservation.getTemporaryReservation()%>
 <%}%>

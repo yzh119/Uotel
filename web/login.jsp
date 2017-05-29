@@ -1,6 +1,6 @@
 <%@ page import="acmdb.Connector" %>
 <%@ page import="acmdb.User" %>
-<%@ page import="acmdb.Reserve" %><%--
+<%@ page import="acmdb.Reservation" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/27

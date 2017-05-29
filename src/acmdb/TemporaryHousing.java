@@ -42,7 +42,8 @@ public class TemporaryHousing {
                 "'" + url + "'" + "," +
                 "'" + telephone + "'" + "," +
                 yearBuilt + "," +
-                price +
+                price + "," +
+                "0" +
                 ")";
         try {
             stmt.execute(statement);
@@ -73,8 +74,9 @@ public class TemporaryHousing {
                 "<th>address</th> " +
                 "<th>url</th>" +
                 "<th>telephone</th>" +
-                "<th>year built</th>" +
+                "<th>year_built</th>" +
                 "<th>price </th>" +
+                "<th>visit_count </th>" +
                 " </tr>");
         while (rs.next()) {
             resultStr.append("<tr> " +
@@ -85,6 +87,7 @@ public class TemporaryHousing {
                     "<th>" + rs.getString("phone_number") + "</th>" +
                     "<th>" + rs.getString("year_built") + "</th>" +
                     "<th>" + rs.getString("price") + "</th>" +
+                    "<th>" + rs.getString("visit_count") + "</th>" +
                     "</tr>");
         }
 

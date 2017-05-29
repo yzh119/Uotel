@@ -43,11 +43,4 @@ public class User {
         rs.next();
         return rs.getString("passwd");
     }
-
-    public String getReservationTable(String userName, Statement stmt) throws Exception {
-        StringBuffer resultStr = new StringBuffer();
-        resultStr.append("<table>");
-        resultStr.append("</table>");
-        return resultStr.toString();
-    }
 }

@@ -1,4 +1,4 @@
-<%@ page import="acmdb.Reserve" %><%--
+<%@ page import="acmdb.Reservation" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/28
@@ -13,7 +13,7 @@
 <body>
 
     <%
-        Reserve reservation = (Reserve)
+        Reservation reservation = (Reservation)
                 session.getAttribute("reservation");
         reservation.addToList(
                 (Integer) session.getAttribute("selectTH"),

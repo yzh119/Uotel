@@ -18,63 +18,65 @@
     <table id="10" parent="2" name="orders"/>
     <table id="11" parent="8" name="available"/>
     <table id="12" parent="8" name="category"/>
-    <table id="13" parent="8" name="keyword"/>
-    <table id="14" parent="8" name="period"/>
-    <table id="15" parent="8" name="th"/>
-    <table id="16" parent="8" name="th_category_pair"/>
-    <table id="17" parent="8" name="th_keyword_pair"/>
-    <table id="18" parent="8" name="user"/>
-    <table id="19" parent="8" name="visit"/>
-    <column id="20" parent="10" name="title">
+    <table id="13" parent="8" name="favorite"/>
+    <table id="14" parent="8" name="keyword"/>
+    <table id="15" parent="8" name="period"/>
+    <table id="16" parent="8" name="reservation"/>
+    <table id="17" parent="8" name="th"/>
+    <table id="18" parent="8" name="th_category_pair"/>
+    <table id="19" parent="8" name="th_keyword_pair"/>
+    <table id="20" parent="8" name="user"/>
+    <table id="21" parent="8" name="visit"/>
+    <column id="22" parent="10" name="title">
       <Position>1</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <column id="21" parent="10" name="quantity">
+    <column id="23" parent="10" name="quantity">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="22" parent="10" name="login">
+    <column id="24" parent="10" name="login">
       <Position>3</Position>
       <DataType>varchar(8)|0</DataType>
     </column>
-    <column id="23" parent="10" name="director">
+    <column id="25" parent="10" name="director">
       <Position>4</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="24" parent="11" name="uid">
+    <column id="26" parent="11" name="uid">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="11" name="start_date">
+    <column id="27" parent="11" name="start_date">
       <Position>2</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="26" parent="11" name="end_date">
+    <column id="28" parent="11" name="end_date">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="27" parent="11" name="start_date">
+    <index id="29" parent="11" name="start_date">
       <ColNames>start_date
 end_date</ColNames>
     </index>
-    <key id="28" parent="11" name="PRIMARY">
+    <key id="30" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>uid
 start_date
 end_date</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="29" parent="11" name="available_ibfk_1">
+    <foreign-key id="31" parent="11" name="available_ibfk_1">
       <ColNames>uid</ColNames>
       <RefSchemaName>uotel</RefSchemaName>
       <RefTableName>th</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <foreign-key id="30" parent="11" name="available_ibfk_2">
+    <foreign-key id="32" parent="11" name="available_ibfk_2">
       <ColNames>start_date
 end_date</ColNames>
       <RefSchemaName>uotel</RefSchemaName>
@@ -82,222 +84,295 @@ end_date</ColNames>
       <RefColNames>start_date
 end_date</RefColNames>
     </foreign-key>
-    <column id="31" parent="12" name="str">
+    <column id="33" parent="12" name="str">
       <Position>1</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="32" parent="12" name="PRIMARY">
+    <key id="34" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>str</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="33" parent="13" name="str">
+    <column id="35" parent="13" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="13" name="user_name">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="37" parent="13" name="user_name">
+      <ColNames>user_name</ColNames>
+    </index>
+    <key id="38" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid
+user_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="39" parent="13" name="favorite_ibfk_1">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>uotel</RefSchemaName>
+      <RefTableName>th</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <foreign-key id="40" parent="13" name="favorite_ibfk_2">
+      <ColNames>user_name</ColNames>
+      <RefSchemaName>uotel</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>login_name</RefColNames>
+    </foreign-key>
+    <column id="41" parent="14" name="str">
       <Position>1</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="34" parent="13" name="PRIMARY">
+    <key id="42" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>str</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="35" parent="14" name="start_date">
+    <column id="43" parent="15" name="start_date">
       <Position>1</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="36" parent="14" name="end_date">
+    <column id="44" parent="15" name="end_date">
       <Position>2</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="37" parent="14" name="PRIMARY">
+    <key id="45" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>start_date
 end_date</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="38" parent="15" name="uid">
+    <column id="46" parent="16" name="rid">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="39" parent="15" name="name">
-      <Position>2</Position>
-      <DataType>varchar(25)|0</DataType>
-    </column>
-    <column id="40" parent="15" name="address">
-      <Position>3</Position>
-      <DataType>varchar(50)|0</DataType>
-    </column>
-    <column id="41" parent="15" name="url">
-      <Position>4</Position>
-      <DataType>varchar(50)|0</DataType>
-    </column>
-    <column id="42" parent="15" name="phone_number">
-      <Position>5</Position>
-      <DataType>varchar(25)|0</DataType>
-    </column>
-    <column id="43" parent="15" name="year_built">
-      <Position>6</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="44" parent="15" name="price">
-      <Position>7</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <key id="45" parent="15" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>uid</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="46" parent="16" name="uid">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="47" parent="16" name="str">
-      <Position>2</Position>
-      <DataType>varchar(25)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="48" parent="16" name="str">
-      <ColNames>str</ColNames>
-    </index>
-    <key id="49" parent="16" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>uid
-str</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="50" parent="16" name="th_category_pair_ibfk_1">
-      <ColNames>uid</ColNames>
-      <RefSchemaName>uotel</RefSchemaName>
-      <RefTableName>th</RefTableName>
-      <RefColNames>uid</RefColNames>
-    </foreign-key>
-    <foreign-key id="51" parent="16" name="th_category_pair_ibfk_2">
-      <ColNames>str</ColNames>
-      <RefSchemaName>uotel</RefSchemaName>
-      <RefTableName>keyword</RefTableName>
-      <RefColNames>str</RefColNames>
-    </foreign-key>
-    <column id="52" parent="17" name="uid">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="53" parent="17" name="str">
-      <Position>2</Position>
-      <DataType>varchar(25)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="54" parent="17" name="str">
-      <ColNames>str</ColNames>
-    </index>
-    <key id="55" parent="17" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>uid
-str</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="56" parent="17" name="th_keyword_pair_ibfk_1">
-      <ColNames>uid</ColNames>
-      <RefSchemaName>uotel</RefSchemaName>
-      <RefTableName>th</RefTableName>
-      <RefColNames>uid</RefColNames>
-    </foreign-key>
-    <foreign-key id="57" parent="17" name="th_keyword_pair_ibfk_2">
-      <ColNames>str</ColNames>
-      <RefSchemaName>uotel</RefSchemaName>
-      <RefTableName>keyword</RefTableName>
-      <RefColNames>str</RefColNames>
-    </foreign-key>
-    <column id="58" parent="18" name="name">
-      <Position>1</Position>
-      <DataType>varchar(25)|0</DataType>
-    </column>
-    <column id="59" parent="18" name="login_name">
-      <Position>2</Position>
-      <DataType>varchar(25)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="60" parent="18" name="passwd">
-      <Position>3</Position>
-      <DataType>varchar(25)|0</DataType>
-    </column>
-    <column id="61" parent="18" name="address">
-      <Position>4</Position>
-      <DataType>varchar(50)|0</DataType>
-    </column>
-    <column id="62" parent="18" name="phone_number">
-      <Position>5</Position>
-      <DataType>varchar(25)|0</DataType>
-    </column>
-    <key id="63" parent="18" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>login_name</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="64" parent="19" name="vid">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="65" parent="19" name="uid">
+    <column id="47" parent="16" name="uid">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="66" parent="19" name="user_name">
+    <column id="48" parent="16" name="user_name">
       <Position>3</Position>
       <DataType>varchar(25)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="67" parent="19" name="start_date">
+    <column id="49" parent="16" name="start_date">
       <Position>4</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
-    <column id="68" parent="19" name="end_date">
+    <column id="50" parent="16" name="end_date">
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
     </column>
-    <column id="69" parent="19" name="total_spent">
-      <Position>6</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="70" parent="19" name="num_person">
-      <Position>7</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="71" parent="19" name="uid">
+    <index id="51" parent="16" name="uid">
       <ColNames>uid</ColNames>
     </index>
-    <index id="72" parent="19" name="user_name">
+    <index id="52" parent="16" name="user_name">
       <ColNames>user_name</ColNames>
     </index>
-    <key id="73" parent="19" name="PRIMARY">
+    <key id="53" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>vid</ColNames>
+      <ColNames>rid
+user_name</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="74" parent="19" name="visit_ibfk_1">
+    <foreign-key id="54" parent="16" name="reservation_ibfk_1">
       <ColNames>uid</ColNames>
       <RefSchemaName>uotel</RefSchemaName>
       <RefTableName>th</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <foreign-key id="75" parent="19" name="visit_ibfk_2">
+    <foreign-key id="55" parent="16" name="reservation_ibfk_2">
       <ColNames>user_name</ColNames>
       <RefSchemaName>uotel</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>login_name</RefColNames>
+    </foreign-key>
+    <column id="56" parent="17" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="57" parent="17" name="name">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <column id="58" parent="17" name="address">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="59" parent="17" name="url">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="60" parent="17" name="phone_number">
+      <Position>5</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <column id="61" parent="17" name="year_built">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="62" parent="17" name="price">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="63" parent="17" name="visit_count">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="64" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="65" parent="18" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="18" name="str">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="67" parent="18" name="str">
+      <ColNames>str</ColNames>
+    </index>
+    <key id="68" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid
+str</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="69" parent="18" name="th_category_pair_ibfk_1">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>uotel</RefSchemaName>
+      <RefTableName>th</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <foreign-key id="70" parent="18" name="th_category_pair_ibfk_2">
+      <ColNames>str</ColNames>
+      <RefSchemaName>uotel</RefSchemaName>
+      <RefTableName>keyword</RefTableName>
+      <RefColNames>str</RefColNames>
+    </foreign-key>
+    <column id="71" parent="19" name="uid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="19" name="str">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="73" parent="19" name="str">
+      <ColNames>str</ColNames>
+    </index>
+    <key id="74" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>uid
+str</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="75" parent="19" name="th_keyword_pair_ibfk_1">
+      <ColNames>uid</ColNames>
+      <RefSchemaName>uotel</RefSchemaName>
+      <RefTableName>th</RefTableName>
+      <RefColNames>uid</RefColNames>
+    </foreign-key>
+    <foreign-key id="76" parent="19" name="th_keyword_pair_ibfk_2">
+      <ColNames>str</ColNames>
+      <RefSchemaName>uotel</RefSchemaName>
+      <RefTableName>keyword</RefTableName>
+      <RefColNames>str</RefColNames>
+    </foreign-key>
+    <column id="77" parent="20" name="name">
+      <Position>1</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <column id="78" parent="20" name="login_name">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="20" name="passwd">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <column id="80" parent="20" name="address">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="81" parent="20" name="phone_number">
+      <Position>5</Position>
+      <DataType>varchar(25)|0</DataType>
+    </column>
+    <key id="82" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>login_name</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="83" parent="21" name="rid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="21" name="start_date">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="85" parent="21" name="end_date">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="21" name="total_spent">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="87" parent="21" name="num_person">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="88" parent="21" name="user_name">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="89" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>rid
+user_name
+start_date
+end_date</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="90" parent="21" name="visit_ibfk_1">
+      <ColNames>rid
+user_name</ColNames>
+      <RefSchemaName>uotel</RefSchemaName>
+      <RefTableName>reservation</RefTableName>
+      <RefColNames>rid
+user_name</RefColNames>
     </foreign-key>
   </database-model>
 </dataSource>

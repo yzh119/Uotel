@@ -1,4 +1,6 @@
-<%@ page import="acmdb.Reserve" %><%--
+<%@ page import="acmdb.Reservation" %>
+<%@ page import="acmdb.Reservation" %>
+<%@ page import="acmdb.Stay" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/28
@@ -15,9 +17,14 @@
 <h1>User profile</h1>
 <h2>My reservations</h2>
 <%
-    Reserve reservation = (Reserve) session.getAttribute("reservation");
+    Reservation reservation = (Reservation) session.getAttribute("reservation");
+    Stay stay = (Stay) session.getAttribute("stay");
 %>
 <%=reservation.getPermanentReservation()%>
+
+<h2>My stays</h2>
+<%=stay.getPermanentStay()%>
+
 <h2>My favorites</h2>
 </body>
 </html>
