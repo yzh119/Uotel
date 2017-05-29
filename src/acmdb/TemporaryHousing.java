@@ -80,14 +80,14 @@ public class TemporaryHousing {
                 " </tr>");
         while (rs.next()) {
             resultStr.append("<tr> " +
-                    "<th>" + rs.getString("uid") + "</th>" +
-                    "<th>" + rs.getString("name") + "</th>" +
-                    "<th>" + rs.getString("address") + "</th>" +
-                    "<th><a href=\"" + rs.getString("url") + "\">" + rs.getString("url") + "</a></th>" +
-                    "<th>" + rs.getString("phone_number") + "</th>" +
-                    "<th>" + rs.getString("year_built") + "</th>" +
-                    "<th>" + rs.getString("price") + "</th>" +
-                    "<th>" + rs.getString("visit_count") + "</th>" +
+                    "<th>" + rs.getString(1) + "</th>" +
+                    "<th>" + rs.getString(2) + "</th>" +
+                    "<th>" + rs.getString(3) + "</th>" +
+                    "<th><a href=\"" + rs.getString(4) + "\">" + rs.getString(4) + "</a></th>" +
+                    "<th>" + rs.getString(5) + "</th>" +
+                    "<th>" + rs.getString(6) + "</th>" +
+                    "<th>" + rs.getString(7) + "</th>" +
+                    "<th>" + rs.getString(8) + "</th>" +
                     "</tr>");
         }
 

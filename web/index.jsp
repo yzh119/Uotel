@@ -1,7 +1,4 @@
-<%@ page import="acmdb.Connector" %>
-<%@ page import="acmdb.TemporaryHousing" %>
-<%@ page import="acmdb.Reservation" %>
-<%@ page import="acmdb.Stay" %>
+<%@ page import="acmdb.*" %>
 <%--
   Created by IntelliJ IDEA.
   User: zihao
@@ -51,6 +48,10 @@
       if (session.getAttribute("stay") == null) {
         Stay stay = new Stay(username);
         session.setAttribute("stay", stay);
+      }
+      if (session.getAttribute("favorite") == null) {
+        Favorite favorite = new Favorite(username);
+        session.setAttribute("favorite", favorite);
       }
     }
   %>

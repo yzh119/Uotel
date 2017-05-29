@@ -16,6 +16,7 @@
     session.removeAttribute("reservation");
     session.removeAttribute("selectTH");
     session.removeAttribute("stay");
+    session.removeAttribute("favorite");
     session.invalidate();
     response.sendRedirect("index.jsp");
 %>
