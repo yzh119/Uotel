@@ -36,7 +36,9 @@ public class Stay {
         for (int i = 0; i < selectRID.size(); ++i) {
             String query;
             query = "SELECT * FROM reservation r, visit v WHERE " +
-                    "r.rid = " + selectRID.get(i) + " and (" +
+                    "r.rid = " + selectRID.get(i) + " and " +
+                    "r.user_name = '" + username + "'" +
+                    " and (" +
                     "'" + startDate.get(i) + "'" + " < r.start_date or " +
                     "'" + endDate.get(i) + "'" + " > r.end_date or " +
                     "(" +

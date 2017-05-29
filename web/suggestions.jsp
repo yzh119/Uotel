@@ -1,4 +1,4 @@
-<%--
+<%@ page import="acmdb.Recommendation" %><%--
   Created by IntelliJ IDEA.
   User: zihao
   Date: 2017/5/28
@@ -14,6 +14,12 @@
 <a href="index.jsp">back</a>
 <h1>Suggestions</h1>
 <p>TH suggestions for you:</p>
+
+<%
+    String username = session.getAttribute("username").toString();
+%>
+
+<%=Recommendation.getRecommendations(username)%>
 
 </body>
 </html>

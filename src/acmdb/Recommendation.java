@@ -6,44 +6,22 @@ import java.sql.Statement;
 /**
  * Created by zihao on 2017/5/29.
  */
-public class Favorite {
-    String username;
-    public Favorite(String username) {
-        this.username = username;
-    }
-
-    public void addFavorite(int uid) throws Exception {
-        Connector connector = new Connector();
-        Statement stmt = connector.stmt;
-
-        String query;
-        query = "SELECT * FROM visit v, reservation r " +
-                "WHERE v.rid = r.rid and v.user_name = '" + username +
-                "' and r.uid = " + uid;
-
-        ResultSet rs;
-        rs = stmt.executeQuery(query);
-        if (!rs.next())
-            throw new Exception("No stay record yet.");
-
-        String statement;
-
-        statement = "INSERT INTO favorite values(" +
-                uid + "," +
-                "'" + username + "'" +
-                ")";
-
-        stmt.execute(statement);
-        connector.closeConnection();
-    }
-
-    public String getFavoriteList() throws Exception {
+public class Recommendation {
+    public static String getRecommendations(String username) throws Exception {
         StringBuffer resultStr = new StringBuffer();
         Connector connector = new Connector();
         Statement stmt = connector.stmt;
-        String query = "SELECT th.uid, name, address, url, phone_number, year_built, price, visit_count " +
-                "FROM TH th, favorite f " +
-                "WHERE f.user_name = '" + username + "' and f.uid = th.uid";
+        String query = "SELECT distinct new_th.* FROM " +
+                "user u1, user u2, " +
+                "visit v1, visit v2, visit all2, " +
+                "reservation r1, reservation r2, reservation allr2, " +
+                "TH common_th, TH new_th " +
+                "WHERE " +
+                "u1.login_name = '" + username + "' and u1.login_name <> u2.login_name and " +
+                "v1.user_name = u1.login_name and v1.rid = r1.rid and r1.uid = common_th.uid and " +
+                "v2.user_name = u2.login_name and v2.rid = r2.rid and r2.uid = common_th.uid and " +
+                "all2.user_name = u2.login_name and all2.rid = allr2.rid and new_th.uid = allr2.uid " +
+                "ORDER by new_th.visit_count DESC";
 
         ResultSet rs;
         try {
@@ -65,7 +43,6 @@ public class Favorite {
                 "<th>price </th>" +
                 "<th>visit_count </th>" +
                 " </tr>");
-
         while (rs.next()) {
             resultStr.append("<tr> " +
                     "<th>" + rs.getString(1) + "</th>" +
