@@ -9,7 +9,7 @@
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-schemas>*:acmdbu10,uotel</introspection-schemas>
+      <introspection-schemas>*:acmdb10,acmdbu10,uotel</introspection-schemas>
     </data-source>
   </component>
 </project>

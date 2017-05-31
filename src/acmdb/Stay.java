@@ -37,7 +37,8 @@ public class Stay {
             String query;
             query = "SELECT * FROM reservation r, visit v WHERE " +
                     "r.rid = " + selectRID.get(i) + " and " +
-                    "r.user_name = '" + username + "'" +
+                    "r.user_name = '" + username + "' and " +
+                    "v.user_name = '" + username + "'" +
                     " and (" +
                     "'" + startDate.get(i) + "'" + " < r.start_date or " +
                     "'" + endDate.get(i) + "'" + " > r.end_date or " +
@@ -86,7 +87,7 @@ public class Stay {
             rs.next();
             newCount = rs.getInt(1) + 1;
 
-            statement = "UPDATE TH SET visit_count = " + newCount + " WHERE th.uid = " + currentUid;
+            statement = "UPDATE TH SET visit_count = " + newCount + " WHERE uid = " + currentUid;
             stmt.execute(statement);
         }
 
