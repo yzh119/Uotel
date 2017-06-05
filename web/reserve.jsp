@@ -35,18 +35,18 @@
                 }
             %>
 
-            <table align="center">
+            <table align="center" cellspacing="2" cellpadding="2" border="1">
                 <tr>
-                    <td><b>UID</b></td>
-                    <td><b>Name</b></td>
-                    <td><b>Address</b></td>
-                    <td><b>Website</b></td>
-                    <td><b>Phone number</b></td>
-                    <td><b>Year built</b></td>
-                    <td><b>Price</b></td>
-                    <td><b>Visit count</b></td>
-                    <td><b>Start date</b></td>
-                    <td><b>End date</b></td>
+                    <th>UID</th>
+                    <th>Owner Name</th>
+                    <th>House Address</th>
+                    <th>Website</th>
+                    <th>Phone number</th>
+                    <th>Year built</th>
+                    <th>Price</th>
+                    <th>Total visits</th>
+                    <th>Start date</th>
+                    <th>End date</th>
                 </tr>
                 <%= builder.toString() %>
             </table>
@@ -83,13 +83,32 @@
                 <%
                     if (session.getAttribute("reservation") != null) {
                         Reservation reservation = (Reservation) session.getAttribute("reservation");
+                        if (!reservation.selectTH.isEmpty()) {
                 %>
                     <br><br>
+                    <%
+                        builder = new StringBuilder();
+                        for (int i = 0; i < reservation.selectTH.size(); ++i) {
+                            builder.append("<tr>");
+                            builder.append("<td>").append(reservation.selectTH.get(i)).append("</td>");
+                            builder.append("<td>").append(reservation.startDate.get(i).substring(0, 10)).append("</td>");
+                            builder.append("<td>").append(reservation.endDate.get(i).substring(0, 10)).append("</td>");
+                            builder.append("</tr>");
+                        }
+                    %>
+                    <table align="center" cellspacing="2" cellpadding="2" border="1">
+                        <tr>
+                            <th>UID</th>
+                            <th>Start date</th>
+                            <th>End date</th>
+                        </tr>
+                        <%= builder.toString() %>
+                    </table>
 
-                    <%=reservation.getTemporaryReservation()%>
-
+                    <br>
                     <input type="button" value="Confirm the above reservations" onclick="location.href='reserve_complete.jsp'">
                 <%
+                        }
                     }
                 %>
             </form>

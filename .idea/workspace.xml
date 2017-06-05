@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f1a83e5f-3eb7-42c1-816b-41e502783156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Database.java" afterPath="$PROJECT_DIR$/src/acmdb/Database.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/reserve.jsp" afterPath="$PROJECT_DIR$/web/reserve.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,26 +38,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="favorite_submit.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/favorite_submit.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="favorite.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/favorite.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Favorite.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/acmdb/Favorite.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,8 +53,8 @@
       <file leaf-file-name="Reservation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/acmdb/Reservation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="81" column="13" lean-forward="false" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
+            <state relative-caret-position="1590">
+              <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="131" selection-end-column="36" />
               <folding>
                 <marker date="1496646250000" expanded="true" signature="721:818" ph="SELECT MAX(r... reservation" />
                 <marker date="1496646250000" expanded="true" signature="2203:2417" ph="SELECT * FRO... available" />
@@ -87,12 +66,70 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Stay.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/acmdb/Stay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <marker date="1496626624000" expanded="true" signature="1003:1108" ph="SELECT * FRO... reservation" />
+                <marker date="1496626624000" expanded="true" signature="1003:1854" ph="SELECT * FRO... reservation" />
+                <marker date="1496626624000" expanded="true" signature="2254:2589" ph="INSERT INTO visit... " />
+                <marker date="1496626624000" expanded="true" signature="2683:2727" ph="SELECT uid F... reservation" />
+                <marker date="1496626624000" expanded="true" signature="2906:2951" ph="SELECT visit... TH" />
+                <marker date="1496626624000" expanded="true" signature="3100:3157" ph="UPDATE TH SE... " />
+                <marker date="1496626624000" expanded="true" signature="3151:3157" ph="UPDATE TH SE... " />
+                <marker date="1496626624000" expanded="true" signature="3787:3913" ph="SELECT rid, visit" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stay.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/stay.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="House.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/acmdb/House.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="79" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+              <folding>
+                <marker date="1496645430000" expanded="true" signature="438:467" ph="SELECT MAX(t... TH" />
+                <marker date="1496645430000" expanded="true" signature="976:1010" ph="INSERT INTO TH... " />
+                <marker date="1496645430000" expanded="true" signature="976:1043" ph="INSERT INTO TH... " />
+                <marker date="1496645430000" expanded="true" signature="976:1110" ph="INSERT INTO TH... " />
+                <marker date="1496645430000" expanded="true" signature="976:1111" ph="INSERT INTO TH... " />
+                <marker date="1496645430000" expanded="true" signature="1451:1467" ph="SELECT * FRO... TH" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="reserve.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/reserve.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="-155">
+              <caret line="85" column="44" lean-forward="true" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Recommendation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/acmdb/Recommendation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <folding>
+                <marker date="1496632819000" expanded="true" signature="417:1201" ph="SELECT disti... user" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,38 +144,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reserve_complete.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/reserve_complete.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="House.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/acmdb/House.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="830">
-              <caret line="79" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding>
-                <marker date="1496645430000" expanded="true" signature="438:467" ph="SELECT MAX(t... TH" />
-                <marker date="1496645430000" expanded="true" signature="976:1010" ph="INSERT INTO TH... " />
-                <marker date="1496645430000" expanded="true" signature="976:1043" ph="INSERT INTO TH... " />
-                <marker date="1496645430000" expanded="true" signature="976:1110" ph="INSERT INTO TH... " />
-                <marker date="1496645430000" expanded="true" signature="976:1111" ph="INSERT INTO TH... " />
-                <marker date="1496645430000" expanded="true" signature="1451:1467" ph="SELECT * FRO... TH" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/acmdb/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+            <state relative-caret-position="281">
+              <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
               <folding>
                 <marker date="1496653724000" expanded="true" signature="371:408" ph="SELECT * fro... user" />
                 <marker date="1496653724000" expanded="true" signature="371:425" ph="SELECT * fro... user" />
@@ -239,7 +249,6 @@
         <option value="$PROJECT_DIR$/src/acmdb/House.java" />
         <option value="$PROJECT_DIR$/web/new_th_information_submit.jsp" />
         <option value="$PROJECT_DIR$/web/add_favorite.jsp" />
-        <option value="$PROJECT_DIR$/src/acmdb/Reservation.java" />
         <option value="$PROJECT_DIR$/web/reserve_cancel.jsp" />
         <option value="$PROJECT_DIR$/web/suggestions.jsp" />
         <option value="$PROJECT_DIR$/web/reserve_submit.jsp" />
@@ -260,6 +269,7 @@
         <option value="$PROJECT_DIR$/src/acmdb/Favorite.java" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/src/acmdb/Database.java" />
+        <option value="$PROJECT_DIR$/src/acmdb/Reservation.java" />
         <option value="$PROJECT_DIR$/web/reserve.jsp" />
       </list>
     </option>
@@ -936,7 +946,7 @@
       <workItem from="1496621070359" duration="1454000" />
       <workItem from="1496625331410" duration="2848000" />
       <workItem from="1496630630865" duration="3470000" />
-      <workItem from="1496637216708" duration="16165000" />
+      <workItem from="1496637216708" duration="16890000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <created>1496626842694</created>
@@ -1036,11 +1046,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496653142432</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="-">
+      <created>1496653747616</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1496653747616</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104544000" />
+    <option name="totallyTimeSpent" value="105269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="69" y="43" width="1386" height="878" extended-state="0" />
@@ -1156,23 +1173,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/acmdb/Distance.java" />
     <entry file="file://$PROJECT_DIR$/src/acmdb/Stats.java" />
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Stay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <marker date="1496626624000" expanded="true" signature="1003:1108" ph="SELECT * FRO... reservation" />
-            <marker date="1496626624000" expanded="true" signature="1003:1854" ph="SELECT * FRO... reservation" />
-            <marker date="1496626624000" expanded="true" signature="2254:2589" ph="INSERT INTO visit... " />
-            <marker date="1496626624000" expanded="true" signature="2683:2727" ph="SELECT uid F... reservation" />
-            <marker date="1496626624000" expanded="true" signature="2906:2951" ph="SELECT visit... TH" />
-            <marker date="1496626624000" expanded="true" signature="3100:3157" ph="UPDATE TH SE... " />
-            <marker date="1496626624000" expanded="true" signature="3151:3157" ph="UPDATE TH SE... " />
-            <marker date="1496626624000" expanded="true" signature="3787:3913" ph="SELECT rid, visit" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1325,24 +1325,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/stay.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Recommendation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding>
-            <marker date="1496632819000" expanded="true" signature="417:1201" ph="SELECT disti... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/distance_submit.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
@@ -1374,21 +1356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/House.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="830">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding>
-            <marker date="1496645430000" expanded="true" signature="438:467" ph="SELECT MAX(t... TH" />
-            <marker date="1496645430000" expanded="true" signature="976:1010" ph="INSERT INTO TH... " />
-            <marker date="1496645430000" expanded="true" signature="976:1043" ph="INSERT INTO TH... " />
-            <marker date="1496645430000" expanded="true" signature="976:1110" ph="INSERT INTO TH... " />
-            <marker date="1496645430000" expanded="true" signature="976:1111" ph="INSERT INTO TH... " />
-            <marker date="1496645430000" expanded="true" signature="1451:1467" ph="SELECT * FRO... TH" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/reserve_complete.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1402,16 +1369,6 @@
         <state relative-caret-position="262">
           <caret line="34" column="41" lean-forward="false" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Favorite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-320">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <marker date="1496651813000" expanded="true" signature="342:544" ph="SELECT th.ui... TH" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1431,24 +1388,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Reservation.java">
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Recommendation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="81" column="13" lean-forward="false" selection-start-line="81" selection-start-column="13" selection-end-line="81" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding>
-            <marker date="1496646250000" expanded="true" signature="721:818" ph="SELECT MAX(r... reservation" />
-            <marker date="1496646250000" expanded="true" signature="2203:2417" ph="SELECT * FRO... available" />
-            <marker date="1496646250000" expanded="true" signature="2689:2903" ph="SELECT * FRO... available" />
-            <marker date="1496646250000" expanded="true" signature="3496:3784" ph="INSERT INTO reservation... " />
-            <marker date="1496646250000" expanded="true" signature="5101:5209" ph="SELECT rid, reservation" />
+            <marker date="1496632819000" expanded="true" signature="417:1201" ph="SELECT disti... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Stay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1496626624000" expanded="true" signature="1003:1108" ph="SELECT * FRO... reservation" />
+            <marker date="1496626624000" expanded="true" signature="1003:1854" ph="SELECT * FRO... reservation" />
+            <marker date="1496626624000" expanded="true" signature="2254:2589" ph="INSERT INTO visit... " />
+            <marker date="1496626624000" expanded="true" signature="2683:2727" ph="SELECT uid F... reservation" />
+            <marker date="1496626624000" expanded="true" signature="2906:2951" ph="SELECT visit... TH" />
+            <marker date="1496626624000" expanded="true" signature="3100:3157" ph="UPDATE TH SE... " />
+            <marker date="1496626624000" expanded="true" signature="3151:3157" ph="UPDATE TH SE... " />
+            <marker date="1496626624000" expanded="true" signature="3787:3913" ph="SELECT rid, visit" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/House.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <marker date="1496645430000" expanded="true" signature="438:467" ph="SELECT MAX(t... TH" />
+            <marker date="1496645430000" expanded="true" signature="976:1010" ph="INSERT INTO TH... " />
+            <marker date="1496645430000" expanded="true" signature="976:1043" ph="INSERT INTO TH... " />
+            <marker date="1496645430000" expanded="true" signature="976:1110" ph="INSERT INTO TH... " />
+            <marker date="1496645430000" expanded="true" signature="976:1111" ph="INSERT INTO TH... " />
+            <marker date="1496645430000" expanded="true" signature="1451:1467" ph="SELECT * FRO... TH" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Favorite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <marker date="1496651813000" expanded="true" signature="342:544" ph="SELECT th.ui... TH" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/acmdb/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+        <state relative-caret-position="281">
+          <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
           <folding>
             <marker date="1496653724000" expanded="true" signature="371:408" ph="SELECT * fro... user" />
             <marker date="1496653724000" expanded="true" signature="371:425" ph="SELECT * fro... user" />
@@ -1468,10 +1463,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/stay.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="36" column="23" lean-forward="true" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Reservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="131" selection-end-column="36" />
+          <folding>
+            <marker date="1496646250000" expanded="true" signature="721:818" ph="SELECT MAX(r... reservation" />
+            <marker date="1496646250000" expanded="true" signature="2203:2417" ph="SELECT * FRO... available" />
+            <marker date="1496646250000" expanded="true" signature="2689:2903" ph="SELECT * FRO... available" />
+            <marker date="1496646250000" expanded="true" signature="3496:3784" ph="INSERT INTO reservation... " />
+            <marker date="1496646250000" expanded="true" signature="5101:5209" ph="SELECT rid, reservation" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/reserve.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="-155">
+          <caret line="85" column="44" lean-forward="true" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
           <folding />
         </state>
       </provider>
