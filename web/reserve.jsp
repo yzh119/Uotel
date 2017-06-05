@@ -1,16 +1,19 @@
-<%@ page import="acmdb.TemporaryHousing" %>
+<%@ page import="acmdb.House" %>
 <%@ page import="acmdb.Available" %>
 <%@ page import="acmdb.Reservation" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
-<head>
-    <title>Reserve</title>
-</head>
-<body>
-<a href="index.jsp">back</a>
-<h1>Reserve TH</h1>
+    <head>
+        <title>Functionality 2 | Reserve</title>
+    </head>
+    <body>
+        <div align="center">
+            <h2>Functionality 2 | Reserve</h2>
+
+            <p><i>After registration, a user can record a reservation to any TH (the same user may reserve the same TH multiple times from different available dates). Each user session (meaning each time after a user has logged into the system) may add one or more researvations, and all reservations added by a user in a user session are reported to him/her for the ﬁnal review and conﬁrmation, before they are added into the database.</i></p>
+        </div>
 
 <%
 
@@ -29,7 +32,7 @@
 
 <p>All possible THs:</p>
 
-<%=TemporaryHousing.getTHsTable()%>
+<%=House.getTHsTable()%>
 
 <%
     } else {

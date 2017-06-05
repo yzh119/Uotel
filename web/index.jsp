@@ -4,9 +4,13 @@
 
 <html>
     <head>
-        <title>Homepage | Welcome to Uotel</title>
+        <title>Project A | Airbnb-like system : Uotel</title>
     </head>
     <body>
+        <div align="center">
+            <h2>Project A | Airbnb-like system : Uotel</h2>
+        </div>
+
         <%
             String username = "visitor";
             if (session.getAttribute("username") != null) {
@@ -26,19 +30,16 @@
             }
         %>
 
-        <div align="center">
-            <h2>Project A | Airbnb-like system : Uotel</h2>
-        </div>
         <%
             if (session.getAttribute("username") == null) {
         %>
         <div align="center">
             <form action="login_submit.jsp">
                 <label><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
+                <input type="text" placeholder="Enter username" name="username" required>
 
                 <label><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
+                <input type="password" placeholder="Enter password" name="password" required>
 
                 <button type="submit">Login as a user</button>
                 <input type="button" value="Register as a new user" onclick="location.href='register.jsp'">
@@ -53,9 +54,9 @@
                 <li><a href="profile.jsp">My profile</a> </li>
                 <li><a href="reserve.jsp">Add reservation</a> </li>
                 <li><a href="stay.jsp">Add stay</a> </li>
-                <li><a href="recommendations.jsp">Recommendations</a> </li>
-                <li><a href="create.jsp">Add Housing</a> </li>
-                <li><a href="distance.jsp">Two degrees of separation</a> </li>
+                <li><a href="suggestions.jsp">Recommendations</a> </li>
+                <li><a href="new_th_information.jsp">Functionality 3 | New TH</a> </li>
+                <li><a href="distance.jsp">Functionality 12 | Two degrees of separation</a></li>
             </ul>
         </div>
         <%
