@@ -77,8 +77,9 @@ public class Reservation {
                     startDate.get(i) + "\" and a.end_date>= \"" +
                     endDate.get(i) + "\"";
             ResultSet rs = stmt.executeQuery(query);
-            if (!rs.next())
+            if (!rs.next()) {
                 throw new Exception("Reservation conflict!");
+            }
         }
 
         for (int i = 0; i < selectTH.size(); ++i) {

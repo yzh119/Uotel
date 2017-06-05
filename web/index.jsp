@@ -50,14 +50,38 @@
         %>
         <div align="center">
             <p> Welcome to the Uotel system, <%=username%> <a href="logout.jsp">[logout]</a>.</p>
-            <ul>
-                <li><a href="profile.jsp">My profile</a> </li>
-                <li><a href="reserve.jsp">Add reservation</a> </li>
-                <li><a href="stay.jsp">Add stay</a> </li>
-                <li><a href="suggestions.jsp">Recommendations</a> </li>
-                <li><a href="new_th_information.jsp">Functionality 3 | New TH</a> </li>
-                <li><a href="distance.jsp">Functionality 12 | Two degrees of separation</a></li>
-            </ul>
+            <table>
+                <tr>
+                    <td>
+                        <a href="profile.jsp">My profile</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="stay.jsp">Add stay</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="reserve.jsp">Functionality 2 | Reserve</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="new_th_information.jsp">Functionality 3 | New TH</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="suggestions.jsp">Functionality 11 | TH suggestions</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="distance.jsp">Functionality 12 | Two degrees of separation</a>
+                    </td>
+                </tr>
+            </table>
         </div>
         <%
             }

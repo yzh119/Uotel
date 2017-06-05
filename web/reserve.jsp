@@ -51,7 +51,7 @@
     }
 %>
 
-<p>My reservation lists:</p>
+<h3>My reservation lists:</h3>
 
 <%
     if (session.getAttribute("reservation") != null) {
