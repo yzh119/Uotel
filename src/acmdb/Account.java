@@ -35,6 +35,17 @@ public class Account {
         return response;
     }
 
+    public static void addFavorite(String username, int uid) throws Exception {
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+        ResultSet result = statement.executeQuery("SELECT * FROM visit v, reservation r WHERE v.rid = r.rid and v.user_name = '" + username + "' and r.uid = " + uid);
+        if (!result.next()) {
+            throw new Exception("You have no stay records for this house yet!");
+        }
+        statement.execute("INSERT INTO favorite values(" + uid + ",'" + username + "')");
+        connector.close();
+    }
+
     public static int computeDistance(String username1, String username2) throws Exception {
         if (!existAccount(username1)) {
             throw new Exception("Account \"" + username1 + "\" does not exist!");

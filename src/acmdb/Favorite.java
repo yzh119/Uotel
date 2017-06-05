@@ -9,30 +9,7 @@ public class Favorite {
         this.username = username;
     }
 
-    public void addFavorite(int uid) throws Exception {
-        Connector connector = new Connector();
-        Statement stmt = connector.statement;
 
-        String query;
-        query = "SELECT * FROM visit v, reservation r " +
-                "WHERE v.rid = r.rid and v.user_name = '" + username +
-                "' and r.uid = " + uid;
-
-        ResultSet rs;
-        rs = stmt.executeQuery(query);
-        if (!rs.next())
-            throw new Exception("No stay record yet.");
-
-        String statement;
-
-        statement = "INSERT INTO favorite values(" +
-                uid + "," +
-                "'" + username + "'" +
-                ")";
-
-        stmt.execute(statement);
-        connector.close();
-    }
 
     public String getFavoriteList() throws Exception {
         StringBuffer resultStr = new StringBuffer();

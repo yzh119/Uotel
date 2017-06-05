@@ -1,9 +1,11 @@
-<%@ page import="acmdb.Favorite" %>
+<%@ page import="acmdb.Account" %>
 
 <%
     try {
-        Favorite favorite = (Favorite) session.getAttribute("favorite");
-        favorite.addFavorite(Integer.valueOf(request.getParameter("uid")));
+        Account.addFavorite(
+            session.getAttribute("username").toString(),
+            Integer.valueOf(request.getParameter("uid"))
+        );
         response.sendRedirect("favorite.jsp");
     } catch (Exception e) {
         response.sendRedirect("error.jsp?message=" + e.getMessage());
