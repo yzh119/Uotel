@@ -58,7 +58,7 @@
                     <td><a href="create_information.jsp">Functionality 3 | New TH</a></td>
                 </tr>
                 <tr>
-                    <td><a href="stay.jsp">Functionality 4 | Stays</a></td>
+                    <td><a href="visit.jsp">Functionality 4 | Stays</a></td>
                 </tr>
                 <tr>
                     <td><a href="favorite.jsp">Functionality 5 | Favorite recordings</a></td>

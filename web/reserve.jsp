@@ -21,25 +21,6 @@
         %>
 
         <div align="center">
-            <h3>All possible houses and their available dates</h3>
-
-            <table align="center" cellspacing="2" cellpadding="2" border="1">
-                <tr>
-                    <th>UID</th>
-                    <th>Owner Name</th>
-                    <th>House Address</th>
-                    <th>Website</th>
-                    <th>Phone number</th>
-                    <th>Year built</th>
-                    <th>Price</th>
-                    <th>Total visits</th>
-                    <th>Start date</th>
-                    <th>End date</th>
-                </tr>
-
-                <%= Database.list2Table(Database.getAvailableHouses()) %>
-            </table>
-
             <h3>All your reservations</h3>
 
             <table align="center" cellspacing="2" cellpadding="2" border="1">
@@ -59,6 +40,25 @@
 
                 <%= Database.list2Table(Database.getReservations(username)) %>
             </table>
+
+            <h3>All possible houses and their available dates</h3>
+
+            <table align="center" cellspacing="2" cellpadding="2" border="1">
+                <tr>
+                    <th>UID</th>
+                    <th>Owner Name</th>
+                    <th>House Address</th>
+                    <th>Website</th>
+                    <th>Phone number</th>
+                    <th>Year built</th>
+                    <th>Price</th>
+                    <th>Total visits</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                </tr>
+
+                <%= Database.list2Table(Database.getAvailableHouses()) %>
+            </table>
         </div>
 
         <%
@@ -69,7 +69,7 @@
         %>
 
         <div align="center">
-            <h3>Stacked reservation list</h3>
+            <h3>Temporary reservation cart</h3>
 
             <form method="post" action="reserve_submit.jsp">
                 <table>
@@ -87,7 +87,7 @@
                     </tr>
                 </table>
 
-                <button type="submit">Add to the stacked reservation list</button>
+                <button type="submit">Add to the temporary reservation cart</button>
 
                 <%
                     if (session.getAttribute("reservation") != null) {

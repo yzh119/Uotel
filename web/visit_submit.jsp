@@ -10,7 +10,7 @@
                 Integer.valueOf(request.getParameter("spent")),
                 Integer.valueOf(request.getParameter("number"))
         );
-        response.sendRedirect("stay.jsp");
+        response.sendRedirect("visit.jsp");
     } catch (Exception e) {
         response.sendRedirect("error.jsp?message=" + e.getMessage());
     }

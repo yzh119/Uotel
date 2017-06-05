@@ -5,7 +5,7 @@
         Stay stay = (Stay) session.getAttribute("stay");
         stay.pushList();
         session.removeAttribute("stay");
-        response.sendRedirect("stay.jsp");
+        response.sendRedirect("visit.jsp");
     } catch (Exception e) {
         response.sendRedirect("error.jsp?message=" + e.getMessage());
     }

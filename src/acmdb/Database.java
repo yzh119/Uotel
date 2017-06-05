@@ -81,6 +81,28 @@ public class Database {
         return records;
     }
 
+    public static List<List<String>> getVisits(String username) throws Exception {
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+
+        List<List<String>> records = new ArrayList<>();
+        ResultSet result = statement.executeQuery("SELECT * FROM visit v, TH t, reservation r WHERE v.rid = r.rid AND t.uid = r.uid AND v.user_name = \"" + username + "\"");
+        while (result.next()) {
+            records.add(new ArrayList<>());
+            for (int i = 1; i <= 13; ++i) {
+                String record = result.getString(i);
+                if (i == 2 || i == 15 || i == 16 || i == 17 || i == 18) {
+                    continue;
+                }
+                if (i == 3 || i == 4) {
+                    record = record.substring(0, 10);
+                }
+                records.get(records.size() - 1).add(record);
+            }
+        }
+        return records;
+    }
+
     public static void addFavorite(String username, int uid) throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
