@@ -46,7 +46,14 @@ public class Database {
         while (result.next()) {
             records.add(new ArrayList<>());
             for (int i = 1; i <= 11; ++i) {
-                records.get(records.size() - 1).add(result.getString(i));
+                String record = result.getString(i);
+                if (i == 9) {
+                    continue;
+                }
+                if (i == 10 || i == 11) {
+                    record = record.substring(0, 10);
+                }
+                records.get(records.size() - 1).add(record);
             }
         }
         return records;

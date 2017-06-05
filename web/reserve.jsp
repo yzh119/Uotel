@@ -24,7 +24,6 @@
 
                 List<List<String>> records = Database.getAvailableHouses();
 
-                builder.append("<table>");
                 for (int i = 0; i < records.size(); ++i) {
                     builder.append("<tr>");
                     for (int j = 0; j < records.get(i).size(); ++j) {
@@ -34,10 +33,23 @@
                     }
                     builder.append("</tr>");
                 }
-                builder.append("</table>");
             %>
 
-            <%= builder.toString() %>
+            <table align="center">
+                <tr>
+                    <td><b>UID</b></td>
+                    <td><b>Name</b></td>
+                    <td><b>Address</b></td>
+                    <td><b>Website</b></td>
+                    <td><b>Phone number</b></td>
+                    <td><b>Year built</b></td>
+                    <td><b>Price</b></td>
+                    <td><b>Visit count</b></td>
+                    <td><b>Start date</b></td>
+                    <td><b>End date</b></td>
+                </tr>
+                <%= builder.toString() %>
+            </table>
         </div>
 
         <%
