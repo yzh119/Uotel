@@ -30,26 +30,27 @@
             <h3>All your reservations</h3>
 
             <%=reservation.getPermanentReservation()%>
+
+            <h3>Stacked stay list</h3>
+
+            <%
+                if (session.getAttribute("stay") != null) {
+                    Stay stay = (Stay) session.getAttribute("stay");
+            %>
+            <%=stay.getTemporaryStay()%>
+            <%}%>
+
+            <form name="fill_stay" method="get" action="stay_submit.jsp">
+                rid: <input type="text" name="rid"> <br>
+                start_date: <input type="text" name="start_date"> <br>
+                end_date: <input type="text" name="end_date"> <br>
+                total_spent: <input type="text" name="spent"> <br>
+                num_person: <input type="text" name="number"> <br>
+                <input type="submit" value="Submit">
+            </form>
+
+            <a href="stay_complete.jsp">confirm</a>
         </div>
-
-        <p>My stay lists:</p>
-        <%
-            if (session.getAttribute("stay") != null) {
-                Stay stay = (Stay) session.getAttribute("stay");
-        %>
-        <%=stay.getTemporaryStay()%>
-        <%}%>
-
-        <form name="fill_stay" method="get" action="completestay.jsp">
-            rid: <input type="text" name="rid"> <br>
-            start_date: <input type="text" name="start_date"> <br>
-            end_date: <input type="text" name="end_date"> <br>
-            total_spent: <input type="text" name="spent"> <br>
-            num_person: <input type="text" name="number"> <br>
-            <input type="submit" value="Submit">
-        </form>
-
-        <a href="confirmstay.jsp">confirm</a>
 
         <div align="right">
             <a href="index.jsp">back to the homepage</a>

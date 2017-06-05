@@ -58,17 +58,17 @@
                 </tr>
                 <tr>
                     <td>
-                        <a href="stay.jsp">Add stay</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         <a href="reserve.jsp">Functionality 2 | Reserve</a>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <a href="new_th_information.jsp">Functionality 3 | New TH</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="stay.jsp">Functionality 4 | Stays</a>
                     </td>
                 </tr>
                 <tr>
