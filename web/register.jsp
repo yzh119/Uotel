@@ -2,11 +2,13 @@
 
 <html>
     <head>
-        <title>Register account | Welcome to Uotel</title>
+        <title>Functionality 1 | Registration</title>
     </head>
     <body>
-        <div align="right">
-            <a href="index.jsp">back to the homepage</a>
+        <div align="center">
+            <h2>Functionality 1 | Registration</h2>
+
+            <p><i>Registration: a new user has to provide the appropriate information; he/she can pick a login-name and a password. The login name should be checked for uniqueness.</i></p>
         </div>
 
         <form method="get" action="register_submit.jsp">
@@ -53,8 +55,12 @@
                 </tr>
             </table>
             <div align="center">
-                <button type="submit">Register account</button>
+                <button type="submit">Register a new account</button>
             </div>
         </form>
+
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
     </body>
 </html>

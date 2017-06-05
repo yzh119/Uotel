@@ -26,6 +26,9 @@
             }
         %>
 
+        <div align="center">
+            <h2>Project A | Airbnb-like system : Uotel</h2>
+        </div>
         <%
             if (session.getAttribute("username") == null) {
         %>
@@ -44,9 +47,8 @@
         <%
             } else {
         %>
-        <a href="logout.jsp">logout</a>
         <div align="center">
-            <p> Welcome to the Uotel system, <%=username%>.</p>
+            <p> Welcome to the Uotel system, <%=username%> <a href="logout.jsp">[logout]</a>.</p>
             <ul>
                 <li><a href="profile.jsp">My profile</a> </li>
                 <li><a href="reserve.jsp">Add reservation</a> </li>
