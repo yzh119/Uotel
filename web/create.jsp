@@ -1,12 +1,5 @@
-<%@ page import="acmdb.TemporaryHousing" %>
-<%@ page import="acmdb.Connector" %><%--
-  Created by IntelliJ IDEA.
-  User: zihao
-  Date: 2017/5/28
-  Time: 1:47
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Add Housing</title>
@@ -44,7 +37,7 @@
     } else {
 %>
     <p>Add available time:</p>
-    <form name="available" method="get" action="addavailable.jsp">
+    <form name="available" method="get" action="add_available.jsp">
         Start time: <input type="text" name="start_date"> <br>
         End time: <input type="text" name="end_date"> <br>
         <input type="submit" value="Submit">

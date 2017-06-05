@@ -1,8 +1,5 @@
 package acmdb;
 
-import javafx.scene.input.DataFormat;
-import sun.security.x509.AVA;
-
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.DateFormat;
@@ -12,9 +9,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-/**
- * Created by zihao on 2017/5/27.
- */
 public class Reservation {
     public static int rid = 0;
     public String username;
@@ -24,6 +18,7 @@ public class Reservation {
     public ArrayList<Integer> selectTH = new ArrayList<>();
     public ArrayList<String> startDate = new ArrayList<>();
     public ArrayList<String> endDate = new ArrayList<>();
+
     public void resetRidFromSQL(Statement stmt) throws Exception {
         String query;
         ResultSet rs;
@@ -70,7 +65,7 @@ public class Reservation {
 
     public void pushList() throws Exception {
         Connector connector = new Connector();
-        Statement stmt = connector.stmt;
+        Statement stmt = connector.statement;
         resetRidFromSQL(stmt);
 
         ++rid;
@@ -113,7 +108,7 @@ public class Reservation {
             ++rid;
         }
 
-        connector.closeConnection();
+        connector.close();
     }
 
     public String getTemporaryReservation() {
@@ -138,7 +133,7 @@ public class Reservation {
 
     public String getPermanentReservation() throws Exception{
         Connector connector = new Connector();
-        Statement stmt = connector.stmt;
+        Statement stmt = connector.statement;
         StringBuffer resultStr = new StringBuffer();
         resultStr.append("<table>");
         resultStr.append("<tr>" +

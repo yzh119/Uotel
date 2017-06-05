@@ -3,31 +3,24 @@ package acmdb;
 import java.sql.*;
 
 public class Connector {
-	public Connection con;
-	public Statement stmt;
+	private Connection connection;
+	public Statement statement;
+
 	public Connector() throws Exception {
-		try{
-			String username = "acmdbu10";
-			String passwd = "1uedu2v9";
-			//String username = "root";
-			//String passwd = "turing";
-			String url = "jdbc:mysql://localhost/acmdb10";
+		String username = "root";
+		String password = "";
+		String url = "jdbc:mysql://localhost/acmdb10";
 
-			Class.forName ("com.mysql.jdbc.Driver").newInstance ();
-			con = DriverManager.getConnection (url, username, passwd);
+//		String userName = "acmuser";
+//	   	String password = "acmspring17";
+//		String url = "jdbc:mysql://georgia.eng.utah.edu/acmdb";
 
-			//DriverManager.registerDriver (new oracle.jdbc.driver.OracleDriver());
-        	//stmt=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-			stmt = con.createStatement();
-			//stmt=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-        } catch(Exception e) {
-			System.err.println("Unable to open mysql jdbc connection. The error is as follows,\n");
-            		System.err.println(e.getMessage());
-			throw(e);
-		}
+		Class.forName("com.mysql.jdbc.Driver").newInstance();
+		connection = DriverManager.getConnection(url, username, password);
+		statement = connection.createStatement();
 	}
 	
-	public void closeConnection() throws Exception{
-		con.close();
+	public void close() throws Exception {
+		connection.close();
 	}
 }

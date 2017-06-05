@@ -3,14 +3,11 @@ package acmdb;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- * Created by zihao on 2017/5/29.
- */
 public class Recommendation {
     public static String getRecommendations(String username) throws Exception {
         StringBuffer resultStr = new StringBuffer();
         Connector connector = new Connector();
-        Statement stmt = connector.stmt;
+        Statement stmt = connector.statement;
         String query = "SELECT distinct new_th.* FROM " +
                 "user u1, user u2, " +
                 "visit v1, visit v2, visit all2, " +
@@ -57,7 +54,7 @@ public class Recommendation {
         }
 
         resultStr.append("</table>");
-        connector.closeConnection();
+        connector.close();
         return resultStr.toString();
     }
 }

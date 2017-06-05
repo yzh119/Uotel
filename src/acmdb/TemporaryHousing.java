@@ -3,16 +3,13 @@ package acmdb;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- * Created by zihao on 2017/5/27.
- */
 public class TemporaryHousing {
     public static int uid = 0;
     public TemporaryHousing() throws Exception {
         Connector connector = new Connector();
-        resetUidFromSQL(connector.stmt);
+        resetUidFromSQL(connector.statement);
         ++uid;
-        connector.closeConnection();
+        connector.close();
     }
 
     public static void resetUidFromSQL(Statement stmt) throws Exception {
@@ -27,7 +24,7 @@ public class TemporaryHousing {
         }
 
         if (rs.next()) {
-            uid =  rs.getInt(1);
+            uid = rs.getInt(1);
         }
     }
 
@@ -55,7 +52,7 @@ public class TemporaryHousing {
 
     public static String getTHsTable() throws Exception {
         Connector connector = new Connector();
-        Statement stmt = connector.stmt;
+        Statement stmt = connector.statement;
         StringBuffer resultStr = new StringBuffer();
         resultStr.append("<table>");
         String query;
@@ -92,7 +89,7 @@ public class TemporaryHousing {
         }
 
         resultStr.append("</table>");
-        connector.closeConnection();
+        connector.close();
         return resultStr.toString();
     }
 }

@@ -1,15 +1,9 @@
 <%@ page import="acmdb.*" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: zihao
-  Date: 2017/5/26
-  Time: 23:58
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
   <head>
-    <title>Uotel</title>
+    <title>Welcome to Uotel</title>
   </head>
   <body>
   <h1>Uotel System</h1>

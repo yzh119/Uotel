@@ -1,6 +1,7 @@
 CREATE DATABASE if NOT EXISTS acmdb10;
 USE acmdb10;
 SELECT DATABASE();
+
 CREATE TABLE IF NOT EXISTS TH (
     uid          INTEGER,
     name         VARCHAR(25),
@@ -25,16 +26,16 @@ CREATE TABLE IF NOT EXISTS user (
 
 
 CREATE TABLE IF NOT EXISTS period (
-    start_date TIMESTAMP DEFAULT '1970-01-01 00:00:01',
-    end_date   TIMESTAMP DEFAULT '1970-01-01 00:00:01',
+    start_date TIMESTAMP,
+    end_date   TIMESTAMP,
     PRIMARY KEY (start_date, end_date)
 );
 
 
 CREATE TABLE IF NOT EXISTS available (
     uid        INTEGER   NOT NULL,
-    start_date TIMESTAMP NOT NULL DEFAULT '1970-01-01 00:00:01',
-    end_date   TIMESTAMP NOT NULL DEFAULT '1970-01-01 00:00:01',
+    start_date TIMESTAMP NOT NULL,
+    end_date   TIMESTAMP NOT NULL,
     PRIMARY KEY (uid, start_date, end_date),
     FOREIGN KEY (uid) REFERENCES TH (uid),
     FOREIGN KEY (start_date, end_date) REFERENCES period (start_date, end_date)
@@ -75,8 +76,8 @@ CREATE TABLE IF NOT EXISTS reservation (
     rid        INTEGER,
     uid        INTEGER     NOT NULL,
     user_name  VARCHAR(25) NOT NULL,
-    start_date TIMESTAMP DEFAULT '1970-01-01 00:00:01',
-    end_date   TIMESTAMP DEFAULT '1970-01-01 00:00:01',
+    start_date TIMESTAMP,
+    end_date   TIMESTAMP,
     PRIMARY KEY (rid, user_name),
     FOREIGN KEY (uid) REFERENCES TH (uid),
     FOREIGN KEY (user_name) REFERENCES user (login_name)
@@ -95,8 +96,8 @@ CREATE TABLE IF NOT EXISTS favorite (
 CREATE TABLE IF NOT EXISTS visit (
     rid         INTEGER     NOT NULL,
     user_name   VARCHAR(25) NOT NULL,
-    start_date  TIMESTAMP DEFAULT '1970-01-01 00:00:01',
-    end_date    TIMESTAMP DEFAULT '1970-01-01 00:00:01',
+    start_date  TIMESTAMP,
+    end_date    TIMESTAMP,
     total_spent INTEGER,
     num_person  INTEGER,
     PRIMARY KEY (rid, user_name, start_date, end_date),

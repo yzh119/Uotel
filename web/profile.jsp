@@ -1,14 +1,8 @@
 <%@ page import="acmdb.Reservation" %>
-<%@ page import="acmdb.Reservation" %>
 <%@ page import="acmdb.Stay" %>
-<%@ page import="acmdb.Favorite" %><%--
-  Created by IntelliJ IDEA.
-  User: zihao
-  Date: 2017/5/28
-  Time: 1:46
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="acmdb.Favorite" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>User profile</title>
@@ -31,7 +25,7 @@
 <%=favorite.getFavoriteList()%>
 
 <h2>Add favorite</h2>
-<form name="add_favorite" method="get" action="addfavorite.jsp">
+<form name="add_favorite" method="get" action="add_favorite.jsp">
     uid: <input name="uid" type="text">
     <input type="submit" value="Submit">
 </form>

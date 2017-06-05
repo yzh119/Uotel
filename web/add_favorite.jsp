@@ -1,11 +1,7 @@
-<%@ page import="acmdb.Favorite" %><%--
-  Created by IntelliJ IDEA.
-  User: zihao
-  Date: 2017/5/29
-  Time: 17:14
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="acmdb.Favorite" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Add favorite</title>

@@ -1,11 +1,7 @@
-<%@ page import="acmdb.Distance" %><%--
-  Created by IntelliJ IDEA.
-  User: zihao
-  Date: 2017/5/28
-  Time: 1:52
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="acmdb.Account" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Distance</title>
@@ -23,7 +19,7 @@
 <%
     int dis = -1;
     if (request.getParameter("is_filled") != null) {
-        dis = Distance.getDis(
+        dis = Account.computeDistance(
                 (String) session.getAttribute("username"),
                 request.getParameter("sim_user")
         );

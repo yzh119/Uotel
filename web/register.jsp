@@ -1,12 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: zihao
-  Date: 2017/5/27
-  Time: 15:02
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" import="acmdb.*" %>
-<%@ page import="javax.jws.soap.SOAPBinding" %>
+
 <html>
 <head>
     <title>Register User</title>
@@ -54,17 +47,12 @@
             address = request.getParameter("address"),
             phonenumber = request.getParameter("phonenumber");
 
-        Connector connector = new Connector();
-        User user = new User();
-
-        user.addUser(username, passwd,
-                name, address, phonenumber, connector.stmt);
+        Account.createAccount(username, passwd, name, address, phonenumber);
 %>
 
 <p> Register successful! </p>
 
 <%
-        connector.closeConnection();
     }
 %>
 </body>

@@ -1,22 +1,18 @@
 package acmdb;
 
-import com.sun.org.apache.xerces.internal.util.SymbolTable;
-
-import javax.swing.plaf.nimbus.State;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Created by zihao on 2017/5/28.
- */
 public class Stay {
-    String username;
-    ArrayList<Integer> selectRID = new ArrayList<>();
-    ArrayList<String> startDate = new ArrayList<>();
-    ArrayList<String> endDate = new ArrayList<>();
-    ArrayList<Integer> spent = new ArrayList<>();
-    ArrayList<Integer> number = new ArrayList<>();
+    private String username;
+    private List<Integer> selectRID = new ArrayList<>();
+    private List<String> startDate = new ArrayList<>();
+    private List<String> endDate = new ArrayList<>();
+    private List<Integer> spent = new ArrayList<>();
+    private List<Integer> number = new ArrayList<>();
+
     public Stay(String username) {
         this.username = username;
     }
@@ -31,7 +27,7 @@ public class Stay {
 
     public void pushList() throws Exception {
         Connector connector = new Connector();
-        Statement stmt = connector.stmt;
+        Statement stmt = connector.statement;
 
         for (int i = 0; i < selectRID.size(); ++i) {
             String query;
@@ -91,12 +87,12 @@ public class Stay {
             stmt.execute(statement);
         }
 
-        connector.closeConnection();
+        connector.close();
     }
 
     public String getPermanentStay() throws Exception {
         Connector connector = new Connector();
-        Statement stmt = connector.stmt;
+        Statement stmt = connector.statement;
 
         StringBuffer resultStr = new StringBuffer();
         resultStr.append("<table>");
@@ -150,6 +146,4 @@ public class Stay {
         resultStr.append("</table>");
         return resultStr.toString();
     }
-
-
 }

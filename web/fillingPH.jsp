@@ -1,12 +1,8 @@
 <%@ page import="acmdb.TemporaryHousing" %>
-<%@ page import="acmdb.Connector" %><%--
-  Created by IntelliJ IDEA.
-  User: zihao
-  Date: 2017/5/28
-  Time: 3:33
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="acmdb.Connector" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Filling PH</title>
@@ -23,8 +19,8 @@
             request.getParameter("telephone"),
             request.getParameter("year_built"),
             request.getParameter("price"),
-            connector.stmt);
-    connector.closeConnection();
+            connector.statement);
+    connector.close();
     response.sendRedirect("create.jsp");
 %>
 </body>

@@ -3,9 +3,6 @@ package acmdb;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- * Created by zihao on 2017/5/29.
- */
 public class Favorite {
     String username;
     public Favorite(String username) {
@@ -14,7 +11,7 @@ public class Favorite {
 
     public void addFavorite(int uid) throws Exception {
         Connector connector = new Connector();
-        Statement stmt = connector.stmt;
+        Statement stmt = connector.statement;
 
         String query;
         query = "SELECT * FROM visit v, reservation r " +
@@ -34,13 +31,13 @@ public class Favorite {
                 ")";
 
         stmt.execute(statement);
-        connector.closeConnection();
+        connector.close();
     }
 
     public String getFavoriteList() throws Exception {
         StringBuffer resultStr = new StringBuffer();
         Connector connector = new Connector();
-        Statement stmt = connector.stmt;
+        Statement stmt = connector.statement;
         String query = "SELECT th.uid, name, address, url, phone_number, year_built, price, visit_count " +
                 "FROM TH th, favorite f " +
                 "WHERE f.user_name = '" + username + "' and f.uid = th.uid";
@@ -80,7 +77,7 @@ public class Favorite {
         }
 
         resultStr.append("</table>");
-        connector.closeConnection();
+        connector.close();
         return resultStr.toString();
     }
 }

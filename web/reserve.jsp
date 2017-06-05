@@ -1,17 +1,9 @@
 <%@ page import="acmdb.TemporaryHousing" %>
-<%@ page import="acmdb.Connector" %>
 <%@ page import="acmdb.Available" %>
-<%@ page import="sun.security.x509.AVA" %>
 <%@ page import="acmdb.Reservation" %>
-<%@ page import="com.sun.org.apache.regexp.internal.RE" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: zihao
-  Date: 2017/5/28
-  Time: 1:46
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Reserve</title>
@@ -45,7 +37,7 @@
 
 <%=Available.getAvailableTable((Integer) session.getAttribute("selectTH"))%>
 
-<form name="choose_date" method="get" action="submitreserve.jsp">
+<form name="choose_date" method="get" action="reserve_submit.jsp">
     Start date: <input type="text" name="start_date"> <br>
     End date: <input type="text" name="end_date"> <br>
     <input type="submit" value="Submit">
