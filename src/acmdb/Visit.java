@@ -5,7 +5,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stay {
+public class Visit {
     private String username;
     private List<Integer> selectRID = new ArrayList<>();
     private List<String> startDate = new ArrayList<>();
@@ -13,7 +13,7 @@ public class Stay {
     private List<Integer> spent = new ArrayList<>();
     private List<Integer> number = new ArrayList<>();
 
-    public Stay(String username) {
+    public Visit(String username) {
         this.username = username;
     }
 

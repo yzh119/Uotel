@@ -20,7 +20,7 @@
                     session.setAttribute("reservation", reservation);
                 }
                 if (session.getAttribute("stay") == null) {
-                    Stay stay = new Stay(username);
+                    Visit stay = new Visit(username);
                     session.setAttribute("stay", stay);
                 }
 //                if (session.getAttribute("favorite") == null) {

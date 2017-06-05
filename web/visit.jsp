@@ -1,5 +1,5 @@
 <%@ page import="acmdb.Reservation" %>
-<%@ page import="acmdb.Stay" %>
+<%@ page import="acmdb.Visit" %>
 <%@ page import="acmdb.Database" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -18,7 +18,7 @@
         <%
             String username = session.getAttribute("username").toString();
             if (session.getAttribute("stay") == null) {
-                Stay stay = new Stay(session.getAttribute("username").toString());
+                Visit stay = new Visit(session.getAttribute("username").toString());
                 session.setAttribute("stay", stay);
             }
         %>
@@ -27,19 +27,21 @@
             <h3>All your visits</h3>
 
             <table align="center" cellspacing="2" cellpadding="2" border="1">
-                <%--<tr>--%>
-                    <%--<th>RID</th>--%>
-                    <%--<th>UID</th>--%>
-                    <%--<th>Start date</th>--%>
-                    <%--<th>End date</th>--%>
-                    <%--<th>Owner Name</th>--%>
-                    <%--<th>House Address</th>--%>
-                    <%--<th>Website</th>--%>
-                    <%--<th>Phone number</th>--%>
-                    <%--<th>Year built</th>--%>
-                    <%--<th>Price</th>--%>
-                    <%--<th>Total visits</th>--%>
-                <%--</tr>--%>
+                <tr>
+                    <th>RID</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Total spent</th>
+                    <th>Number of people</th>
+                    <th>UID</th>
+                    <th>Owner Name</th>
+                    <th>House Address</th>
+                    <th>Website</th>
+                    <th>Phone number</th>
+                    <th>Year built</th>
+                    <th>Price</th>
+                    <th>Total visits</th>
+                </tr>
 
                 <%= Database.list2Table(Database.getVisits(username)) %>
             </table>
@@ -94,7 +96,7 @@
 
                 <%
                     if (session.getAttribute("stay") != null) {
-                        Stay stay = (Stay) session.getAttribute("stay");
+                        Visit stay = (Visit) session.getAttribute("stay");
                 %>
                     <br><br>
 

@@ -1,8 +1,8 @@
-<%@ page import="acmdb.Stay" %>
+<%@ page import="acmdb.Visit" %>
 
 <%
     try {
-        Stay stay = (Stay) session.getAttribute("stay");
+        Visit stay = (Visit) session.getAttribute("stay");
         stay.addToList(
                 Integer.valueOf(request.getParameter("rid")),
                 request.getParameter("start_date"),

@@ -89,7 +89,7 @@ public class Database {
         ResultSet result = statement.executeQuery("SELECT * FROM visit v, TH t, reservation r WHERE v.rid = r.rid AND t.uid = r.uid AND v.user_name = \"" + username + "\"");
         while (result.next()) {
             records.add(new ArrayList<>());
-            for (int i = 1; i <= 13; ++i) {
+            for (int i = 1; i <= 18; ++i) {
                 String record = result.getString(i);
                 if (i == 2 || i == 15 || i == 16 || i == 17 || i == 18) {
                     continue;
