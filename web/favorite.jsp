@@ -22,20 +22,18 @@
         %>
 
         <div align="center">
-            <h3>My reservations</h3>
-            <%= reservation.getPermanentReservation() %>
-
-            <h3>My stays</h3>
+            <h3>All your stays</h3>
             <%= stay.getPermanentStay() %>
 
-            <h3>My favorites</h3>
-            <%= favorite.getFavoriteList() %>
+            <h3>All your favorites</h3>
 
-            <h3>Add favorite</h3>
             <form method="post" action="favorite_submit.jsp">
-                uid: <input name="uid" type="text">
+                UID: <input name="uid" type="text">
                 <input type="submit" value="Submit">
             </form>
+
+            <%= favorite.getFavoriteList() %>
+
         </div>
 
         <div align="right">
