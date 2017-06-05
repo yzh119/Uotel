@@ -2,6 +2,8 @@ package acmdb;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Database {
     private static boolean existAccount(String username) throws Exception {
@@ -33,6 +35,21 @@ public class Database {
         boolean response = result.next() && result.getString("passwd").equals(password);
         connector.close();
         return response;
+    }
+
+    public static List<List<String>> getAvailableHouses() throws Exception {
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+
+        List<List<String>> records = new ArrayList<>();
+        ResultSet result = statement.executeQuery("SELECT * FROM TH t, available a WHERE t.uid = a.uid");
+        while (result.next()) {
+            records.add(new ArrayList<>());
+            for (int i = 1; i <= 11; ++i) {
+                records.get(records.size() - 1).add(result.getString(i));
+            }
+        }
+        return records;
     }
 
     public static void addFavorite(String username, int uid) throws Exception {

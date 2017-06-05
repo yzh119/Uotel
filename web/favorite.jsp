@@ -1,6 +1,7 @@
 <%@ page import="acmdb.Reservation" %>
 <%@ page import="acmdb.Stay" %>
 <%@ page import="acmdb.Favorite" %>
+<%@ page import="com.jcraft.jsch.Session" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -16,8 +17,7 @@
         </div>
 
         <%
-            Reservation reservation = (Reservation) session.getAttribute("reservation");
-            Favorite favorite = (Favorite) session.getAttribute("favorite");
+            String username = session.getAttribute("username").toString();
             Stay stay = (Stay) session.getAttribute("stay");
         %>
 
@@ -32,7 +32,7 @@
                 <input type="submit" value="Submit">
             </form>
 
-            <%= favorite.getFavoriteList() %>
+            <%= Favorite.getFavoriteList(username) %>
 
         </div>
 

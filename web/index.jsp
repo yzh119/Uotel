@@ -23,10 +23,10 @@
                     Stay stay = new Stay(username);
                     session.setAttribute("stay", stay);
                 }
-                if (session.getAttribute("favorite") == null) {
-                    Favorite favorite = new Favorite(username);
-                    session.setAttribute("favorite", favorite);
-                }
+//                if (session.getAttribute("favorite") == null) {
+//                    Favorite favorite = new Favorite(username);
+//                    session.setAttribute("favorite", favorite);
+//                }
             }
         %>
 

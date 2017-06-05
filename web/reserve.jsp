@@ -1,6 +1,7 @@
 <%@ page import="acmdb.House" %>
-<%@ page import="acmdb.Available" %>
 <%@ page import="acmdb.Reservation" %>
+<%@ page import="acmdb.Database" %>
+<%@ page import="java.util.List" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -18,7 +19,25 @@
         <div align="center">
             <h3>All possible houses and their available dates</h3>
 
-            <%= House.getTHsTable() %>
+            <%
+                StringBuilder builder = new StringBuilder();
+
+                List<List<String>> records = Database.getAvailableHouses();
+
+                builder.append("<table>");
+                for (int i = 0; i < records.size(); ++i) {
+                    builder.append("<tr>");
+                    for (int j = 0; j < records.get(i).size(); ++j) {
+                        builder.append("<td>");
+                        builder.append(records.get(i).get(j));
+                        builder.append("</td>");
+                    }
+                    builder.append("</tr>");
+                }
+                builder.append("</table>");
+            %>
+
+            <%= builder.toString() %>
         </div>
 
         <%

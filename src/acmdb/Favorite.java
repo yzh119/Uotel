@@ -4,14 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Favorite {
-    String username;
-    public Favorite(String username) {
-        this.username = username;
-    }
-
-
-
-    public String getFavoriteList() throws Exception {
+    public static String getFavoriteList(String username) throws Exception {
         StringBuffer resultStr = new StringBuffer();
         Connector connector = new Connector();
         Statement stmt = connector.statement;
