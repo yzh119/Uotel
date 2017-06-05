@@ -15,52 +15,47 @@
             <p><i>After registration, a user can record a reservation to any TH (the same user may reserve the same TH multiple times from different available dates). Each user session (meaning each time after a user has logged into the system) may add one or more researvations, and all reservations added by a user in a user session are reported to him/her for the ﬁnal review and conﬁrmation, before they are added into the database.</i></p>
         </div>
 
-<%
+        <div align="center">
+            <h3>All possible houses and their available dates</h3>
 
-    if (session.getAttribute("reservation") == null) {
-        Reservation reservation = new Reservation(session.getAttribute("username").toString());
-        session.setAttribute("reservation", reservation);
-    }
-    if (session.getAttribute("selectTH") == null) {
-%>
+            <%= House.getTHsTable() %>
+        </div>
 
-<form name="reserve_form" method="get" action="fillingTH.jsp">
-    UID of the TH you select: <input type="text" name="th_id">
-    <input type="submit" value="Submit">
-</form>
+        <%
+            if (session.getAttribute("reservation") == null) {
+                Reservation reservation = new Reservation(session.getAttribute("username").toString());
+                session.setAttribute("reservation", reservation);
+            }
+        %>
 
+        <div align="center">
+            <h3>Stacked reservation list</h3>
 
-<p>All possible THs:</p>
+            <form method="post" action="reserve_submit.jsp">
+                <label><b>UID</b></label>
+                <input type="text" placeholder="Enter UID of the house" name="uid" required>
 
-<%=House.getTHsTable()%>
+                <label><b>Start date</b></label>
+                <input type="text" placeholder="Enter start date" name="start_date" required>
 
-<%
-    } else {
-%>
+                <label><b>Start date</b></label>
+                <input type="text" placeholder="Enter end date" name="end_date" required>
 
-<%=Available.getAvailableTable((Integer) session.getAttribute("selectTH"))%>
+                <button type="submit">Add to the reservation list</button>
 
-<form name="choose_date" method="get" action="reserve_submit.jsp">
-    Start date: <input type="text" name="start_date"> <br>
-    End date: <input type="text" name="end_date"> <br>
-    <input type="submit" value="Submit">
-</form>
+                <%
+                    if (session.getAttribute("reservation") != null) {
+                        Reservation reservation = (Reservation) session.getAttribute("reservation");
+                %>
+                    <br><br>
 
-<a href="reserve_cancel.jsp">finish</a><br>
-<%
-    }
-%>
+                    <%=reservation.getTemporaryReservation()%>
 
-<h3>My reservation lists:</h3>
-
-<%
-    if (session.getAttribute("reservation") != null) {
-        Reservation reservation = (Reservation) session.getAttribute("reservation");
-%>
-<%=reservation.getTemporaryReservation()%>
-<%}%>
-<br><br>
-<a href="confirm.jsp">confirm</a>
-
-</body>
+                    <input type="button" value="Confirm the above reservations" onclick="location.href='reserve_complete.jsp'">
+                <%
+                    }
+                %>
+            </form>
+        </div>
+    </body>
 </html>

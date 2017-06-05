@@ -20,7 +20,7 @@
                 <input type="text" placeholder="Enter end date" name="end_date" required>
 
                 <button type="submit">Continue to add available date</button>
-                <input type="button" value="Complete" onclick="location.href='new_th_submit.jsp'">
+                <input type="button" value="Complete" onclick="location.href='new_th_time_complete.jsp'">
             </div>
         </form>
 

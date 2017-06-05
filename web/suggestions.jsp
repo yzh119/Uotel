@@ -17,5 +17,9 @@
         %>
 
         <%= Recommendation.getRecommendations(username) %>
+
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
     </body>
 </html>
