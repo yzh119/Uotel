@@ -112,50 +112,5 @@ public class Reservation {
         connector.close();
     }
 
-    public String getTemporaryReservation() {
-        StringBuffer resultStr = new StringBuffer();
 
-        resultStr.append("<table>");
-        resultStr.append("<tr>" +
-                "<th>uid</th>" +
-                "<th>start_date</th>" +
-                "<th>end_date</th>" +
-                "</tr>");
-        for (int i = 0; i < selectTH.size(); ++i) {
-            resultStr.append("<tr>" +
-                    "<th>" + selectTH.get(i) + "</th>" +
-                    "<th>" + startDate.get(i).substring(0, 10) + "</th>" +
-                    "<th>" + endDate.get(i).substring(0, 10) + "</th>" +
-                    "</tr>");
-        }
-        resultStr.append("</table>");
-        return resultStr.toString();
-    }
-
-    public String getPermanentReservation() throws Exception{
-        Connector connector = new Connector();
-        Statement stmt = connector.statement;
-        StringBuffer resultStr = new StringBuffer();
-        resultStr.append("<table>");
-        resultStr.append("<tr>" +
-                "<th>rid</th>" +
-                "<th>uid</th>" +
-                "<th>start_date</th>" +
-                "<th>end_date</th>" +
-                "</tr>");
-        String query;
-        query = "SELECT rid, uid, start_date, end_date FROM reservation WHERE " +
-            "user_name=\"" + username + "\"";
-        ResultSet rs = stmt.executeQuery(query);
-        while (rs.next()) {
-            resultStr.append("<tr>" +
-                    "<th>" + rs.getString(1) + "</th>" +
-                    "<th>" + rs.getString(2) + "</th>" +
-                    "<th>" + rs.getString(3).substring(0, 10) + "</th>" +
-                    "<th>" + rs.getString(4).substring(0, 10) + "</th>" +
-                    "</tr>");
-        }
-        resultStr.append("</table>");
-        return resultStr.toString();
-    }
 }

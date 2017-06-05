@@ -1,5 +1,6 @@
 <%@ page import="acmdb.Reservation" %>
 <%@ page import="acmdb.Stay" %>
+<%@ page import="acmdb.Database" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -15,21 +16,33 @@
         </div>
 
         <%
+            String username = session.getAttribute("username").toString();
             if (session.getAttribute("stay") == null) {
                 Stay stay = new Stay(session.getAttribute("username").toString());
                 session.setAttribute("stay", stay);
             }
         %>
 
-        <%
-            Reservation reservation = (Reservation) session.getAttribute("reservation");
-
-        %>
+        <h3>All your reservations</h3>
 
         <div align="center">
-            <h3>All your reservations</h3>
+            <table align="center" cellspacing="2" cellpadding="2" border="1">
+                <tr>
+                    <th>RID</th>
+                    <th>UID</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Owner Name</th>
+                    <th>House Address</th>
+                    <th>Website</th>
+                    <th>Phone number</th>
+                    <th>Year built</th>
+                    <th>Price</th>
+                    <th>Total visits</th>
+                </tr>
 
-            <%=reservation.getPermanentReservation()%>
+                <%= Database.list2Table(Database.getReservations(username)) %>
+            </table>
 
             <h3>Stacked stay list</h3>
 
