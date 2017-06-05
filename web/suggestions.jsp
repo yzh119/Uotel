@@ -17,7 +17,19 @@
             String username = session.getAttribute("username").toString();
         %>
 
-        <%= Database.getRecommendations(username) %>
+        <table align="center" cellspacing="2" cellpadding="2" border="1">
+            <tr>
+                <th>UID</th>
+                <th>Owner name</th>
+                <th>Address</th>
+                <th>Website</th>
+                <th>Telephone</th>
+                <th>Year built</th>
+                <th>Price</th>
+                <th>Total visits</th>
+            </tr>
+            <%= Database.list2Table(Database.getRecommendations(username)) %>
+        </table>
 
         <div align="right">
             <a href="index.jsp">back to the homepage</a>
