@@ -37,7 +37,6 @@
                     <th>Price</th>
                     <th>Total visits</th>
                 </tr>
-
                 <%= Database.list2Table(Database.getReservations(username)) %>
             </table>
 
@@ -56,7 +55,6 @@
                     <th>Start date</th>
                     <th>End date</th>
                 </tr>
-
                 <%= Database.list2Table(Database.getAvailableHouses()) %>
             </table>
         </div>

@@ -42,7 +42,6 @@
                     <th>Price</th>
                     <th>Total visits</th>
                 </tr>
-
                 <%= Database.list2Table(Database.getVisits(username)) %>
             </table>
 
@@ -62,7 +61,6 @@
                     <th>Price</th>
                     <th>Total visits</th>
                 </tr>
-
                 <%= Database.list2Table(Database.getReservations(username)) %>
             </table>
 
@@ -96,14 +94,37 @@
 
                 <%
                     if (session.getAttribute("stay") != null) {
-                        Visit stay = (Visit) session.getAttribute("stay");
+                        Visit visit = (Visit) session.getAttribute("stay");
+                        if (!visit.selectRID.isEmpty()) {
                 %>
                     <br><br>
 
-                    <%= stay.getTemporaryStay() %>
+                    <%
+                        StringBuilder builder = new StringBuilder();
+                        for (int i = 0; i < visit.selectRID.size(); ++i) {
+                            builder.append("<tr>");
+                            builder.append("<td>").append(visit.selectRID.get(i)).append("</td>");
+                            builder.append("<td>").append(visit.startDate.get(i)).append("</td>");
+                            builder.append("<td>").append(visit.endDate.get(i)).append("</td>");
+                            builder.append("<td>").append(visit.spent.get(i)).append("</td>");
+                            builder.append("<td>").append(visit.number.get(i)).append("</td>");
+                            builder.append("</tr>");
+                        }
+                    %>
+                    <table align="center" cellspacing="2" cellpadding="2" border="1">
+                        <tr>
+                            <th>RID</th>
+                            <th>Start date</th>
+                            <th>End date</th>
+                            <th>Total spent</th>
+                            <th>Number of people</th>
+                        </tr>
+                        <%= builder.toString() %>
+                    </table>
 
                     <input type="button" value="Confirm the above stays" onclick="location.href='visit_complete.jsp'">
                 <%
+                        }
                     }
                 %>
             </form>
