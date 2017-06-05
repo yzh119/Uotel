@@ -1,4 +1,5 @@
-<%@ page import="acmdb.Recommendation" %>
+<%@ page import="acmdb.Database" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -16,7 +17,7 @@
             String username = session.getAttribute("username").toString();
         %>
 
-        <%= Recommendation.getRecommendations(username) %>
+        <%= Database.getRecommendations(username) %>
 
         <div align="right">
             <a href="index.jsp">back to the homepage</a>
