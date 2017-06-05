@@ -1,7 +1,3 @@
-<%@ page import="acmdb.Reservation" %>
-<%@ page import="acmdb.Visit" %>
-<%@ page import="acmdb.Favorite" %>
-<%@ page import="com.jcraft.jsch.Session" %>
 <%@ page import="acmdb.Database" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -40,19 +36,29 @@
                     <th>Price</th>
                     <th>Total visits</th>
                 </tr>
-
                 <%= Database.list2Table(Database.getVisits(username)) %>
             </table>
 
             <h3>All your favorites</h3>
 
             <form method="post" action="favorite_submit.jsp">
-                UID: <input name="uid" type="text">
-                <input type="submit" value="Submit">
+                <label><b>UID</b></label>
+                <input name="uid" type="text">
+                <button type="submit">Add to your favorites</button>
             </form>
-
-            <%= Favorite.getFavoriteList(username) %>
-
+            <table align="center" cellspacing="2" cellpadding="2" border="1">
+                <tr>
+                    <th>UID</th>
+                    <th>Owner name</th>
+                    <th>Address</th>
+                    <th>Website</th>
+                    <th>Telephone</th>
+                    <th>Year built</th>
+                    <th>Price</th>
+                    <th>Total visits</th>
+                </tr>
+                <%= Database.list2Table(Database.getFavorites(username)) %>
+            </table>
         </div>
 
         <div align="right">

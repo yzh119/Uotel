@@ -37,7 +37,18 @@ public class Database {
         return response;
     }
 
-    public static List<List<String>> getAvailableHouses() throws Exception {
+    public static void addFavorite(String username, int uid) throws Exception {
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+        ResultSet result = statement.executeQuery("SELECT * FROM visit v, reservation r WHERE v.rid = r.rid and v.user_name = '" + username + "' and r.uid = " + uid);
+        if (!result.next()) {
+            throw new Exception("You have no stay records for this house yet!");
+        }
+        statement.execute("INSERT INTO favorite values(" + uid + ",'" + username + "')");
+        connector.close();
+    }
+
+    public static List<List<String>> getHouses() throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
 
@@ -102,17 +113,22 @@ public class Database {
         }
         return records;
     }
-
-    public static void addFavorite(String username, int uid) throws Exception {
+    public static List<List<String>> getFavorites(String username) throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
-        ResultSet result = statement.executeQuery("SELECT * FROM visit v, reservation r WHERE v.rid = r.rid and v.user_name = '" + username + "' and r.uid = " + uid);
-        if (!result.next()) {
-            throw new Exception("You have no stay records for this house yet!");
+
+        List<List<String>> records = new ArrayList<>();
+        ResultSet result = statement.executeQuery("SELECT th.uid, name, address, url, phone_number, year_built, price, visit_count FROM TH th, favorite f WHERE f.user_name = '" + username + "' and f.uid = th.uid");
+        while (result.next()) {
+            records.add(new ArrayList<>());
+            for (int i = 1; i <= 8; ++i) {
+                String record = result.getString(i);
+                records.get(records.size() - 1).add(record);
+            }
         }
-        statement.execute("INSERT INTO favorite values(" + uid + ",'" + username + "')");
-        connector.close();
+        return records;
     }
+
 
     public static String getRecommendations(String username) throws Exception {
         StringBuilder builder = new StringBuilder();

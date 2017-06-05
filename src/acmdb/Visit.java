@@ -49,12 +49,10 @@ public class Visit {
                     ")" +
                     "))";
 
-            System.out.println(query);
-            System.out.flush();
-
             ResultSet rs = stmt.executeQuery(query);
-            if (rs.next())
+            if (rs.next()) {
                 throw new Exception("Invalid stay period or conflict!");
+            }
         }
 
         for (int i = 0; i < selectRID.size(); ++i) {

@@ -16,7 +16,7 @@
             if (session.getAttribute("username") != null) {
                 username = session.getAttribute("username").toString();
                 if (session.getAttribute("reservation") == null) {
-                    Reservation reservation = new Reservation(username);
+                    Reserve reservation = new Reserve(username);
                     session.setAttribute("reservation", reservation);
                 }
                 if (session.getAttribute("stay") == null) {

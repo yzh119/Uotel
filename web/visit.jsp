@@ -1,4 +1,4 @@
-<%@ page import="acmdb.Reservation" %>
+<%@ page import="acmdb.Reserve" %>
 <%@ page import="acmdb.Visit" %>
 <%@ page import="acmdb.Database" %>
 
