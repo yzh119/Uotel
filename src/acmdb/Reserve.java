@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Reservation {
+public class Reserve {
     public static int rid = 0;
     public String username;
-    public Reservation(String username) {
+    public Reserve(String username) {
         this.username = username;
     }
     public ArrayList<Integer> selectTH = new ArrayList<>();
@@ -78,7 +78,7 @@ public class Reservation {
                     endDate.get(i) + "\"";
             ResultSet rs = stmt.executeQuery(query);
             if (!rs.next()) {
-                throw new Exception("Reservation conflict!");
+                throw new Exception("Reserve conflict!");
             }
         }
 

@@ -16,17 +16,13 @@
             if (session.getAttribute("username") != null) {
                 username = session.getAttribute("username").toString();
                 if (session.getAttribute("reservation") == null) {
-                    Reservation reservation = new Reservation(username);
+                    Reserve reservation = new Reserve(username);
                     session.setAttribute("reservation", reservation);
                 }
                 if (session.getAttribute("stay") == null) {
                     Visit stay = new Visit(username);
                     session.setAttribute("stay", stay);
                 }
-//                if (session.getAttribute("favorite") == null) {
-//                    Favorite favorite = new Favorite(username);
-//                    session.setAttribute("favorite", favorite);
-//                }
             }
         %>
 

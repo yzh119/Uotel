@@ -1,8 +1,8 @@
-<%@ page import="acmdb.Reservation" %>
+<%@ page import="acmdb.Reserve" %>
 
 <%
     try {
-        Reservation reservation = (Reservation) session.getAttribute("reservation");
+        Reserve reservation = (Reserve) session.getAttribute("reservation");
         reservation.pushList();
         session.removeAttribute("reservation");
         response.sendRedirect("reserve.jsp");

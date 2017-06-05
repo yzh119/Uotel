@@ -1,8 +1,8 @@
-<%@ page import="acmdb.Reservation" %>
+<%@ page import="acmdb.Reserve" %>
 
 <%
     try {
-        Reservation reservation = (Reservation) session.getAttribute("reservation");
+        Reserve reservation = (Reserve) session.getAttribute("reservation");
         reservation.addToList(
                 Integer.valueOf(request.getParameter("uid")),
                 request.getParameter("start_date"),

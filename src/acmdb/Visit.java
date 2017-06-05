@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Visit {
-    private String username;
-    private List<Integer> selectRID = new ArrayList<>();
-    private List<String> startDate = new ArrayList<>();
-    private List<String> endDate = new ArrayList<>();
-    private List<Integer> spent = new ArrayList<>();
-    private List<Integer> number = new ArrayList<>();
+    public String username;
+    public List<Integer> selectRID = new ArrayList<>();
+    public List<String> startDate = new ArrayList<>();
+    public List<String> endDate = new ArrayList<>();
+    public List<Integer> spent = new ArrayList<>();
+    public List<Integer> number = new ArrayList<>();
 
     public Visit(String username) {
         this.username = username;
@@ -49,12 +49,10 @@ public class Visit {
                     ")" +
                     "))";
 
-            System.out.println(query);
-            System.out.flush();
-
             ResultSet rs = stmt.executeQuery(query);
-            if (rs.next())
+            if (rs.next()) {
                 throw new Exception("Invalid stay period or conflict!");
+            }
         }
 
         for (int i = 0; i < selectRID.size(); ++i) {
@@ -88,30 +86,5 @@ public class Visit {
         }
 
         connector.close();
-    }
-
-    public String getTemporaryStay() throws Exception {
-        StringBuffer resultStr = new StringBuffer();
-        resultStr.append("<table>");
-        resultStr.append("<tr>" +
-                "<th>rid</th>" +
-                "<th>start_date</th>" +
-                "<th>end_date</th>" +
-                "<th>total_spent</th>" +
-                "<th>num_person</th>" +
-                "</tr>");
-
-        for (int i = 0; i < selectRID.size(); ++i) {
-            resultStr.append("<tr>" +
-                    "<th>" + selectRID.get(i) + "</th>" +
-                    "<th>" + startDate.get(i) + "</th>" +
-                    "<th>" + endDate.get(i) + "</th>" +
-                    "<th>" + spent.get(i) + "</th>" +
-                    "<th>" + number.get(i) + "</th>" +
-                    "</tr>");
-        }
-
-        resultStr.append("</table>");
-        return resultStr.toString();
     }
 }

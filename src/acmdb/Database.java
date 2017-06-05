@@ -37,7 +37,18 @@ public class Database {
         return response;
     }
 
-    public static List<List<String>> getAvailableHouses() throws Exception {
+    public static void addFavorite(String username, int uid) throws Exception {
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+        ResultSet result = statement.executeQuery("SELECT * FROM visit v, reservation r WHERE v.rid = r.rid and v.user_name = '" + username + "' and r.uid = " + uid);
+        if (!result.next()) {
+            throw new Exception("You have no stay records for this house yet!");
+        }
+        statement.execute("INSERT INTO favorite values(" + uid + ",'" + username + "')");
+        connector.close();
+    }
+
+    public static List<List<String>> getHouses() throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
 
@@ -102,16 +113,47 @@ public class Database {
         }
         return records;
     }
-
-    public static void addFavorite(String username, int uid) throws Exception {
+    public static List<List<String>> getFavorites(String username) throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
-        ResultSet result = statement.executeQuery("SELECT * FROM visit v, reservation r WHERE v.rid = r.rid and v.user_name = '" + username + "' and r.uid = " + uid);
-        if (!result.next()) {
-            throw new Exception("You have no stay records for this house yet!");
+
+        List<List<String>> records = new ArrayList<>();
+        ResultSet result = statement.executeQuery("SELECT th.uid, name, address, url, phone_number, year_built, price, visit_count FROM TH th, favorite f WHERE f.user_name = '" + username + "' and f.uid = th.uid");
+        while (result.next()) {
+            records.add(new ArrayList<>());
+            for (int i = 1; i <= 8; ++i) {
+                String record = result.getString(i);
+                records.get(records.size() - 1).add(record);
+            }
         }
-        statement.execute("INSERT INTO favorite values(" + uid + ",'" + username + "')");
-        connector.close();
+        return records;
+    }
+
+    public static List<List<String>> getRecommendations(String username) throws Exception {
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+
+        List<List<String>> records = new ArrayList<>();
+        ResultSet result = statement.executeQuery(
+            "SELECT distinct new_th.* FROM " +
+                "user u1, user u2, " +
+                "visit v1, visit v2, visit all2, " +
+                "reservation r1, reservation r2, reservation allr2, " +
+                "TH common_th, TH new_th " +
+                "WHERE " +
+                "u1.login_name = '" + username + "' and u1.login_name <> u2.login_name and " +
+                "v1.user_name = u1.login_name and v1.rid = r1.rid and v1.user_name = r1.user_name and r1.uid = common_th.uid and " +
+                "v2.user_name = u2.login_name and v2.rid = r2.rid and v2.user_name = r2.user_name and r2.uid = common_th.uid and " +
+                "all2.user_name = u2.login_name and all2.rid = allr2.rid and new_th.uid = allr2.uid " +
+                "ORDER by new_th.visit_count DESC");
+        while (result.next()) {
+            records.add(new ArrayList<>());
+            for (int i = 1; i <= 8; ++i) {
+                String record = result.getString(i);
+                records.get(records.size() - 1).add(record);
+            }
+        }
+        return records;
     }
 
     public static int computeDistance(String username1, String username2) throws Exception {

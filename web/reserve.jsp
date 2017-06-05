@@ -1,5 +1,5 @@
 <%@ page import="acmdb.House" %>
-<%@ page import="acmdb.Reservation" %>
+<%@ page import="acmdb.Reserve" %>
 <%@ page import="acmdb.Database" %>
 <%@ page import="java.util.List" %>
 
@@ -37,7 +37,6 @@
                     <th>Price</th>
                     <th>Total visits</th>
                 </tr>
-
                 <%= Database.list2Table(Database.getReservations(username)) %>
             </table>
 
@@ -56,14 +55,13 @@
                     <th>Start date</th>
                     <th>End date</th>
                 </tr>
-
-                <%= Database.list2Table(Database.getAvailableHouses()) %>
+                <%= Database.list2Table(Database.getHouses()) %>
             </table>
         </div>
 
         <%
             if (session.getAttribute("reservation") == null) {
-                Reservation reservation = new Reservation(session.getAttribute("username").toString());
+                Reserve reservation = new Reserve(session.getAttribute("username").toString());
                 session.setAttribute("reservation", reservation);
             }
         %>
@@ -91,7 +89,7 @@
 
                 <%
                     if (session.getAttribute("reservation") != null) {
-                        Reservation reservation = (Reservation) session.getAttribute("reservation");
+                        Reserve reservation = (Reserve) session.getAttribute("reservation");
                         if (!reservation.selectTH.isEmpty()) {
                 %>
                     <br><br>
