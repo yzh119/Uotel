@@ -37,13 +37,7 @@ public class Available {
         if (rs.next()) {
             throw new Exception("Overlay period!");
         }
-
-        statement.execute("INSERT INTO available values(" +
-            uid + "," +
-            "'" + start + "'," +
-            "'" + end + "'" +
-            ")");
-
+        statement.execute("INSERT INTO available values(" + uid + ",'" + start + "','" + end + "')");
         connector.close();
     }
 

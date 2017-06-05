@@ -3,7 +3,7 @@ package acmdb;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Account {
+public class Database {
     private static boolean existAccount(String username) throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;

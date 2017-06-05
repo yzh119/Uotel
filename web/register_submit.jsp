@@ -18,7 +18,7 @@
                 String name = request.getParameter("name");
                 String address = request.getParameter("address");
                 String phone = request.getParameter("phone");
-                Account.createAccount(username, password, name, address, phone);
+                Database.createAccount(username, password, name, address, phone);
                 session.setAttribute("username", username);
                 response.sendRedirect("index.jsp");
             } catch (Exception e) {
