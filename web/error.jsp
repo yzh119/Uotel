@@ -2,13 +2,15 @@
 
 <html>
     <head>
-        <title>Two degrees of separation | Welcome to Uotel</title>
+        <title>Error | Welcome to Uotel</title>
     </head>
     <body>
-        <h1>Some errors have just occurred!</h1>
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
 
-        <p> <%= request.getParameter("message") %> </p>
+        <p>Some error has just occurred, and the message is as follows:</p>
 
-        <a href="index.jsp">back to homepage</a>
+        <b> <%= request.getParameter("message") %> </b>
     </body>
 </html>

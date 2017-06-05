@@ -3,17 +3,6 @@
 <html>
 <head>
     <title>Add Housing</title>
-    <script LANGUAGE="javascript">
-
-        function check_all_fields(form_obj){
-            if( form_obj.name.value == "") {
-                alert("Name should be nonempty");
-                return false;
-            }
-            return true;
-        }
-
-    </script>
 </head>
 <body>
 <a href="index.jsp">back</a>
@@ -24,7 +13,7 @@
     if (session.getAttribute("currentPH") == null) {
 %>
     <p> Complete the following form first:</p>
-    <form name="PH_form" method="get" onsubmit="return check_all_fields(this)" action="fillingPH.jsp">
+    <form method="get" action="fillingPH.jsp">
         Name: <input type="text" name="name"> <br>
         Address: <input type="text" name="address"> <br>
         Url: <input type="text" name="url"> <br>

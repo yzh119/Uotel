@@ -2,27 +2,26 @@
 
 <html>
     <head>
-        <title>Register User</title>
+        <title>Register account | Welcome to Uotel</title>
     </head>
     <body>
-    <%
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String name = request.getParameter("name");
-        String address = request.getParameter("address");
-        String phone = request.getParameter("phonenumber");
-        boolean success = Account.createAccount(username, password, name, address, phone);
-        if (success) {
-    %>
-        <p> Register successful!</p>
-    <%
-        } else {
-    %>
-        <p> Register unsuccessful!</p>
-    <%
-        }
-    %>
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
 
-        <a href="index.jsp">back to homepage</a>
+        <%
+            try {
+                String username = request.getParameter("username");
+                String password = request.getParameter("password");
+                String name = request.getParameter("name");
+                String address = request.getParameter("address");
+                String phone = request.getParameter("phone");
+                Account.createAccount(username, password, name, address, phone);
+                session.setAttribute("username", username);
+                response.sendRedirect("index.jsp");
+            } catch (Exception e) {
+                response.sendRedirect("error.jsp?message=" + e.getMessage());
+            }
+        %>
     </body>
 </html>

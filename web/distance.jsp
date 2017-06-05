@@ -5,18 +5,22 @@
         <title>Two degrees of separation | Welcome to Uotel</title>
     </head>
     <body>
-        <h1>Two degrees of separation</h1>
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
 
-        <form method="get" action="distance_submit.jsp">
-            <label><b>Username 1</b></label>
-            <input type="text" placeholder="Enter Username 1" name="username1" required>
+        <div align="center">
+            <h1>Two degrees of separation</h1>
 
-            <label><b>Username 2</b></label>
-            <input type="text" placeholder="Enter Username 2" name="username2" required>
+            <form method="post" action="distance_submit.jsp">
+                <label><b>Username 1</b></label>
+                <input type="text" placeholder="Enter Username 1" name="username1" required>
 
-            <button type="submit">Compute</button>
-        </form>
+                <label><b>Username 2</b></label>
+                <input type="text" placeholder="Enter Username 2" name="username2" required>
 
-        <a href="index.jsp">back to homepage</a>
+                <button type="submit">Compute distance</button>
+            </form>
+        </div>
     </body>
 </html>

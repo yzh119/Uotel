@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Account {
-    public static boolean existAccount(String username) throws Exception {
+    private static boolean existAccount(String username) throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
         ResultSet result = statement.executeQuery("SELECT * from user WHERE login_name='" + username + "'");
@@ -17,9 +17,6 @@ public class Account {
         if (existAccount(username)) {
             throw new Exception("Username \"" + username + "\" exists!");
         }
-        if (password.length() < 6) {
-            throw new Exception("Password length is too short!");
-        }
         Connector connector = new Connector();
         Statement statement = connector.statement;
         statement.execute("INSERT INTO user values('" + name + "','" + username + "','" + password + "','" + address + "','" + phone + "')");
@@ -28,7 +25,7 @@ public class Account {
 
     public static boolean checkPassword(String username, String password) throws Exception {
         if (!existAccount(username)) {
-            throw new Exception("Account \"" + username + "\" does not exist!");
+            return false;
         }
         Connector connector = new Connector();
         Statement statement = connector.statement;
