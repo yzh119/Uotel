@@ -2,15 +2,19 @@
 
 <html>
     <head>
-        <title>Error | Welcome to Uotel</title>
+        <title>Some error has just occurred</title>
     </head>
     <body>
+        <div align="center">
+            <h2>Some error has just occurred</h2>
+
+            <p>Detailed error message is as follows:</p>
+
+            <b> <%= request.getParameter("message") %> </b>
+        </div>
+
         <div align="right">
             <a href="index.jsp">back to the homepage</a>
         </div>
-
-        <p>Some error has just occurred, and the message is as follows:</p>
-
-        <b> <%= request.getParameter("message") %> </b>
     </body>
 </html>

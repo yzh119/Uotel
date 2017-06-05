@@ -32,16 +32,22 @@
             <h3>Stacked reservation list</h3>
 
             <form method="post" action="reserve_submit.jsp">
-                <label><b>UID</b></label>
-                <input type="text" placeholder="Enter UID of the house" name="uid" required>
+                <table>
+                    <tr>
+                        <td><label><b>UID</b></label></td>
+                        <td><input type="text" placeholder="Enter UID of the house" name="uid" required></td>
+                    </tr>
+                    <tr>
+                        <td><label><b>Start date</b></label></td>
+                        <td><input type="text" placeholder="Enter start date" name="start_date" required></td>
+                    </tr>
+                    <tr>
+                        <td><label><b>End date</b></label></td>
+                        <td><input type="text" placeholder="Enter end date" name="end_date" required></td>
+                    </tr>
+                </table>
 
-                <label><b>Start date</b></label>
-                <input type="text" placeholder="Enter start date" name="start_date" required>
-
-                <label><b>Start date</b></label>
-                <input type="text" placeholder="Enter end date" name="end_date" required>
-
-                <button type="submit">Add to the reservation list</button>
+                <button type="submit">Add to the stacked reservation list</button>
 
                 <%
                     if (session.getAttribute("reservation") != null) {

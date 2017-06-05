@@ -10,7 +10,7 @@
                 request.getParameter("telephone"),
                 request.getParameter("year_built"),
                 request.getParameter("price"));
-        response.sendRedirect("new_th_time.jsp");
+        response.sendRedirect("create_time.jsp");
     } catch (Exception e) {
         response.sendRedirect("error.jsp?message=" + e.getMessage());
     }

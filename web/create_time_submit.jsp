@@ -5,5 +5,5 @@
             (Integer) session.getAttribute("currentPH"),
             request.getParameter("start_date"),
             request.getParameter("end_date"));
-    response.sendRedirect("new_th_time.jsp");
+    response.sendRedirect("create_time.jsp");
 %>

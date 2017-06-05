@@ -11,7 +11,7 @@
             <p><i>A user may record the details of a new TH, and may update the information regarding an existing TH he/she owns.</i></p>
         </div>
 
-        <form method="post" action="new_th_information_submit.jsp">
+        <form method="post" action="create_information_submit.jsp">
             <div align="center">
                 <table>
                     <tr>

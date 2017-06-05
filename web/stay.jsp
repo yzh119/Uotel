@@ -33,23 +33,46 @@
 
             <h3>Stacked stay list</h3>
 
-            <%
-                if (session.getAttribute("stay") != null) {
-                    Stay stay = (Stay) session.getAttribute("stay");
-            %>
-            <%=stay.getTemporaryStay()%>
-            <%}%>
+            <form method="post" action="stay_submit.jsp">
+                <table>
+                    <tr>
+                        <td><label><b>RID</b></label></td>
+                        <td><input type="text" placeholder="Enter RID of the reservation" name="rid" required></td>
+                    </tr>
+                    <tr>
+                        <td><label><b>Start date</b></label></td>
+                        <td><input type="text" placeholder="Enter start date" name="start_date" required></td>
+                    </tr>
+                    <tr>
+                        <td><label><b>End date</b></label></td>
+                        <td><input type="text" placeholder="Enter end date" name="end_date" required></td>
+                    </tr>
+                    <tr>
+                        <td><label><b>Total spent</b></label></td>
+                        <td><input type="text" placeholder="Enter total spent" name="spent" required></td>
+                    </tr>
+                    <tr>
+                        <td><label><b>Number of people</b></label></td>
+                        <td><input type="text" placeholder="Enter number of people" name="number" required></td>
+                    </tr>
+                </table>
 
-            <form name="fill_stay" method="get" action="stay_submit.jsp">
-                rid: <input type="text" name="rid"> <br>
-                start_date: <input type="text" name="start_date"> <br>
-                end_date: <input type="text" name="end_date"> <br>
-                total_spent: <input type="text" name="spent"> <br>
-                num_person: <input type="text" name="number"> <br>
-                <input type="submit" value="Submit">
+                <button type="submit">Add to the stacked stay list</button>
+
+                <%
+                    if (session.getAttribute("stay") != null) {
+                        Stay stay = (Stay) session.getAttribute("stay");
+                %>
+                    <br><br>
+
+                    <%= stay.getTemporaryStay() %>
+
+                    <input type="button" value="Confirm the above stays" onclick="location.href='stay_complete.jsp'">
+                <%
+                    }
+                %>
             </form>
 
-            <a href="stay_complete.jsp">confirm</a>
         </div>
 
         <div align="right">

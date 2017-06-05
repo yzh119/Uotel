@@ -52,34 +52,22 @@
             <p> Welcome to the Uotel system, <%=username%> <a href="logout.jsp">[logout]</a>.</p>
             <table>
                 <tr>
-                    <td>
-                        <a href="profile.jsp">My profile</a>
-                    </td>
+                    <td><a href="reserve.jsp">Functionality 2 | Reserve</a></td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="reserve.jsp">Functionality 2 | Reserve</a>
-                    </td>
+                    <td><a href="create_information.jsp">Functionality 3 | New TH</a></td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="new_th_information.jsp">Functionality 3 | New TH</a>
-                    </td>
+                    <td><a href="stay.jsp">Functionality 4 | Stays</a></td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="stay.jsp">Functionality 4 | Stays</a>
-                    </td>
+                    <td><a href="favorite.jsp">Functionality 5 | Favorite recordings</a></td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="suggestions.jsp">Functionality 11 | TH suggestions</a>
-                    </td>
+                    <td><a href="suggestions.jsp">Functionality 11 | TH suggestions</a></td>
                 </tr>
                 <tr>
-                    <td>
-                        <a href="distance.jsp">Functionality 12 | Two degrees of separation</a>
-                    </td>
+                    <td><a href="distance.jsp">Functionality 12 | Two degrees of separation</a></td>
                 </tr>
             </table>
         </div>
