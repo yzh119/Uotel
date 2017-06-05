@@ -16,39 +16,48 @@
             <p><i>After registration, a user can record a reservation to any TH (the same user may reserve the same TH multiple times from different available dates). Each user session (meaning each time after a user has logged into the system) may add one or more researvations, and all reservations added by a user in a user session are reported to him/her for the ﬁnal review and conﬁrmation, before they are added into the database.</i></p>
         </div>
 
+        <%
+            String username = session.getAttribute("username").toString();
+        %>
+
         <div align="center">
+            <h3>All your reservations</h3>
+
+            <table align="center" cellspacing="2" cellpadding="2" border="1">
+                <tr>
+                    <th>RID</th>
+                    <th>UID</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Owner Name</th>
+                    <th>House Address</th>
+                    <th>Website</th>
+                    <th>Phone number</th>
+                    <th>Year built</th>
+                    <th>Price</th>
+                    <th>Total visits</th>
+                </tr>
+
+                <%= Database.list2Table(Database.getReservations(username)) %>
+            </table>
+
             <h3>All possible houses and their available dates</h3>
 
-            <%
-                StringBuilder builder = new StringBuilder();
-
-                List<List<String>> records = Database.getAvailableHouses();
-
-                for (int i = 0; i < records.size(); ++i) {
-                    builder.append("<tr>");
-                    for (int j = 0; j < records.get(i).size(); ++j) {
-                        builder.append("<td>");
-                        builder.append(records.get(i).get(j));
-                        builder.append("</td>");
-                    }
-                    builder.append("</tr>");
-                }
-            %>
-
-            <table align="center">
+            <table align="center" cellspacing="2" cellpadding="2" border="1">
                 <tr>
-                    <td><b>UID</b></td>
-                    <td><b>Name</b></td>
-                    <td><b>Address</b></td>
-                    <td><b>Website</b></td>
-                    <td><b>Phone number</b></td>
-                    <td><b>Year built</b></td>
-                    <td><b>Price</b></td>
-                    <td><b>Visit count</b></td>
-                    <td><b>Start date</b></td>
-                    <td><b>End date</b></td>
+                    <th>UID</th>
+                    <th>Owner Name</th>
+                    <th>House Address</th>
+                    <th>Website</th>
+                    <th>Phone number</th>
+                    <th>Year built</th>
+                    <th>Price</th>
+                    <th>Total visits</th>
+                    <th>Start date</th>
+                    <th>End date</th>
                 </tr>
-                <%= builder.toString() %>
+
+                <%= Database.list2Table(Database.getAvailableHouses()) %>
             </table>
         </div>
 
@@ -60,7 +69,7 @@
         %>
 
         <div align="center">
-            <h3>Stacked reservation list</h3>
+            <h3>Temporary reservation cart</h3>
 
             <form method="post" action="reserve_submit.jsp">
                 <table>
@@ -78,18 +87,36 @@
                     </tr>
                 </table>
 
-                <button type="submit">Add to the stacked reservation list</button>
+                <button type="submit">Add to the temporary reservation cart</button>
 
                 <%
                     if (session.getAttribute("reservation") != null) {
                         Reservation reservation = (Reservation) session.getAttribute("reservation");
+                        if (!reservation.selectTH.isEmpty()) {
                 %>
                     <br><br>
-
-                    <%=reservation.getTemporaryReservation()%>
+                    <%
+                        StringBuilder builder = new StringBuilder();
+                        for (int i = 0; i < reservation.selectTH.size(); ++i) {
+                            builder.append("<tr>");
+                            builder.append("<td>").append(reservation.selectTH.get(i)).append("</td>");
+                            builder.append("<td>").append(reservation.startDate.get(i).substring(0, 10)).append("</td>");
+                            builder.append("<td>").append(reservation.endDate.get(i).substring(0, 10)).append("</td>");
+                            builder.append("</tr>");
+                        }
+                    %>
+                    <table align="center" cellspacing="2" cellpadding="2" border="1">
+                        <tr>
+                            <th>UID</th>
+                            <th>Start date</th>
+                            <th>End date</th>
+                        </tr>
+                        <%= builder.toString() %>
+                    </table>
 
                     <input type="button" value="Confirm the above reservations" onclick="location.href='reserve_complete.jsp'">
                 <%
+                        }
                     }
                 %>
             </form>

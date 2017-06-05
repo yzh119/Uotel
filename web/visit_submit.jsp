@@ -1,8 +1,8 @@
-<%@ page import="acmdb.Stay" %>
+<%@ page import="acmdb.Visit" %>
 
 <%
     try {
-        Stay stay = (Stay) session.getAttribute("stay");
+        Visit stay = (Visit) session.getAttribute("stay");
         stay.addToList(
                 Integer.valueOf(request.getParameter("rid")),
                 request.getParameter("start_date"),
@@ -10,7 +10,7 @@
                 Integer.valueOf(request.getParameter("spent")),
                 Integer.valueOf(request.getParameter("number"))
         );
-        response.sendRedirect("stay.jsp");
+        response.sendRedirect("visit.jsp");
     } catch (Exception e) {
         response.sendRedirect("error.jsp?message=" + e.getMessage());
     }

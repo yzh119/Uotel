@@ -5,7 +5,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stay {
+public class Visit {
     private String username;
     private List<Integer> selectRID = new ArrayList<>();
     private List<String> startDate = new ArrayList<>();
@@ -13,7 +13,7 @@ public class Stay {
     private List<Integer> spent = new ArrayList<>();
     private List<Integer> number = new ArrayList<>();
 
-    public Stay(String username) {
+    public Visit(String username) {
         this.username = username;
     }
 
@@ -88,38 +88,6 @@ public class Stay {
         }
 
         connector.close();
-    }
-
-    public String getPermanentStay() throws Exception {
-        Connector connector = new Connector();
-        Statement stmt = connector.statement;
-
-        StringBuffer resultStr = new StringBuffer();
-        resultStr.append("<table>");
-        resultStr.append("<tr>" +
-                "<th>rid</th>" +
-                "<th>start_date</th>" +
-                "<th>end_date</th>" +
-                "<th>total_spent</th>" +
-                "<th>num_person</th>" +
-                "</tr>");
-
-        String query;
-        query = "SELECT rid, start_date, end_date, total_spent, num_person FROM visit " +
-                "WHERE user_name = '" + username + "'";
-        ResultSet rs = stmt.executeQuery(query);
-        while (rs.next()) {
-            resultStr.append("<tr>" +
-                    "<th>" + rs.getInt(1) + "</th>" +
-                    "<th>" + rs.getString(2).substring(0, 10) + "</th>" +
-                    "<th>" + rs.getString(3).substring(0, 10) + "</th>" +
-                    "<th>" + rs.getInt(4) + "</th>" +
-                    "<th>" + rs.getInt(5) + "</th>" +
-                    "</tr>");
-        }
-
-        resultStr.append("</table>");
-        return resultStr.toString();
     }
 
     public String getTemporaryStay() throws Exception {
