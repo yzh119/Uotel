@@ -1,19 +1,7 @@
+DROP DATABASE acmdb10;
 CREATE DATABASE if NOT EXISTS acmdb10;
 USE acmdb10;
 SELECT DATABASE();
-
-CREATE TABLE IF NOT EXISTS TH (
-    uid          INTEGER,
-    name         VARCHAR(25),
-    address      VARCHAR(50),
-    url          VARCHAR(50),
-    phone_number VARCHAR(25),
-    year_built   INTEGER,
-    price        INTEGER,
-    visit_count  INTEGER,
-    PRIMARY KEY (uid)
-);
-
 
 CREATE TABLE IF NOT EXISTS user (
     name         VARCHAR(25),
@@ -22,6 +10,20 @@ CREATE TABLE IF NOT EXISTS user (
     address      VARCHAR(50),
     phone_number VARCHAR(25),
     PRIMARY KEY (login_name)
+);
+
+CREATE TABLE IF NOT EXISTS TH (
+    uid          INTEGER,
+    owner        VARCHAR(25) NOT NULL ,
+    name         VARCHAR(25),
+    address      VARCHAR(50),
+    url          VARCHAR(50),
+    phone_number VARCHAR(25),
+    year_built   INTEGER,
+    price        INTEGER,
+    visit_count  INTEGER,
+    PRIMARY KEY (uid),
+    FOREIGN KEY (owner) REFERENCES user(login_name)
 );
 
 

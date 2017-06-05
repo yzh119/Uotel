@@ -20,7 +20,8 @@
         <table align="center" cellspacing="2" cellpadding="2" border="1">
             <tr>
                 <th>UID</th>
-                <th>Owner name</th>
+                <th>Owner Name</th>
+                <th>House Name</th>
                 <th>Address</th>
                 <th>Website</th>
                 <th>Telephone</th>

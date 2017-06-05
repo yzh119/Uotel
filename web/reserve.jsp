@@ -30,6 +30,7 @@
                     <th>Start date</th>
                     <th>End date</th>
                     <th>Owner Name</th>
+                    <th>House Name</th>
                     <th>House Address</th>
                     <th>Website</th>
                     <th>Phone number</th>
@@ -46,6 +47,7 @@
                 <tr>
                     <th>UID</th>
                     <th>Owner Name</th>
+                    <th>House Name</th>
                     <th>House Address</th>
                     <th>Website</th>
                     <th>Phone number</th>

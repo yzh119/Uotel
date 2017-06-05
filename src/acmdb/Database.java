@@ -56,12 +56,16 @@ public class Database {
         ResultSet result = statement.executeQuery("SELECT * FROM TH t, available a WHERE t.uid = a.uid");
         while (result.next()) {
             records.add(new ArrayList<>());
-            for (int i = 1; i <= 11; ++i) {
+            for (int i = 1; i <= 12; ++i) {
                 String record = result.getString(i);
-                if (i == 9) {
+                //if (i == 3) {
+                //    continue;
+                //}
+
+                if (i == 10) {
                     continue;
                 }
-                if (i == 10 || i == 11) {
+                if (i == 11 || i == 12) {
                     record = record.substring(0, 10);
                 }
                 records.get(records.size() - 1).add(record);
@@ -78,7 +82,7 @@ public class Database {
         ResultSet result = statement.executeQuery("SELECT * FROM reservation r, TH t WHERE r.uid = t.uid AND user_name = \"" + username + "\"");
         while (result.next()) {
             records.add(new ArrayList<>());
-            for (int i = 1; i <= 13; ++i) {
+            for (int i = 1; i <= 14; ++i) {
                 String record = result.getString(i);
                 if (i == 3 || i == 6) {
                     continue;
@@ -100,7 +104,7 @@ public class Database {
         ResultSet result = statement.executeQuery("SELECT * FROM visit v, TH t, reservation r WHERE v.rid = r.rid AND t.uid = r.uid AND v.user_name = \"" + username + "\"");
         while (result.next()) {
             records.add(new ArrayList<>());
-            for (int i = 1; i <= 18; ++i) {
+            for (int i = 1; i <= 19; ++i) {
                 String record = result.getString(i);
                 if (i == 2 || i == 15 || i == 16 || i == 17 || i == 18) {
                     continue;
@@ -118,10 +122,10 @@ public class Database {
         Statement statement = connector.statement;
 
         List<List<String>> records = new ArrayList<>();
-        ResultSet result = statement.executeQuery("SELECT th.uid, name, address, url, phone_number, year_built, price, visit_count FROM TH th, favorite f WHERE f.user_name = '" + username + "' and f.uid = th.uid");
+        ResultSet result = statement.executeQuery("SELECT th.uid, owner, name, address, url, phone_number, year_built, price, visit_count FROM TH th, favorite f WHERE f.user_name = '" + username + "' and f.uid = th.uid");
         while (result.next()) {
             records.add(new ArrayList<>());
-            for (int i = 1; i <= 8; ++i) {
+            for (int i = 1; i <= 9; ++i) {
                 String record = result.getString(i);
                 records.get(records.size() - 1).add(record);
             }
@@ -148,7 +152,7 @@ public class Database {
                 "ORDER by new_th.visit_count DESC");
         while (result.next()) {
             records.add(new ArrayList<>());
-            for (int i = 1; i <= 8; ++i) {
+            for (int i = 1; i <= 9; ++i) {
                 String record = result.getString(i);
                 records.get(records.size() - 1).add(record);
             }

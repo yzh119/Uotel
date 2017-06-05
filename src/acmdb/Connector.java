@@ -8,7 +8,7 @@ public class Connector {
 
 	public Connector() throws Exception {
 		String username = "root";
-		String password = "";
+		String password = "turing";
 		String url = "jdbc:mysql://localhost/acmdb10";
 
 //		String username = "acmuser";

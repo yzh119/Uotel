@@ -16,6 +16,14 @@
                 <table>
                     <tr>
                         <td>
+                            <label><b>Name</b></label>
+                        </td>
+                        <td>
+                            <input type="text" name="name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <label><b>Address</b></label>
                         </td>
                         <td>

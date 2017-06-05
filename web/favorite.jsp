@@ -29,6 +29,7 @@
                     <th>Number of people</th>
                     <th>UID</th>
                     <th>Owner Name</th>
+                    <th>House Name</th>
                     <th>House Address</th>
                     <th>Website</th>
                     <th>Phone number</th>
@@ -49,7 +50,8 @@
             <table align="center" cellspacing="2" cellpadding="2" border="1">
                 <tr>
                     <th>UID</th>
-                    <th>Owner name</th>
+                    <th>Owner Name</th>
+                    <th>House Name</th>
                     <th>Address</th>
                     <th>Website</th>
                     <th>Telephone</th>

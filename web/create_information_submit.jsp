@@ -2,8 +2,10 @@
 
 <%
     try {
+        House.uid++;
         session.setAttribute("currentPH", House.uid);
         House.createHouse(House.uid,
+                request.getParameter("name"),
                 session.getAttribute("username").toString(),
                 request.getParameter("address"),
                 request.getParameter("url"),

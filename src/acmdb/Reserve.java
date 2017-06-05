@@ -10,16 +10,19 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Reserve {
-    public static int rid = 0;
+    public int rid;
     public String username;
-    public Reserve(String username) {
+    public Reserve(String username) throws Exception {
         this.username = username;
+        this.rid = getInitRidFromSQL();
     }
     public ArrayList<Integer> selectTH = new ArrayList<>();
     public ArrayList<String> startDate = new ArrayList<>();
     public ArrayList<String> endDate = new ArrayList<>();
 
-    public void resetRidFromSQL(Statement stmt) throws Exception {
+    public int getInitRidFromSQL() throws Exception {
+        Connector connector = new Connector();
+        Statement stmt = connector.statement;
         String query;
         ResultSet rs;
         query = "SELECT MAX(rs.rid) FROM reservation rs WHERE " +
@@ -33,9 +36,11 @@ public class Reserve {
             throw e;
         }
 
+        int ret = 0;
         if (rs.next()) {
-            rid = rs.getInt(1);
+            ret = rs.getInt(1);
         }
+        return ret;
     }
     public void addToList(int uid, String start, String end) {
         selectTH.add(uid);
@@ -66,7 +71,6 @@ public class Reserve {
     public void pushList() throws Exception {
         Connector connector = new Connector();
         Statement stmt = connector.statement;
-        resetRidFromSQL(stmt);
 
         ++rid;
 
