@@ -31,7 +31,7 @@
     <li><a href="stay.jsp">Add stay</a> </li>
     <li><a href="recommendations.jsp">Recommendations</a> </li>
     <li><a href="create.jsp">Add Housing</a> </li>
-    <li><a href="distance.jsp">Distance between users</a> </li>
+    <li><a href="distance.jsp">Two degrees of separation</a> </li>
   </ul>
 
   <%

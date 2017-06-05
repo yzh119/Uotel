@@ -1,37 +1,22 @@
-<%@ page import="acmdb.Account" %>
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
-<head>
-    <title>Distance</title>
-</head>
-<body>
-<a href="index.jsp">back</a>
-<h1>Distance</h1>
+    <head>
+        <title>Two degrees of separation | Welcome to Uotel</title>
+    </head>
+    <body>
+        <h1>Two degrees of separation</h1>
 
-<form name="distance_form" method="get">
-    <input type="hidden" name="is_filled" value="frog">
-    User: <input type="text" name="sim_user">
-    <input type="submit" value="Submit">
-</form>
+        <form method="get" action="distance_submit.jsp">
+            <label><b>Username 1</b></label>
+            <input type="text" placeholder="Enter Username 1" name="username1" required>
 
-<%
-    int dis = -1;
-    if (request.getParameter("is_filled") != null) {
-        dis = Account.computeDistance(
-                (String) session.getAttribute("username"),
-                request.getParameter("sim_user")
-        );
-%>
+            <label><b>Username 2</b></label>
+            <input type="text" placeholder="Enter Username 2" name="username2" required>
 
-<br>
-<p>
-Your distance with <%=request.getParameter("sim_user")%> is <%=dis%>.
-</p>
+            <button type="submit">Compute</button>
+        </form>
 
-<%
-    }
-%>
-</body>
+        <a href="index.jsp">back to homepage</a>
+    </body>
 </html>

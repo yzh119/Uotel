@@ -11,13 +11,17 @@ public class Connector {
 		String password = "";
 		String url = "jdbc:mysql://localhost/acmdb10";
 
-//		String userName = "acmuser";
+//		String username = "acmuser";
 //	   	String password = "acmspring17";
 //		String url = "jdbc:mysql://georgia.eng.utah.edu/acmdb";
 
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
-		connection = DriverManager.getConnection(url, username, password);
-		statement = connection.createStatement();
+		try {
+			connection = DriverManager.getConnection(url, username, password);
+			statement = connection.createStatement();
+		} catch (Exception e) {
+			throw new Exception("Database connection error!");
+		}
 	}
 	
 	public void close() throws Exception {

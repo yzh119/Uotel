@@ -43,7 +43,7 @@
     <input type="submit" value="Submit">
 </form>
 
-<a href="finishreservation.jsp">finish</a><br>
+<a href="reserve_cancel.jsp">finish</a><br>
 <%
     }
 %>
