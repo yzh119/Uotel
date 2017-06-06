@@ -19,7 +19,7 @@ public class Reservation {
         this.username = username;
         Connector connector = new Connector();
         Statement statement = connector.statement;
-        ResultSet result = statement.executeQuery("SELECT MAX(rs.rid) FROM reservation r WHERE r.user_name = '" + username + "'");
+        ResultSet result = statement.executeQuery("SELECT MAX(r.rid) FROM reservation r WHERE r.user_name = '" + username + "'");
         this.id = result.next() ? result.getInt(1) : 0;
     }
 
