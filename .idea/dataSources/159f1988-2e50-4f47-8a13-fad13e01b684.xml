@@ -404,6 +404,7 @@ user_name</RefColNames>
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <index id="106" parent="23" name="start_date">
       <ColNames>start_date
@@ -491,6 +492,7 @@ user_name</ColNames>
       <Position>2</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <key id="122" parent="27" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
@@ -523,7 +525,7 @@ end_date</ColNames>
       <Position>5</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0000-00-00 00:00:00&apos;</DefaultExpression>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <index id="128" parent="28" name="uid">
       <ColNames>uid</ColNames>
@@ -709,6 +711,7 @@ str</ColNames>
       <Position>4</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
     </column>
     <column id="167" parent="33" name="total_spent">
       <Position>5</Position>
