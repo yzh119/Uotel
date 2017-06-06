@@ -137,27 +137,27 @@
                     <table>
                         <tr>
                             <td><label><b>House Name</b></label></td>
-                            <td><input type="text" name="name" value="<%= record.getOrDefault("name", "") %>" required></td>
+                            <td><input type="text" name="name" placeholder="Enter house name" value="<%= record.getOrDefault("name", "") %>" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Address</b></label></td>
-                            <td><input type="text" name="address" value="<%= record.getOrDefault("address", "") %>" required></td>
+                            <td><input type="text" name="address" placeholder="Enter address" value="<%= record.getOrDefault("address", "") %>" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Website</b></label></td>
-                            <td><input type="text" name="url" value="<%= record.getOrDefault("url", "") %>" required></td>
+                            <td><input type="text" name="url" placeholder="Enter website" value="<%= record.getOrDefault("url", "") %>" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Telephone</b></label></td>
-                            <td><input type="text" name="telephone" value="<%= record.getOrDefault("phone_number", "") %>" required></td>
+                            <td><input type="text" name="telephone" placeholder="Enter telephone" value="<%= record.getOrDefault("phone_number", "") %>" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Year of Build</b></label></td>
-                            <td><input type="text" name="year_built" value="<%= record.getOrDefault("year_built", "") %>" required></td>
+                            <td><input type="text" name="year_built" placeholder="Enter year of build" value="<%= record.getOrDefault("year_built", "") %>" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Rental</b></label></td>
-                            <td><input type="text" name="price" value="<%= record.getOrDefault("price", "") %>" required></td>
+                            <td><input type="text" name="price" placeholder="Enter rental" value="<%= record.getOrDefault("price", "") %>" required></td>
                         </tr>
                     </table>
 

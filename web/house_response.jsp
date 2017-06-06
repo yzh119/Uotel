@@ -34,7 +34,7 @@
                 request.getParameter("start_date"),
                 request.getParameter("end_date")
             );
-            response.sendRedirect("house.jsp?state=add_time&id=" + id);
+            response.sendRedirect("house.jsp?state=add_date&id=" + id);
         }
     } catch (Exception e) {
         response.sendRedirect("error.jsp?message=" + e.getMessage());
