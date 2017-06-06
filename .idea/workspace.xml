@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f1a83e5f-3eb7-42c1-816b-41e502783156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Account.java" afterPath="$PROJECT_DIR$/src/acmdb/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/reserve.jsp" afterPath="$PROJECT_DIR$/web/reserve.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/reserve_submit.jsp" afterPath="$PROJECT_DIR$/web/reserve_submit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/visit.jsp" afterPath="$PROJECT_DIR$/web/visit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/visit_submit.jsp" afterPath="$PROJECT_DIR$/web/visit_submit.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,8 +40,8 @@
       <file leaf-file-name="reserve.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/reserve.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="139" column="85" lean-forward="false" selection-start-line="139" selection-start-column="85" selection-end-line="139" selection-end-column="85" />
+            <state relative-caret-position="479">
+              <caret line="141" column="14" lean-forward="true" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -171,17 +166,19 @@
               <caret line="56" column="42" lean-forward="false" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1496748980000" expanded="true" signature="543:654" ph="INSERT INTO user... " />
-                <marker date="1496748980000" expanded="true" signature="910:947" ph="SELECT * fro... user" />
-                <marker date="1496748980000" expanded="true" signature="910:964" ph="SELECT * fro... user" />
-                <marker date="1496748980000" expanded="true" signature="1379:1438" ph="SELECT passw... user" />
-                <marker date="1496748980000" expanded="true" signature="1819:1894" ph="SELECT * FRO... visit" />
-                <marker date="1496748980000" expanded="true" signature="1819:1955" ph="SELECT * FRO... visit" />
-                <marker date="1496748980000" expanded="true" signature="2113:2172" ph="INSERT INTO favorite... " />
-                <marker date="1496748980000" expanded="true" signature="2308:2478" ph="SELECT * FRO... TH" />
-                <marker date="1496748980000" expanded="true" signature="2602:2742" ph="SELECT h.uid... TH" />
-                <marker date="1496748980000" expanded="true" signature="3878:4659" ph="SELECT disti... user" />
-                <marker date="1496748980000" expanded="true" signature="4672:4677" ph="{...}" />
+                <marker date="1496750688000" expanded="true" signature="543:654" ph="INSERT INTO user... " />
+                <marker date="1496750688000" expanded="true" signature="910:947" ph="SELECT * fro... user" />
+                <marker date="1496750688000" expanded="true" signature="910:964" ph="SELECT * fro... user" />
+                <marker date="1496750688000" expanded="true" signature="1379:1438" ph="SELECT passw... user" />
+                <marker date="1496750688000" expanded="true" signature="1819:1894" ph="SELECT * FRO... visit" />
+                <marker date="1496750688000" expanded="true" signature="1819:1955" ph="SELECT * FRO... visit" />
+                <marker date="1496750688000" expanded="true" signature="2113:2172" ph="INSERT INTO favorite... " />
+                <marker date="1496750688000" expanded="true" signature="2308:2478" ph="SELECT * FRO... TH" />
+                <marker date="1496750688000" expanded="true" signature="2602:2742" ph="SELECT h.uid... TH" />
+                <marker date="1496750688000" expanded="true" signature="3878:4781" ph="SELECT disti... user" />
+                <marker date="1496750688000" expanded="true" signature="4794:4799" ph="{...}" />
+                <marker date="1496750688000" expanded="true" signature="4892:7064" ph="{...}" />
+                <marker date="1496750688000" expanded="true" signature="7130:7571" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -300,8 +297,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="5" />
-    <option name="y" value="203" />
+    <option name="x" value="-26" />
+    <option name="y" value="198" />
     <option name="width" value="1386" />
     <option name="height" value="878" />
   </component>
@@ -434,9 +431,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/acmdb/Account.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/acmdb/Connector.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/acmdb/Main.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -1100,7 +1096,7 @@
       <workItem from="1496667455527" duration="1481000" />
       <workItem from="1496670530102" duration="86000" />
       <workItem from="1496674032393" duration="802000" />
-      <workItem from="1496725375579" duration="12838000" />
+      <workItem from="1496725375579" duration="12871000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <created>1496626842694</created>
@@ -1319,14 +1315,21 @@
       <option name="project" value="LOCAL" />
       <updated>1496748503311</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="-">
+      <created>1496750670199</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1496750670199</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124363000" />
+    <option name="totallyTimeSpent" value="124396000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="5" y="203" width="1386" height="878" extended-state="0" />
+    <frame x="-26" y="198" width="1386" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1351,8 +1354,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32951653" sideWeight="0.49853802" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.49853802" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30059522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1648,17 +1651,19 @@
           <caret line="56" column="42" lean-forward="false" selection-start-line="56" selection-start-column="42" selection-end-line="56" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1496748980000" expanded="true" signature="543:654" ph="INSERT INTO user... " />
-            <marker date="1496748980000" expanded="true" signature="910:947" ph="SELECT * fro... user" />
-            <marker date="1496748980000" expanded="true" signature="910:964" ph="SELECT * fro... user" />
-            <marker date="1496748980000" expanded="true" signature="1379:1438" ph="SELECT passw... user" />
-            <marker date="1496748980000" expanded="true" signature="1819:1894" ph="SELECT * FRO... visit" />
-            <marker date="1496748980000" expanded="true" signature="1819:1955" ph="SELECT * FRO... visit" />
-            <marker date="1496748980000" expanded="true" signature="2113:2172" ph="INSERT INTO favorite... " />
-            <marker date="1496748980000" expanded="true" signature="2308:2478" ph="SELECT * FRO... TH" />
-            <marker date="1496748980000" expanded="true" signature="2602:2742" ph="SELECT h.uid... TH" />
-            <marker date="1496748980000" expanded="true" signature="3878:4659" ph="SELECT disti... user" />
-            <marker date="1496748980000" expanded="true" signature="4672:4677" ph="{...}" />
+            <marker date="1496750688000" expanded="true" signature="543:654" ph="INSERT INTO user... " />
+            <marker date="1496750688000" expanded="true" signature="910:947" ph="SELECT * fro... user" />
+            <marker date="1496750688000" expanded="true" signature="910:964" ph="SELECT * fro... user" />
+            <marker date="1496750688000" expanded="true" signature="1379:1438" ph="SELECT passw... user" />
+            <marker date="1496750688000" expanded="true" signature="1819:1894" ph="SELECT * FRO... visit" />
+            <marker date="1496750688000" expanded="true" signature="1819:1955" ph="SELECT * FRO... visit" />
+            <marker date="1496750688000" expanded="true" signature="2113:2172" ph="INSERT INTO favorite... " />
+            <marker date="1496750688000" expanded="true" signature="2308:2478" ph="SELECT * FRO... TH" />
+            <marker date="1496750688000" expanded="true" signature="2602:2742" ph="SELECT h.uid... TH" />
+            <marker date="1496750688000" expanded="true" signature="3878:4781" ph="SELECT disti... user" />
+            <marker date="1496750688000" expanded="true" signature="4794:4799" ph="{...}" />
+            <marker date="1496750688000" expanded="true" signature="4892:7064" ph="{...}" />
+            <marker date="1496750688000" expanded="true" signature="7130:7571" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1761,8 +1766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/reserve.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="139" column="85" lean-forward="false" selection-start-line="139" selection-start-column="85" selection-end-line="139" selection-end-column="85" />
+        <state relative-caret-position="479">
+          <caret line="141" column="14" lean-forward="true" selection-start-line="141" selection-start-column="14" selection-end-line="141" selection-end-column="14" />
           <folding />
         </state>
       </provider>
