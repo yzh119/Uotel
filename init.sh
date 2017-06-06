@@ -1,1 +1,2 @@
-mysql --user=acmdbu10 --password=1uedu2v9 < sql/uotel.sql
+#!/usr/bin/env bash
+mysql --user=root --password=turing < sql/uotel.sql

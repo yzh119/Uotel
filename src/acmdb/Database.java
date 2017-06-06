@@ -40,7 +40,7 @@ public class Database {
     public static void addFavorite(String username, int uid) throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
-        ResultSet result = statement.executeQuery("SELECT * FROM visit v, reservation r WHERE v.rid = r.rid and v.user_name = '" + username + "' and r.uid = " + uid);
+        ResultSet result = statement.executeQuery("SELECT * FROM visit v, reservation r WHERE v.rid = r.rid and v.user_name = r.user_name and v.user_name = '" + username + "' and r.uid = " + uid);
         if (!result.next()) {
             throw new Exception("You have no stay records for this house yet!");
         }
@@ -101,7 +101,7 @@ public class Database {
         Statement statement = connector.statement;
 
         List<List<String>> records = new ArrayList<>();
-        ResultSet result = statement.executeQuery("SELECT * FROM visit v, TH t, reservation r WHERE v.rid = r.rid AND t.uid = r.uid AND v.user_name = \"" + username + "\"");
+        ResultSet result = statement.executeQuery("SELECT * FROM visit v, TH t, reservation r WHERE v.rid = r.rid AND t.uid = r.uid AND v.user_name = r.user_name AND v.user_name = \"" + username + "\"");
         while (result.next()) {
             records.add(new ArrayList<>());
             for (int i = 1; i <= 19; ++i) {
@@ -148,7 +148,7 @@ public class Database {
                 "u1.login_name = '" + username + "' and u1.login_name <> u2.login_name and " +
                 "v1.user_name = u1.login_name and v1.rid = r1.rid and v1.user_name = r1.user_name and r1.uid = common_th.uid and " +
                 "v2.user_name = u2.login_name and v2.rid = r2.rid and v2.user_name = r2.user_name and r2.uid = common_th.uid and " +
-                "all2.user_name = u2.login_name and all2.rid = allr2.rid and new_th.uid = allr2.uid " +
+                "all2.user_name = u2.login_name and all2.rid = allr2.rid and all2.user_name = allr2.user_name and new_th.uid = allr2.uid " +
                 "ORDER by new_th.visit_count DESC");
         while (result.next()) {
             records.add(new ArrayList<>());

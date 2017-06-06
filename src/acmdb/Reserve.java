@@ -109,6 +109,7 @@ public class Reserve {
                     "'" + startDate.get(i) + "'" + "," +
                     "'" + endDate.get(i) + "'" +
                     ")";
+            System.out.println(statement);
             stmt.execute(statement);
             ++rid;
         }

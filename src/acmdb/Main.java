@@ -189,6 +189,8 @@ public class Main {
                         case 6: currentState = State.atTwoDegreesOfSeperation; break;
                         case 7:
                             username = "";
+                            reserve = null;
+                            visit = null;
                             currentState = State.atLogout;
                             break;
                     }
