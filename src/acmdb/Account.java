@@ -123,18 +123,16 @@ public class Account {
         Connector connector = new Connector();
         Statement statement = connector.statement;
 
-        ResultSet result = statement.executeQuery("SELECT * FROM visit v, TH t, reservation r WHERE v.rid = r.rid AND t.uid = r.uid AND v.user_name = r.user_name AND v.user_name = \"" + username + "\"");
+        ResultSet result = statement.executeQuery("SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, v.start_date, v.end_date, v.num_person, v.total_spent FROM visit v, TH h, reservation r WHERE v.rid = r.rid AND h.uid = r.uid AND v.user_name = r.user_name AND v.user_name = \"" + username + "\"");
+        ResultSetMetaData meta = result.getMetaData();
 
         List<List<String>> records = new ArrayList<>();
         while (result.next()) {
             records.add(new ArrayList<>());
-            for (int i = 1; i <= 15; ++i) {
+            for (int i = 1; i <= meta.getColumnCount(); ++i) {
                 String record = result.getString(i);
                 if (record.endsWith("00:00:00.0")) {
                     record = record.substring(0, 10);
-                }
-                if (i == 2) {
-                    continue;
                 }
                 records.get(records.size() - 1).add(record);
             }

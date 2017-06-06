@@ -33,12 +33,12 @@
                         List<List<String>> records = Account.getHouses(username);
                         for (int i = 0; i < records.size(); ++i) {
                             builder.append("<tr>");
-                            for (int j = 0; j < records.get(i).size(); ++j) {
-                                builder.append("<td>");
+                            for (int j = 1; j < records.get(i).size(); ++j) {
+                                builder.append("<td align=\"center\">");
                                 builder.append(records.get(i).get(j));
                                 builder.append("</td>");
                             }
-                            builder.append("<td>");
+                            builder.append("<td align=\"center\">");
                             builder.append("<input type=\"button\" value=\"update\" onclick=\"location.href='house.jsp?state=update_information&id=").append(records.get(i).get(0)).append("'\">");
                             builder.append("</td>");
                             builder.append("</tr>");
@@ -46,14 +46,13 @@
                     %>
                     <table align="center" cellspacing="2" cellpadding="2" border="1">
                         <tr>
-                            <th>UID</th>
-                            <th>House name</th>
-                            <th>House address</th>
+                            <th>House Name</th>
+                            <th>Address</th>
                             <th>Website</th>
                             <th>Telephone</th>
-                            <th>Year built</th>
+                            <th>Year of Build</th>
                             <th>Rental</th>
-                            <th>Visits</th>
+                            <th>Total Visits</th>
                             <th>Action</th>
                         </tr>
                         <%= builder.toString() %>
@@ -70,28 +69,28 @@
                     <h3>Release a new house</h3>
                     <table>
                         <tr>
-                            <td><label><b>Name</b></label></td>
-                            <td><input type="text" name="name"></td>
+                            <td><label><b>House Name</b></label></td>
+                            <td><input type="text" name="name" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Address</b></label></td>
-                            <td><input type="text" name="address"></td>
+                            <td><input type="text" name="address" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Website</b></label></td>
-                            <td><input type="text" name="url"></td>
+                            <td><input type="text" name="url" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Telephone</b></label></td>
-                            <td><input type="text" name="telephone"></td>
+                            <td><input type="text" name="telephone" required></td>
                         </tr>
                         <tr>
-                            <td><label><b>Year built</b></label></td>
-                            <td><input type="text" name="year_built"></td>
+                            <td><label><b>Year of Build</b></label></td>
+                            <td><input type="text" name="year_built" required></td>
                         </tr>
                         <tr>
-                            <td><label><b>Price</b></label></td>
-                            <td><input type="text" name="price"></td>
+                            <td><label><b>Rental</b></label></td>
+                            <td><input type="text" name="price" required></td>
                         </tr>
                     </table>
 
@@ -105,28 +104,28 @@
                     <h3>Update house information</h3>
                     <table>
                         <tr>
-                            <td><label><b>Name</b></label></td>
-                            <td><input type="text" name="name" value="<%= record.getOrDefault("name", "") %>"></td>
+                            <td><label><b>House Name</b></label></td>
+                            <td><input type="text" name="name" value="<%= record.getOrDefault("name", "") %>" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Address</b></label></td>
-                            <td><input type="text" name="address" value="<%= record.getOrDefault("address", "") %>"></td>
+                            <td><input type="text" name="address" value="<%= record.getOrDefault("address", "") %>" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Website</b></label></td>
-                            <td><input type="text" name="url" value="<%= record.getOrDefault("url", "") %>"></td>
+                            <td><input type="text" name="url" value="<%= record.getOrDefault("url", "") %>" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Telephone</b></label></td>
-                            <td><input type="text" name="telephone" value="<%= record.getOrDefault("phone_number", "") %>"></td>
+                            <td><input type="text" name="telephone" value="<%= record.getOrDefault("phone_number", "") %>" required></td>
                         </tr>
                         <tr>
-                            <td><label><b>Year built</b></label></td>
-                            <td><input type="text" name="year_built" value="<%= record.getOrDefault("year_built", "") %>"></td>
+                            <td><label><b>Year of Build</b></label></td>
+                            <td><input type="text" name="year_built" value="<%= record.getOrDefault("year_built", "") %>" required></td>
                         </tr>
                         <tr>
-                            <td><label><b>Price</b></label></td>
-                            <td><input type="text" name="price" value="<%= record.getOrDefault("price", "") %>"></td>
+                            <td><label><b>Rental</b></label></td>
+                            <td><input type="text" name="price" value="<%= record.getOrDefault("price", "") %>" required></td>
                         </tr>
                     </table>
 

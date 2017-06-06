@@ -4,7 +4,7 @@
     try {
         Account.addFavorite(
             session.getAttribute("username").toString(),
-            Integer.valueOf(request.getParameter("uid"))
+            Integer.valueOf(request.getParameter("id"))
         );
         response.sendRedirect("favorite.jsp");
     } catch (Exception e) {

@@ -1,6 +1,6 @@
-<%@ page import="acmdb.Reserve" %>
 <%@ page import="acmdb.Visit" %>
 <%@ page import="acmdb.Account" %>
+<%@ page import="java.util.List" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -25,25 +25,32 @@
 
         <div align="center">
             <h3>All your visits</h3>
-
+            <%
+                StringBuilder builder = new StringBuilder();
+                List<List<String>> records = Account.getVisits(username);
+                for (int i = 0; i < records.size(); ++i) {
+                    builder.append("<tr>");
+                    for (int j = 1; j < records.get(i).size(); ++j) {
+                        builder.append("<td align=\"center\">");
+                        builder.append(records.get(i).get(j));
+                        builder.append("</td>");
+                    }
+                    builder.append("</tr>");
+                }
+            %>
             <table align="center" cellspacing="2" cellpadding="2" border="1">
                 <tr>
-                    <th>RID</th>
-                    <th>Start date</th>
-                    <th>End date</th>
-                    <th>Total spent</th>
-                    <th>Number of people</th>
-                    <th>UID</th>
-                    <th>Owner Name</th>
                     <th>House Name</th>
-                    <th>House Address</th>
+                    <th>Owner</th>
+                    <th>Address</th>
                     <th>Website</th>
-                    <th>Phone number</th>
-                    <th>Year built</th>
-                    <th>Price</th>
-                    <th>Total visits</th>
+                    <th>Telephone</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Number of People</th>
+                    <th>Total Cost</th>
                 </tr>
-                <%= Account.list2Table(Account.getVisits(username)) %>
+                <%= builder.toString() %>
             </table>
 
             <h3>All your reservations</h3>
@@ -102,7 +109,7 @@
                     <br><br>
 
                     <%
-                        StringBuilder builder = new StringBuilder();
+                        builder = new StringBuilder();
                         for (int i = 0; i < visit.selectRID.size(); ++i) {
                             builder.append("<tr>");
                             builder.append("<td>").append(visit.selectRID.get(i)).append("</td>");
