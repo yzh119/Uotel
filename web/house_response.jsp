@@ -26,7 +26,7 @@
                 request.getParameter("year_built"),
                 request.getParameter("price")
             );
-            response.sendRedirect("house.jsp?state=add_information");
+            response.sendRedirect("house.jsp");
         }
     } catch (Exception e) {
         response.sendRedirect("error.jsp?message=" + e.getMessage());

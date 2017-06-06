@@ -1,4 +1,4 @@
 <%
     session.removeAttribute("currentPH");
-    response.sendRedirect("index.jsp");
+    response.sendRedirect("house.jsp");
 %>

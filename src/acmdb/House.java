@@ -13,7 +13,7 @@ public class House {
         Connector connector = new Connector();
         Statement statement = connector.statement;
         ResultSet result = statement.executeQuery("SELECT MAX(h.uid) FROM TH h");
-        int id = result.next() ? result.getInt(1) : 0;
+        int id = result.next() ? result.getInt(1) + 1 : 1;
         statement.execute("INSERT INTO TH VALUES (" + id + ",'" + owner + "','" + name + "','" + address + "','" + website + "','" + phone + "'," + year + "," + rental + ",0)");
         connector.close();
         return id;
