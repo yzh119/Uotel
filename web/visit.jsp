@@ -58,17 +58,13 @@
             <table align="center" cellspacing="2" cellpadding="2" border="1">
                 <tr>
                     <th>RID</th>
-                    <th>UID</th>
-                    <th>Start date</th>
-                    <th>End date</th>
-                    <th>Owner Name</th>
                     <th>House Name</th>
-                    <th>House Address</th>
+                    <th>Owner</th>
+                    <th>Address</th>
                     <th>Website</th>
-                    <th>Phone number</th>
-                    <th>Year built</th>
-                    <th>Price</th>
-                    <th>Total visits</th>
+                    <th>Telephone</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
                 </tr>
                 <%= Account.list2Table(Account.getReservations(username)) %>
             </table>

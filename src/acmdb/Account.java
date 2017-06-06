@@ -96,27 +96,7 @@ public class Account {
     }
 
     public static List<List<String>> getReservations(String username) throws Exception{
-        Connector connector = new Connector();
-        Statement statement = connector.statement;
-
-        ResultSet result = statement.executeQuery("SELECT * FROM reservation r, TH t WHERE r.uid = t.uid AND user_name = \"" + username + "\"");
-        ResultSetMetaData meta = result.getMetaData();
-
-        List<List<String>> records = new ArrayList<>();
-        while (result.next()) {
-            records.add(new ArrayList<>());
-            for (int i = 1; i <= meta.getColumnCount(); ++i) {
-                String record = result.getString(i);
-                if (record.endsWith("00:00:00.0")) {
-                    record = record.substring(0, 10);
-                }
-                if (i == 3 || i == 6) {
-                    continue;
-                }
-                records.get(records.size() - 1).add(record);
-            }
-        }
-        return records;
+        return Utility.query("SELECT r.rid, h.name, h.owner, h.address, h.url, h.phone_number, r.start_date, r.end_date FROM reservation r, TH h WHERE r.uid = h.uid AND user_name = \"" + username + "\"");
     }
 
     public static List<List<String>> getVisits(String username) throws Exception {
