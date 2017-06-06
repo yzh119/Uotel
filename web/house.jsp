@@ -68,34 +68,38 @@
                     <table>
                         <tr>
                             <td><label><b>House Name</b></label></td>
-                            <td><input type="text" name="name" required></td>
+                            <td><input type="text" name="name" placeholder="Enter house name" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Address</b></label></td>
-                            <td><input type="text" name="address" required></td>
+                            <td><input type="text" name="address" placeholder="Enter address" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Website</b></label></td>
-                            <td><input type="text" name="url" required></td>
+                            <td><input type="text" name="url" placeholder="Enter website" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Telephone</b></label></td>
-                            <td><input type="text" name="telephone" required></td>
+                            <td><input type="text" name="telephone" placeholder="Enter telephone" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Year of Build</b></label></td>
-                            <td><input type="text" name="year_built" required></td>
+                            <td><input type="text" name="year_built" placeholder="Enter year of build" required></td>
                         </tr>
                         <tr>
                             <td><label><b>Rental</b></label></td>
-                            <td><input type="text" name="price" required></td>
+                            <td><input type="text" name="price" placeholder="Enter rental" required></td>
                         </tr>
                     </table>
 
                     <button type="submit">Continue to add available time</button>
                 </form>
             <%
-                } else if (state.equals("update_information")){
+                }
+            %>
+
+            <%
+                if (state.equals("update_information")){
                     Map<String, String> record = House.get(Integer.valueOf(id));
             %>
                 <form method="post" action="house_response.jsp?state=update_information&id=<%= id %>">
@@ -130,18 +134,22 @@
                     <button type="submit">Update information of selected house</button>
                 </form>
             <%
-                } else if (state.equals("add_date")) {
+                }
             %>
-                <form method="post" action="house_time_submit.jsp?id=<%= id %>">
+
+            <%
+                if (state.equals("add_date")) {
+            %>
+                <form method="post" action="house_response.jsp?state=add_date&id=<%= id %>">
                     <div align="center">
                         <label><b>Start date</b></label>
-                        <input type="text" placeholder="Enter start date" name="start_date" required>
+                        <input type="text" placeholder="Enter start date (required)" name="start_date" required>
 
                         <label><b>End date</b></label>
-                        <input type="text" placeholder="Enter end date" name="end_date" required>
+                        <input type="text" placeholder="Enter end date (required)" name="end_date" required>
 
                         <button type="submit">Continue to add available date</button>
-                        <input type="button" value="Complete" onclick="location.href='house_time_complete.jsp'">
+                        <input type="button" value="Complete" onclick="location.href='house.jsp'">
                     </div>
                 </form>
             <%

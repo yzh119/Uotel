@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1a83e5f-3eb7-42c1-816b-41e502783156" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/house_time_complete.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/house_time_submit.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Account.java" afterPath="$PROJECT_DIR$/src/acmdb/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Available.java" afterPath="$PROJECT_DIR$/src/acmdb/Available.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Connector.java" afterPath="$PROJECT_DIR$/src/acmdb/Connector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Main.java" afterPath="$PROJECT_DIR$/src/acmdb/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Reserve.java" afterPath="$PROJECT_DIR$/src/acmdb/Reserve.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/distance.jsp" afterPath="$PROJECT_DIR$/web/distance.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/distance_response.jsp" afterPath="$PROJECT_DIR$/web/distance_response.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/error.jsp" afterPath="$PROJECT_DIR$/web/error.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/favorite.jsp" afterPath="$PROJECT_DIR$/web/favorite.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house.jsp" afterPath="$PROJECT_DIR$/web/house.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house_response.jsp" afterPath="$PROJECT_DIR$/web/house_response.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house_time_submit.jsp" afterPath="$PROJECT_DIR$/web/house_time_submit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/register.jsp" afterPath="$PROJECT_DIR$/web/register.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/reserve.jsp" afterPath="$PROJECT_DIR$/web/reserve.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/suggestions.jsp" afterPath="$PROJECT_DIR$/web/suggestions.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/visit.jsp" afterPath="$PROJECT_DIR$/web/visit.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,41 +41,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="house.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="house.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/house.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="132" column="49" lean-forward="false" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+            <state relative-caret-position="1905">
+              <caret line="136" column="17" lean-forward="true" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="house_time_submit.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/house_time_submit.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="house_time_complete.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/house_time_complete.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="house_response.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="house_response.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/house_response.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="15" column="59" lean-forward="false" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+            <state relative-caret-position="415">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -282,7 +250,6 @@
         <option value="$PROJECT_DIR$/web/house_update.jsp" />
         <option value="$PROJECT_DIR$/web/house_information_submit.jsp" />
         <option value="$PROJECT_DIR$/web/house_time.jsp" />
-        <option value="$PROJECT_DIR$/web/house_time_complete.jsp" />
         <option value="$PROJECT_DIR$/src/acmdb/House.java" />
         <option value="$PROJECT_DIR$/web/favorite_response.jsp" />
         <option value="$PROJECT_DIR$/src/acmdb/Utility.java" />
@@ -301,10 +268,11 @@
         <option value="$PROJECT_DIR$/web/suggestions.jsp" />
         <option value="$PROJECT_DIR$/web/distance_response.jsp" />
         <option value="$PROJECT_DIR$/web/distance.jsp" />
-        <option value="$PROJECT_DIR$/web/house_time_submit.jsp" />
         <option value="$PROJECT_DIR$/src/acmdb/Account.java" />
-        <option value="$PROJECT_DIR$/web/house.jsp" />
+        <option value="$PROJECT_DIR$/web/house_time_complete.jsp" />
+        <option value="$PROJECT_DIR$/web/house_time_submit.jsp" />
         <option value="$PROJECT_DIR$/web/house_response.jsp" />
+        <option value="$PROJECT_DIR$/web/house.jsp" />
       </list>
     </option>
   </component>
@@ -1124,7 +1092,7 @@
       <workItem from="1496667455527" duration="1481000" />
       <workItem from="1496670530102" duration="86000" />
       <workItem from="1496674032393" duration="802000" />
-      <workItem from="1496725375579" duration="13980000" />
+      <workItem from="1496725375579" duration="14264000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <created>1496626842694</created>
@@ -1357,11 +1325,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496750701681</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="-">
+      <created>1496751817736</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1496751817736</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125505000" />
+    <option name="totallyTimeSpent" value="125789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="52" y="22" width="1386" height="878" extended-state="6" />
@@ -1665,22 +1640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/house_time_complete.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="36" lean-forward="false" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/house_time_submit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/acmdb/Connector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1788,18 +1747,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/house.jsp">
+    <entry file="file://$PROJECT_DIR$/web/house_time_complete.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="132" column="49" lean-forward="false" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house_time_submit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/house_response.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="15" column="59" lean-forward="false" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
+        <state relative-caret-position="415">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1905">
+          <caret line="136" column="17" lean-forward="true" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
           <folding />
         </state>
       </provider>
