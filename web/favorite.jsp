@@ -42,7 +42,7 @@
 
             <h3>All your favorites</h3>
 
-            <form method="post" action="favorite_submit.jsp">
+            <form method="post" action="favorite_response.jsp">
                 <label><b>UID</b></label>
                 <input name="uid" type="text">
                 <button type="submit">Add to your favorites</button>

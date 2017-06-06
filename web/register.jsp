@@ -11,7 +11,7 @@
             <p><i>Registration: a new user has to provide the appropriate information; he/she can pick a login-name and a password. The login name should be checked for uniqueness.</i></p>
         </div>
 
-        <form method="get" action="register_submit.jsp">
+        <form method="get" action="register_response.jsp">
             <div align="center">
                 <table>
                     <tr>
