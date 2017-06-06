@@ -26,7 +26,7 @@
             String id = request.getParameter("id");
 
             if (session.getAttribute("reservation") == null) {
-                Reservation reservation = new Reservation(session.getAttribute("username").toString());
+                Reservation reservation = new Reservation(username);
                 session.setAttribute("reservation", reservation);
             }
         %>
@@ -144,7 +144,7 @@
                         </tr>
                         <%= builder.toString() %>
                     </table>
-                    <input type="button" value="Confirm the above reservation records" onclick="location.href='reservation_response.jsp'">
+                    <input type="button" value="Confirm the above reservation records" onclick="location.href='reservation_response.jsp?state=complete'">
                 </form>
             <%
                     }

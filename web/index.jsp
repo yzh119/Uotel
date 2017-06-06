@@ -15,14 +15,6 @@
             String username = "visitor";
             if (session.getAttribute("username") != null) {
                 username = session.getAttribute("username").toString();
-                if (session.getAttribute("reservation") == null) {
-                    Reservation reservation = new Reservation(username);
-                    session.setAttribute("reservation", reservation);
-                }
-                if (session.getAttribute("stay") == null) {
-                    Visit stay = new Visit(username);
-                    session.setAttribute("stay", stay);
-                }
             }
         %>
 

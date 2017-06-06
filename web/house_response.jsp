@@ -29,7 +29,7 @@
             response.sendRedirect("house.jsp");
         } else if (state.equals("add_date")) {
             int id = Integer.valueOf(request.getParameter("id"));
-            Available.addAvailable(
+            Available.add(
                 id,
                 request.getParameter("start_date"),
                 request.getParameter("end_date")

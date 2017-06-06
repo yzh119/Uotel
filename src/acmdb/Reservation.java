@@ -2,45 +2,24 @@ package acmdb;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.List;
 
 public class Reservation {
-    public int rid;
+    public int id;
     public String username;
+
+    public List<Integer> indices = new ArrayList<>();
+    public List<String> start = new ArrayList<>();
+    public List<String> end = new ArrayList<>();
+
     public Reservation(String username) throws Exception {
         this.username = username;
-        this.rid = getInitRidFromSQL();
-    }
-    public ArrayList<Integer> indices = new ArrayList<>();
-    public ArrayList<String> start = new ArrayList<>();
-    public ArrayList<String> end = new ArrayList<>();
 
-    public int getInitRidFromSQL() throws Exception {
         Connector connector = new Connector();
-        Statement stmt = connector.statement;
-        String query;
-        ResultSet rs;
-        query = "SELECT MAX(rs.rid) FROM reservation rs WHERE " +
-            "rs.user_name = \"" + username + "\"";
-        ;
-
-        try {
-            rs = stmt.executeQuery(query);
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw e;
-        }
-
-        int ret = 0;
-        if (rs.next()) {
-            ret = rs.getInt(1);
-        }
-        return ret;
+        Statement statement = connector.statement;
+        ResultSet result = statement.executeQuery("SELECT MAX(rs.rid) FROM reservation rs WHERE rs.user_name = '" + username + "'");
+        this.id = result.next() ? result.getInt(1) : 0;
     }
 
     public void add(int uid, String start, String end) {
@@ -51,68 +30,45 @@ public class Reservation {
 
     public void push() throws Exception {
         Connector connector = new Connector();
-        Statement stmt = connector.statement;
+        Statement statement = connector.statement;
 
-        ++rid;
+        ++id;
 
         for (int i = 0; i < indices.size(); ++i) {
-            String query;
-            query = "SELECT * FROM available a WHERE a.uid = " +
-                indices.get(i) + " and a.start_date<=\"" +
-                start.get(i) + "\" and a.end_date>= \"" +
-                end.get(i) + "\"";
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = statement.executeQuery("SELECT * FROM available a WHERE a.uid = " +
+                indices.get(i) + " AND a.start_date<=\"" +
+                start.get(i) + "\" AND a.end_date>= \"" +
+                end.get(i) + "\"");
             if (!rs.next()) {
                 throw new Exception("Reservation conflict!");
             }
         }
 
         for (int i = 0; i < indices.size(); ++i) {
-            String query;
-            query = "SELECT * FROM available a WHERE a.uid = " +
-                indices.get(i) + " and a.start_date<=\"" +
-                start.get(i) + "\" and a.end_date>= \"" +
-                end.get(i) + "\"";
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = statement.executeQuery("SELECT * FROM available a WHERE a.uid = " +
+                indices.get(i) + " AND a.start_date <= '" +
+                start.get(i) + "' AND a.end_date >= '" +
+                end.get(i) + "'");
             rs.next();
-            String t1 = yesterday(start.get(i)), t2 = tomorrow(end.get(i));
-            String start = rs.getString("start_date"),
-                end = rs.getString("end_date");
-            Available.removeAvailable(indices.get(i), start, end);
-            if (start.compareTo(t1) < 0) Available.addAvailable(indices.get(i), start, t1);
-            if (t2.compareTo(end.substring(0, 10)) < 0) Available.addAvailable(indices.get(i), t2, end);
-
-            String statement;
-            statement = "INSERT INTO reservation values(" +
-                rid + "," +
+            String t1 = Utility.yesterday(start.get(i)), t2 = Utility.tomorrow(end.get(i));
+            String start = rs.getString("start_date");
+            String end = rs.getString("end_date");
+            Available.remove(indices.get(i), start, end);
+            if (start.compareTo(t1) < 0) {
+                Available.add(indices.get(i), start, t1);
+            }
+            if (t2.compareTo(end.substring(0, 10)) < 0) {
+                Available.add(indices.get(i), t2, end);
+            }
+            statement.execute("INSERT INTO reservation values(" +
+                id + "," +
                 indices.get(i) + "," +
                 "'" + username + "'" + "," +
                 "'" + this.start.get(i) + "'" + "," +
                 "'" + this.end.get(i) + "'" +
-                ")";
-            stmt.execute(statement);
-            ++rid;
+                ")");
+            ++id;
         }
         connector.close();
-    }
-
-    public String yesterday(String today) throws ParseException {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        Date td = df.parse(today);
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(td);
-        cal.add(Calendar.DATE, -1);
-        Date yesterday = cal.getTime();
-        return df.format(yesterday);
-    }
-
-    public String tomorrow(String today) throws ParseException {
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        Date td = df.parse(today);
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(td);
-        cal.add(Calendar.DATE, +1);
-        Date yesterday = cal.getTime();
-        return df.format(yesterday);
     }
 }

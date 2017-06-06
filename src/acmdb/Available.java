@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class Available {
-    public static void removeAvailable(int uid, String startTime, String endTime) throws Exception {
+    public static void remove(int uid, String startTime, String endTime) throws Exception {
         Connector connector = new Connector();
         Statement stmt = connector.statement;
         String statement = "DELETE a FROM available a WHERE a.uid = " + uid + " and " +
@@ -13,7 +13,7 @@ public class Available {
         connector.close();
     }
 
-    public static void addAvailable(int uid, String start, String end) throws Exception {
+    public static void add(int uid, String start, String end) throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
 

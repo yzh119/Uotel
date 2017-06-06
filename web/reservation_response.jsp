@@ -10,7 +10,7 @@
                 request.getParameter("start_date"),
                 request.getParameter("end_date")
             );
-        } else if (state.equals("complete")){
+        } else if (state.equals("complete")) {
             reservation.push();
             session.removeAttribute("reservation");
         }

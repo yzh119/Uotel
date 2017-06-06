@@ -23,9 +23,9 @@
             String state = request.getParameter("state") != null ? request.getParameter("state") : "add_visit";
             String id = request.getParameter("id");
 
-            if (session.getAttribute("stay") == null) {
-                Visit stay = new Visit(session.getAttribute("username").toString());
-                session.setAttribute("stay", stay);
+            if (session.getAttribute("visit") == null) {
+                Visit visit = new Visit(username);
+                session.setAttribute("visit", visit);
             }
         %>
 
@@ -95,7 +95,7 @@
             %>
                 <h3>Add start and end date</h3>
 
-                <form method="post" action="visit_submit.jsp?id=<%= id %>">
+                <form method="post" action="visit_response.jsp?state=stack&id=<%= id %>">
                     <table>
                         <tr>
                             <td><label><b>Start Date</b></label></td>
@@ -122,8 +122,8 @@
             %>
 
             <%
-                if (session.getAttribute("stay") != null) {
-                    Visit visit = (Visit) session.getAttribute("stay");
+                if (session.getAttribute("visit") != null) {
+                    Visit visit = (Visit) session.getAttribute("visit");
                     if (!visit.indices.isEmpty()) {
             %>
                 <form>
@@ -150,7 +150,7 @@
                         </tr>
                         <%= builder.toString() %>
                     </table>
-                    <input type="button" value="Confirm the above visit records" onclick="location.href='visit_complete.jsp'">
+                    <input type="button" value="Confirm the above visit records" onclick="location.href='visit_response.jsp?state=complete'">
                 </form>
             <%
                     }
