@@ -67,14 +67,11 @@ public class House {
     public static Map<String, String> get(int id) throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
-
         ResultSet result = statement.executeQuery("SELECT * FROM TH t WHERE t.uid = " + id);
         ResultSetMetaData meta = result.getMetaData();
-
         if (!result.next()) {
             throw new Exception("The house does not exist!");
         }
-
         Map<String, String> record = new HashMap<>();
         for (int i = 1; i <= meta.getColumnCount(); ++i) {
             record.put(meta.getColumnName(i), result.getString(i));

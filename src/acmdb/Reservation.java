@@ -1,21 +1,22 @@
 package acmdb;
 
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Reservation {
     public int id;
     public String username;
-
     public List<Integer> indices = new ArrayList<>();
     public List<String> start = new ArrayList<>();
     public List<String> end = new ArrayList<>();
 
     public Reservation(String username) throws Exception {
         this.username = username;
-
         Connector connector = new Connector();
         Statement statement = connector.statement;
         ResultSet result = statement.executeQuery("SELECT MAX(rs.rid) FROM reservation rs WHERE rs.user_name = '" + username + "'");
@@ -70,5 +71,20 @@ public class Reservation {
             ++id;
         }
         connector.close();
+    }
+
+    public static Map<String, String> get(int id) throws Exception {
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+        ResultSet result = statement.executeQuery("SELECT * FROM reservation r, TH h WHERE r.uid = h.uid AND r.rid = " + id);
+        ResultSetMetaData meta = result.getMetaData();
+        if (!result.next()) {
+            throw new Exception("The reservation does not exist!");
+        }
+        Map<String, String> record = new HashMap<>();
+        for (int i = 1; i <= meta.getColumnCount(); ++i) {
+            record.put(meta.getColumnName(i), result.getString(i));
+        }
+        return record;
     }
 }

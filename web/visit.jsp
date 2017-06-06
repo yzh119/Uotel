@@ -1,6 +1,8 @@
 <%@ page import="acmdb.Visit" %>
 <%@ page import="acmdb.Account" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="acmdb.Reservation" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -106,12 +108,12 @@
                             <td><input type="text" placeholder="Enter end date (required)" name="end_date" required></td>
                         </tr>
                         <tr>
-                            <td><label><b>Total Cost</b></label></td>
-                            <td><input type="text" placeholder="Enter total cost (required)" name="spent" required></td>
-                        </tr>
-                        <tr>
                             <td><label><b>Number of People</b></label></td>
                             <td><input type="text" placeholder="Enter number of people (required)" name="number" required></td>
+                        </tr>
+                        <tr>
+                            <td><label><b>Total Cost</b></label></td>
+                            <td><input type="text" placeholder="Enter total cost (required)" name="spent" required></td>
                         </tr>
                     </table>
 
@@ -131,8 +133,10 @@
                     <%
                         builder = new StringBuilder();
                         for (int i = 0; i < visit.indices.size(); ++i) {
+                            Map<String, String> record = Reservation.get(visit.indices.get(i));
                             builder.append("<tr>");
-                            builder.append("<td align=\"center\">").append(visit.indices.get(i)).append("</td>");
+                            builder.append("<td align=\"center\">").append(record.get("name")).append("</td>");
+                            builder.append("<td align=\"center\">").append(record.get("owner")).append("</td>");
                             builder.append("<td align=\"center\">").append(visit.start.get(i)).append("</td>");
                             builder.append("<td align=\"center\">").append(visit.end.get(i)).append("</td>");
                             builder.append("<td align=\"center\">").append(visit.people.get(i)).append("</td>");
@@ -142,7 +146,8 @@
                     %>
                     <table align="center" cellspacing="2" cellpadding="2" border="1">
                         <tr>
-                            <th>RID</th>
+                            <th>House Name</th>
+                            <th>Owner</th>
                             <th>Start Date</th>
                             <th>End Date</th>
                             <th>Number of People</th>
