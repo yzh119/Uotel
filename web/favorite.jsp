@@ -53,20 +53,31 @@
             </table>
 
             <h3>All your favorites</h3>
-
+            <%
+                builder = new StringBuilder();
+                records = Account.getFavorites(username);
+                for (int i = 0; i < records.size(); ++i) {
+                    builder.append("<tr>");
+                    for (int j = 1; j < records.get(i).size(); ++j) {
+                        builder.append("<td align=\"center\">");
+                        builder.append(records.get(i).get(j));
+                        builder.append("</td>");
+                    }
+                    builder.append("</tr>");
+                }
+            %>
             <table align="center" cellspacing="2" cellpadding="2" border="1">
                 <tr>
-                    <th>UID</th>
-                    <th>Owner Name</th>
                     <th>House Name</th>
+                    <th>Owner</th>
                     <th>Address</th>
                     <th>Website</th>
                     <th>Telephone</th>
-                    <th>Year built</th>
-                    <th>Price</th>
-                    <th>Total visits</th>
+                    <th>Year of Build</th>
+                    <th>Rental</th>
+                    <th>Total Visits</th>
                 </tr>
-                <%= Account.list2Table(Account.getFavorites(username)) %>
+                <%= builder.toString() %>
             </table>
         </div>
 

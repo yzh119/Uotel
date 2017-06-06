@@ -120,66 +120,27 @@ public class Account {
     }
 
     public static List<List<String>> getVisits(String username) throws Exception {
-        Connector connector = new Connector();
-        Statement statement = connector.statement;
-
-        ResultSet result = statement.executeQuery("SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, v.start_date, v.end_date, v.num_person, v.total_spent FROM visit v, TH h, reservation r WHERE v.rid = r.rid AND h.uid = r.uid AND v.user_name = r.user_name AND v.user_name = \"" + username + "\"");
-        ResultSetMetaData meta = result.getMetaData();
-
-        List<List<String>> records = new ArrayList<>();
-        while (result.next()) {
-            records.add(new ArrayList<>());
-            for (int i = 1; i <= meta.getColumnCount(); ++i) {
-                String record = result.getString(i);
-                if (record.endsWith("00:00:00.0")) {
-                    record = record.substring(0, 10);
-                }
-                records.get(records.size() - 1).add(record);
-            }
-        }
-        return records;
+        return Utility.query("SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, v.start_date, v.end_date, v.num_person, v.total_spent FROM visit v, TH h, reservation r WHERE v.rid = r.rid AND h.uid = r.uid AND v.user_name = r.user_name AND v.user_name = \"" + username + "\"");
     }
-    public static List<List<String>> getFavorites(String username) throws Exception {
-        Connector connector = new Connector();
-        Statement statement = connector.statement;
 
-        List<List<String>> records = new ArrayList<>();
-        ResultSet result = statement.executeQuery("SELECT th.uid, owner, name, address, url, phone_number, year_built, price, visit_count FROM TH th, favorite f WHERE f.user_name = '" + username + "' and f.uid = th.uid");
-        while (result.next()) {
-            records.add(new ArrayList<>());
-            for (int i = 1; i <= 9; ++i) {
-                String record = result.getString(i);
-                records.get(records.size() - 1).add(record);
-            }
-        }
-        return records;
+    public static List<List<String>> getFavorites(String username) throws Exception {
+        return Utility.query("SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, h.year_built, h.price, h.visit_count FROM TH h, favorite f WHERE f.user_name = '" + username + "' and f.uid = h.uid");
     }
 
     public static List<List<String>> getRecommendations(String username) throws Exception {
-        Connector connector = new Connector();
-        Statement statement = connector.statement;
-
-        List<List<String>> records = new ArrayList<>();
-        ResultSet result = statement.executeQuery(
+        return Utility.query(
             "SELECT distinct new_th.* FROM " +
-                "user u1, user u2, " +
-                "visit v1, visit v2, visit all2, " +
-                "reservation r1, reservation r2, reservation allr2, " +
-                "TH common_th, TH new_th " +
-                "WHERE " +
-                "u1.login_name = '" + username + "' and u1.login_name <> u2.login_name and " +
-                "v1.user_name = u1.login_name and v1.rid = r1.rid and v1.user_name = r1.user_name and r1.uid = common_th.uid and " +
-                "v2.user_name = u2.login_name and v2.rid = r2.rid and v2.user_name = r2.user_name and r2.uid = common_th.uid and " +
-                "all2.user_name = u2.login_name and all2.rid = allr2.rid and all2.user_name = allr2.user_name and new_th.uid = allr2.uid " +
-                "ORDER by new_th.visit_count DESC");
-        while (result.next()) {
-            records.add(new ArrayList<>());
-            for (int i = 1; i <= 9; ++i) {
-                String record = result.getString(i);
-                records.get(records.size() - 1).add(record);
-            }
-        }
-        return records;
+            "user u1, user u2, " +
+            "visit v1, visit v2, visit all2, " +
+            "reservation r1, reservation r2, reservation allr2, " +
+            "TH common_th, TH new_th " +
+            "WHERE " +
+            "u1.login_name = '" + username + "' and u1.login_name <> u2.login_name and " +
+            "v1.user_name = u1.login_name and v1.rid = r1.rid and v1.user_name = r1.user_name and r1.uid = common_th.uid and " +
+            "v2.user_name = u2.login_name and v2.rid = r2.rid and v2.user_name = r2.user_name and r2.uid = common_th.uid and " +
+            "all2.user_name = u2.login_name and all2.rid = allr2.rid and all2.user_name = allr2.user_name and new_th.uid = allr2.uid " +
+            "ORDER by new_th.visit_count DESC"
+        );
     }
 
     public static int computeDistance(String username1, String username2) throws Exception {
