@@ -1,5 +1,7 @@
 <%@ page import="acmdb.Account" %>
 <%@ page import="java.util.List" %>
+<%@ page import="acmdb.Favorite" %>
+<%@ page import="acmdb.Visit" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -25,7 +27,7 @@
             <h3>All your visits</h3>
             <%
                 StringBuilder builder = new StringBuilder();
-                List<List<String>> records = Account.getVisits(username);
+                List<List<String>> records = Visit.get(username);
                 for (int i = 0; i < records.size(); ++i) {
                     builder.append("<tr>");
                     for (int j = 1; j < records.get(i).size(); ++j) {
@@ -58,7 +60,7 @@
             <h3>All your favorites</h3>
             <%
                 builder = new StringBuilder();
-                records = Account.getFavorites(username);
+                records = Favorite.get(username);
                 for (int i = 0; i < records.size(); ++i) {
                     builder.append("<tr>");
                     for (int j = 1; j < records.get(i).size(); ++j) {

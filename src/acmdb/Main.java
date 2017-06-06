@@ -1,5 +1,7 @@
 package acmdb;
 
+import sun.security.x509.AVA;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -67,7 +69,7 @@ public class Main {
                 resultStr.append("Functionality 2 | Reserve\n\n");
                 resultStr.append("After registration, a user can record a reservation to any TH (the same user may reserve the same TH multiple times from different available dates). Each user session (meaning each time after a user has logged into the system) may add one or more researvations, and all reservations added by a user in a user session are reported to him/her for the ﬁnal review and conﬁrmation, before they are added into the database.\n\n");
                 resultStr.append("All your reservations\n");
-                resultStr.append(formatChart(Account.getReservations(username)) + "\n");
+                resultStr.append(formatChart(Reservation.get(username)) + "\n");
                 resultStr.append("All possible houses and their available dates\n");
                 resultStr.append(formatChart(House.get()) + "\n");
                 resultStr.append("Your stacked reservation list\n");
@@ -87,9 +89,9 @@ public class Main {
                 resultStr.append("Functionality 4 | Stays\n\n");
                 resultStr.append("A user can record a stay at any TH (the same user may stay at the same TH multiple times). Each user session (meaning each time after a user has logged into the system) may add one or more stays, and all stays added by a user in a user session are reported to him/her for the ﬁnal review and conﬁrmation, before they are added into the database. Note that a user may only record a stay at a TH during a period he/she has a reservation.\n\n");
                 resultStr.append("All your visits\n");
-                resultStr.append(formatChart(Account.getVisits(username)) + "\n");
+                resultStr.append(formatChart(Visit.get(username)) + "\n");
                 resultStr.append("All your reservations\n");
-                resultStr.append(formatChart(Account.getReservations(username)) + "\n");
+                resultStr.append(formatChart(Reservation.get(username)) + "\n");
                 resultStr.append("Your stacked visit list\n");
                 for (int i = 0; i < visit.indices.size(); ++i) {
                     resultStr.append(visit.indices.get(i) + "\t");
@@ -106,14 +108,14 @@ public class Main {
             case atRecommendation:
                 resultStr.append("Functionality 11 | TH suggestions\n\n");
                 resultStr.append("Like most e-commerce websites, when a user records his/her reservations to a TH ‘A’, your system should give a list of other suggested THs. TH ‘B’ is suggested, if there exist a user ‘X’ that visited both ‘A’ and ‘B’. The suggested THs should be sorted on decreasing total visit count (i.e., most popular ﬁrst); count only visits by users like ‘X’.\n");
-                resultStr.append(formatChart(Account.getRecommendations(username)));
+                resultStr.append(formatChart(Suggestion.get(username)));
                 resultStr.append("Type in 'back' to return to homepage.\n");
                 break;
             case atTemporaryHousing:
                 resultStr.append("Functionality 3 | New TH\n\n");
                 resultStr.append("A user may record the details of a new TH, and may update the information regarding an existing TH he/she owns.\n");
                 resultStr.append("All your Houses:\n");
-                resultStr.append(formatChart(Account.getHouses(username)));
+                resultStr.append(formatChart(House.get(username)));
                 resultStr.append("To add a new TH, fill the chart with the format below to continue:\n");
                 resultStr.append("\t Name | Address | Website | Telephone | Year built | Price \n");
                 resultStr.append("To add an available period to current TH, fill the chart with the format below to continue:\n");
@@ -133,9 +135,9 @@ public class Main {
                 resultStr.append("Functionality 5 | Favorite recordings\n\n");
                 resultStr.append("Users can declare a TH as his/her favorite place to stay.\n");
                 resultStr.append("All your visits\n");
-                resultStr.append(formatChart(Account.getVisits(username)) + "\n");
+                resultStr.append(formatChart(Visit.get(username)) + "\n");
                 resultStr.append("All your favorites\n");
-                resultStr.append(formatChart(Account.getFavorites(username)) + "\n");
+                resultStr.append(formatChart(Favorite.get(username)) + "\n");
                 resultStr.append("Input UID of your favorite TH:\n");
                 resultStr.append("Type in 'back' to return to homepage.\n");
                 break;
@@ -232,7 +234,7 @@ public class Main {
                         currentTHUid =
                             House.add(tokens[0], username, tokens[1], tokens[2], tokens[3], tokens[4], tokens[5]);
                     } else if (tokens.length == 2){
-                        House.addAvailable(currentTHUid, tokens[0], tokens[1]);
+                        Available.add(currentTHUid, tokens[0], tokens[1]);
                     } else if (tokens.length == 7){
                         House.update(Integer.valueOf(tokens[0]), tokens[1], username, tokens[2], tokens[3], tokens[4], tokens[5], tokens[6]);
                     }
@@ -241,14 +243,14 @@ public class Main {
                     if (tokens[0].equals("back")) {
                         currentState = State.atLogin;
                     } else {
-                        Account.addFavorite(username, Integer.valueOf(tokens[0]));
+                        Favorite.add(username, Integer.valueOf(tokens[0]));
                     }
                     break;
                 case atTwoDegreesOfSeperation:
                     if (tokens[0].equals("back")) {
                         currentState = State.atLogin;
                     } else {
-                        int dis = Account.getDistance(tokens[0], tokens[1]);
+                        int dis = Distance.get(tokens[0], tokens[1]);
                         if (dis > 0 )
                             System.out.println("The distance between these two users is " + dis + "\n");
                         else

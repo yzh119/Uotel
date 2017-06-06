@@ -2,6 +2,8 @@
 <%@ page import="acmdb.House" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="sun.security.x509.AVA" %>
+<%@ page import="acmdb.Available" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -30,7 +32,7 @@
                 <h3>All your houses</h3>
                 <%
                     StringBuilder builder = new StringBuilder();
-                    List<List<String>> records = Account.getHouses(username);
+                    List<List<String>> records = House.get(username);
                     for (int i = 0; i < records.size(); ++i) {
                         builder.append("<tr>");
                         for (int j = 1; j < records.get(i).size(); ++j) {
@@ -66,7 +68,7 @@
                 <h3>Available dates</h3>
                 <%
                     builder = new StringBuilder();
-                    records = House.getAvailable(Integer.valueOf(id));
+                    records = Available.get(Integer.valueOf(id));
                     for (int i = 0; i < records.size(); ++i) {
                         builder.append("<tr>");
                         for (int j = 0; j < records.get(i).size(); ++j) {

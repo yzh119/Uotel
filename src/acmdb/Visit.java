@@ -84,7 +84,10 @@ public class Visit {
             statement = "UPDATE TH SET visit_count = " + newCount + " WHERE uid = " + currentUid;
             stmt.execute(statement);
         }
-
         connector.close();
+    }
+
+    public static List<List<String>> get(String username) throws Exception {
+        return Utility.query("SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, v.start_date, v.end_date, v.num_person, v.total_spent FROM visit v, TH h, reservation r WHERE v.rid = r.rid AND h.uid = r.uid AND v.user_name = r.user_name AND v.user_name = \"" + username + "\"");
     }
 }

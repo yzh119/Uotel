@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1a83e5f-3eb7-42c1-816b-41e502783156" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/acmdb/Available.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/acmdb/Distance.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/acmdb/Favorite.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/acmdb/Suggestion.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/suggestions.jsp" afterPath="$PROJECT_DIR$/web/suggestion.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Account.java" afterPath="$PROJECT_DIR$/src/acmdb/Account.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/House.java" afterPath="$PROJECT_DIR$/src/acmdb/House.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Main.java" afterPath="$PROJECT_DIR$/src/acmdb/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Reservation.java" afterPath="$PROJECT_DIR$/src/acmdb/Reservation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Visit.java" afterPath="$PROJECT_DIR$/src/acmdb/Visit.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/distance_response.jsp" afterPath="$PROJECT_DIR$/web/distance_response.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/favorite.jsp" afterPath="$PROJECT_DIR$/web/favorite.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/favorite_response.jsp" afterPath="$PROJECT_DIR$/web/favorite_response.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house.jsp" afterPath="$PROJECT_DIR$/web/house.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house_response.jsp" afterPath="$PROJECT_DIR$/web/house_response.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/reservation.jsp" afterPath="$PROJECT_DIR$/web/reservation.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/visit.jsp" afterPath="$PROJECT_DIR$/web/visit.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,103 +54,33 @@
     <favorites_list name="uotel" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="visit.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/visit.jsp">
+    <leaf>
+      <file leaf-file-name="logout.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/logout.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3120">
-              <caret line="104" column="29" lean-forward="false" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
+            <state relative-caret-position="120">
+              <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reservation_response.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/reservation_response.jsp">
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Reservation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/acmdb/Reservation.java">
+      <file leaf-file-name="house_response.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/house_response.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-566">
-              <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="235">
+              <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="House.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/acmdb/House.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2250">
-              <caret line="80" column="56" lean-forward="false" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Account.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/acmdb/Account.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
-              <caret line="71" column="39" lean-forward="true" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Connector.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/acmdb/Connector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Visit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/acmdb/Visit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#464#465#0" expanded="false" />
-                <element signature="e#504#505#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Utility.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/acmdb/Utility.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/acmdb/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6930">
-              <caret line="234" column="29" lean-forward="false" selection-start-line="234" selection-start-column="29" selection-end-line="234" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -140,8 +88,81 @@
       <file leaf-file-name="house.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/house.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+            <state relative-caret-position="143">
+              <caret line="70" column="44" lean-forward="false" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="favorite_response.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/favorite_response.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/error.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="distance_response.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/distance_response.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="favorite.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/favorite.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-241">
+              <caret line="30" column="58" lean-forward="true" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Reservation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/acmdb/Reservation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-95">
+              <caret line="58" column="29" lean-forward="false" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+              <folding>
+                <marker date="1496758659000" expanded="true" signature="707:782" ph="SELECT MAX(r... reservation" />
+                <marker date="1496758659000" expanded="true" signature="1263:1294" ph="SELECT * FRO... available" />
+                <marker date="1496758659000" expanded="true" signature="1263:1350" ph="SELECT * FRO... available" />
+                <marker date="1496758659000" expanded="true" signature="1263:1414" ph="SELECT * FRO... available" />
+                <marker date="1496758659000" expanded="true" signature="1263:1468" ph="SELECT * FRO... available" />
+                <marker date="1496758659000" expanded="true" signature="1263:1470" ph="SELECT * FRO... available" />
+                <marker date="1496758659000" expanded="true" signature="1263:1485" ph="SELECT * FRO... available" />
+                <marker date="1496758659000" expanded="true" signature="1724:1883" ph="SELECT * FRO... available" />
+                <marker date="1496758659000" expanded="true" signature="1724:1915" ph="SELECT * FRO... available" />
+                <marker date="1496758659000" expanded="true" signature="1724:1916" ph="SELECT * FRO... available" />
+                <marker date="1496758659000" expanded="true" signature="2473:2737" ph="INSERT INTO reservation... " />
+                <marker date="1496758659000" expanded="true" signature="3309:3375" ph="SELECT * FRO... reservation" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="distance.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/distance.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -189,15 +210,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/stay_complete.jsp" />
-        <option value="$PROJECT_DIR$/web/stay_submit.jsp" />
-        <option value="$PROJECT_DIR$/web/profile.jsp" />
         <option value="$PROJECT_DIR$/web/create_time_submit.jsp" />
         <option value="$PROJECT_DIR$/web/favorite_submit.jsp" />
         <option value="$PROJECT_DIR$/web/stay.jsp" />
         <option value="$PROJECT_DIR$/src/acmdb/Stay.java" />
         <option value="$PROJECT_DIR$/src/acmdb/Stay.java" />
-        <option value="$PROJECT_DIR$/src/acmdb/Favorite.java" />
         <option value="$PROJECT_DIR$/web/logout.jsp" />
         <option value="$PROJECT_DIR$/sql/uotel.sql" />
         <option value="$PROJECT_DIR$/web/create_information_submit.jsp" />
@@ -207,19 +224,15 @@
         <option value="$PROJECT_DIR$/web/house_update.jsp" />
         <option value="$PROJECT_DIR$/web/house_information_submit.jsp" />
         <option value="$PROJECT_DIR$/web/house_time.jsp" />
-        <option value="$PROJECT_DIR$/web/favorite_response.jsp" />
         <option value="$PROJECT_DIR$/web/reserve_submit.jsp" />
         <option value="$PROJECT_DIR$/web/register.jsp" />
         <option value="$PROJECT_DIR$/web/error.jsp" />
-        <option value="$PROJECT_DIR$/web/favorite.jsp" />
-        <option value="$PROJECT_DIR$/web/distance_response.jsp" />
         <option value="$PROJECT_DIR$/web/distance.jsp" />
         <option value="$PROJECT_DIR$/web/house_time_complete.jsp" />
         <option value="$PROJECT_DIR$/web/house_time_submit.jsp" />
         <option value="$PROJECT_DIR$/web/reserve_complete.jsp" />
         <option value="$PROJECT_DIR$/web/reserve.jsp" />
         <option value="$PROJECT_DIR$/web/reserve_response.jsp" />
-        <option value="$PROJECT_DIR$/src/acmdb/Visit.java" />
         <option value="$PROJECT_DIR$/src/acmdb/Reserve.java" />
         <option value="$PROJECT_DIR$/src/acmdb/Utility.java" />
         <option value="$PROJECT_DIR$/web/reservation_response.jsp" />
@@ -227,19 +240,27 @@
         <option value="$PROJECT_DIR$/web/visit_submit.jsp" />
         <option value="$PROJECT_DIR$/web/visit_response.jsp" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/web/suggestions.jsp" />
-        <option value="$PROJECT_DIR$/web/reservation.jsp" />
         <option value="$PROJECT_DIR$/src/acmdb/Connector.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
-        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
-        <option value="$PROJECT_DIR$/src/acmdb/Main.java" />
-        <option value="$PROJECT_DIR$/web/house_response.jsp" />
-        <option value="$PROJECT_DIR$/web/visit.jsp" />
+        <option value="$PROJECT_DIR$/src/acmdb/Distance.java" />
+        <option value="$PROJECT_DIR$/web/distance_response.jsp" />
+        <option value="$PROJECT_DIR$/src/acmdb/Recommendation.java" />
+        <option value="$PROJECT_DIR$/web/suggestions.jsp" />
+        <option value="$PROJECT_DIR$/web/suggestion.jsp" />
+        <option value="$PROJECT_DIR$/src/acmdb/Visit.java" />
+        <option value="$PROJECT_DIR$/web/reservation.jsp" />
+        <option value="$PROJECT_DIR$/src/acmdb/Favorite.java" />
+        <option value="$PROJECT_DIR$/web/favorite_response.jsp" />
         <option value="$PROJECT_DIR$/src/acmdb/House.java" />
-        <option value="$PROJECT_DIR$/web/house.jsp" />
-        <option value="$PROJECT_DIR$/src/acmdb/Reservation.java" />
+        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
+        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
         <option value="$PROJECT_DIR$/src/acmdb/Account.java" />
+        <option value="$PROJECT_DIR$/src/acmdb/Main.java" />
+        <option value="$PROJECT_DIR$/web/visit.jsp" />
+        <option value="$PROJECT_DIR$/web/house_response.jsp" />
+        <option value="$PROJECT_DIR$/web/house.jsp" />
+        <option value="$PROJECT_DIR$/web/favorite.jsp" />
+        <option value="$PROJECT_DIR$/src/acmdb/Reservation.java" />
       </list>
     </option>
   </component>
@@ -260,10 +281,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-13" />
-    <option name="y" value="-13" />
-    <option name="width" value="2762" />
-    <option name="height" value="1770" />
+    <option name="x" value="31" />
+    <option name="y" value="22" />
+    <option name="width" value="1386" />
+    <option name="height" value="878" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -283,6 +304,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -291,14 +314,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="uotel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Uotel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uotel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Uotel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="uotel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acmdb" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -319,6 +372,117 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\zihao\IdeaProjects\uotel\web" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/acmdb/Account.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -506,6 +670,17 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
@@ -877,15 +1052,7 @@
       <workItem from="1496667455527" duration="1481000" />
       <workItem from="1496670530102" duration="86000" />
       <workItem from="1496674032393" duration="802000" />
-      <workItem from="1496725375579" duration="19719000" />
-      <workItem from="1496757792574" duration="18000" />
-    </task>
-    <task id="LOCAL-00001" summary="-">
-      <created>1496626842694</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1496626842694</updated>
+      <workItem from="1496725375579" duration="20829000" />
     </task>
     <task id="LOCAL-00002" summary="-">
       <created>1496634440092</created>
@@ -1223,17 +1390,25 @@
       <option name="project" value="LOCAL" />
       <updated>1496757491920</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="-">
+      <created>1496757572137</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1496757572138</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131262000" />
+    <option name="totallyTimeSpent" value="132354000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-13" y="-13" width="2762" height="1770" extended-state="6" />
+    <frame x="31" y="22" width="1386" height="878" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969853" sideWeight="0.501462" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969853" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1241,34 +1416,33 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967836" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.49853802" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32951653" sideWeight="0.49853802" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30043858" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30059522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967836" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969853" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1292,8 +1466,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Reservation.java" />
-    <entry file="file://$PROJECT_DIR$/web/suggestions.jsp" />
+    <entry file="file://$PROJECT_DIR$/web/suggestion.jsp" />
     <entry file="file://$PROJECT_DIR$/web/similarity.jsp" />
     <entry file="file://$PROJECT_DIR$/src/acmdb/Suggestions.java" />
     <entry file="file://$PROJECT_DIR$/src/acmdb/Course.java" />
@@ -1330,87 +1503,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Distance.java" />
     <entry file="file://$PROJECT_DIR$/src/acmdb/Stats.java" />
     <entry file="file://$PROJECT_DIR$/web/login.jsp" />
     <entry file="file://$PROJECT_DIR$/web/reserve_cancel.jsp" />
     <entry file="file://$PROJECT_DIR$/web/fillingTH.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/register_response.jsp">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="252">
+          <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Recommendation.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/src.zip!/java/lang/String.java" />
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Favorite.java" />
-    <entry file="file://$PROJECT_DIR$/web/house_information_submit.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/house_time.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/logout.jsp">
+    <entry file="file://$PROJECT_DIR$/web/house_information_submit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/register.jsp">
+    <entry file="file://$PROJECT_DIR$/web/house_time.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/error.jsp">
+    <entry file="file://$PROJECT_DIR$/web/house_time_complete.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/distance.jsp">
+    <entry file="file://$PROJECT_DIR$/web/house_time_submit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/house_time_complete.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/house_time_submit.jsp" />
     <entry file="file://$PROJECT_DIR$/sql/uotel.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/reserve_complete.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+    <entry file="file://$PROJECT_DIR$/web/reserve_complete.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/favorite_response.jsp">
+    <entry file="file://$PROJECT_DIR$/web/visit_complete.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="50" lean-forward="false" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/distance_response.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="26" column="77" lean-forward="true" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/visit_complete.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/visit_response.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1418,13 +1574,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-46">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/favorite.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1432,117 +1582,341 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="2014" column="19" lean-forward="true" selection-start-line="2014" selection-start-column="19" selection-end-line="2014" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Available.java" />
-    <entry file="file://$PROJECT_DIR$/web/house_response.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/suggestions.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/reservation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-681">
-          <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/reservation_response.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/visit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3120">
-          <caret line="104" column="29" lean-forward="false" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Visit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#464#465#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
+            <marker date="1496758666000" expanded="true" signature="102144:102161" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102144:102179" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102144:102192" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102144:102207" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102242:104519" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102255:104504" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102309:102699" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102328:102684" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102447:102664" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102487:102630" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102508:102608" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102749:103067" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102768:103052" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102854:103032" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102894:102998" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="102915:102976" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103118:103383" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103137:103368" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103170:103348" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103210:103314" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103231:103292" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103426:103732" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103445:103717" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103519:103697" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103559:103663" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103580:103641" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103783:104130" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103802:104115" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103878:104095" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103918:104061" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="103939:104039" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="104182:104490" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="104201:104475" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="104277:104455" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="104317:104421" ph="..." />
+            <marker date="1496758666000" expanded="true" signature="104338:104399" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/acmdb/Utility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
+        <state relative-caret-position="370">
           <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6930">
-          <caret line="234" column="29" lean-forward="false" selection-start-line="234" selection-start-column="29" selection-end-line="234" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/House.java">
+    <entry file="file://$PROJECT_DIR$/.idea/dictionaries/zhijian.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="80" column="56" lean-forward="false" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+        <state relative-caret-position="120">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/house.jsp">
+    <entry file="file://$PROJECT_DIR$/web/visit_response.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        <state relative-caret-position="285">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/acmdb/Connector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state relative-caret-position="94">
+          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Visit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1496758296000" expanded="true" signature="975:1078" ph="SELECT * FRO... reservation" />
+            <marker date="1496758296000" expanded="true" signature="975:1800" ph="SELECT * FRO... reservation" />
+            <marker date="1496758296000" expanded="true" signature="2142:2466" ph="INSERT INTO visit... " />
+            <marker date="1496758296000" expanded="true" signature="2560:2604" ph="SELECT uid F... reservation" />
+            <marker date="1496758296000" expanded="true" signature="2781:2826" ph="SELECT visit... TH" />
+            <marker date="1496758296000" expanded="true" signature="2975:3032" ph="UPDATE TH SE... " />
+            <marker date="1496758296000" expanded="true" signature="3026:3032" ph="UPDATE TH SE... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Reservation.java">
+    <entry file="file://$PROJECT_DIR$/src/acmdb/House.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-566">
-          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        <state relative-caret-position="325">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1496758518000" expanded="true" signature="492:519" ph="SELECT MAX(h... TH" />
+            <marker date="1496758518000" expanded="true" signature="609:756" ph="INSERT INTO TH... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1122" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1146" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1147" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1162" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1188" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1202" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1229" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1250" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1271" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1273" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1274" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1292" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1324" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1325" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1341" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1369" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1371" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1372" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1385" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1387" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1412" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1413" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1428" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1458" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1109:1459" ph="UPDATE TH SE... " />
+            <marker date="1496758518000" expanded="true" signature="1991:2023" ph="SELECT * FRO... TH" />
+            <marker date="1496758518000" expanded="true" signature="1991:2024" ph="SELECT * FRO... TH" />
+            <marker date="1496758518000" expanded="true" signature="1991:2031" ph="SELECT * FRO... TH" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Suggestion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Favorite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1496758411000" expanded="true" signature="338:474" ph="SELECT * FRO... visit" />
+            <marker date="1496758411000" expanded="true" signature="631:689" ph="INSERT INTO favorite... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Distance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Available.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1496758528000" expanded="true" signature="349:440" ph="SELECT * FRO... period" />
+            <marker date="1496758528000" expanded="true" signature="505:561" ph="INSERT INTO period... " />
+            <marker date="1496758528000" expanded="true" signature="616:862" ph="SELECT * FRO... available" />
+            <marker date="1496758528000" expanded="true" signature="984:1055" ph="INSERT INTO available... " />
+            <marker date="1496758528000" expanded="true" signature="1301:1447" ph="DELETE a FRO... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/acmdb/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="71" column="39" lean-forward="true" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
+        <state relative-caret-position="370">
+          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1496758533000" expanded="true" signature="480:591" ph="INSERT INTO user... " />
+            <marker date="1496758533000" expanded="true" signature="846:883" ph="SELECT * fro... user" />
+            <marker date="1496758533000" expanded="true" signature="846:900" ph="SELECT * fro... user" />
+            <marker date="1496758533000" expanded="true" signature="1307:1366" ph="SELECT passw... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="241" column="32" lean-forward="true" selection-start-line="241" selection-start-column="32" selection-end-line="241" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/visit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="37" column="55" lean-forward="false" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/suggestion.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/reservation_response.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/reservation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="37" column="60" lean-forward="false" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/register_response.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house_response.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="70" column="44" lean-forward="false" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/favorite_response.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/distance.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/distance_response.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="25" column="18" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/error.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/favorite.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-241">
+          <caret line="30" column="58" lean-forward="true" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Reservation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="58" column="29" lean-forward="false" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+          <folding>
+            <marker date="1496758659000" expanded="true" signature="707:782" ph="SELECT MAX(r... reservation" />
+            <marker date="1496758659000" expanded="true" signature="1263:1294" ph="SELECT * FRO... available" />
+            <marker date="1496758659000" expanded="true" signature="1263:1350" ph="SELECT * FRO... available" />
+            <marker date="1496758659000" expanded="true" signature="1263:1414" ph="SELECT * FRO... available" />
+            <marker date="1496758659000" expanded="true" signature="1263:1468" ph="SELECT * FRO... available" />
+            <marker date="1496758659000" expanded="true" signature="1263:1470" ph="SELECT * FRO... available" />
+            <marker date="1496758659000" expanded="true" signature="1263:1485" ph="SELECT * FRO... available" />
+            <marker date="1496758659000" expanded="true" signature="1724:1883" ph="SELECT * FRO... available" />
+            <marker date="1496758659000" expanded="true" signature="1724:1915" ph="SELECT * FRO... available" />
+            <marker date="1496758659000" expanded="true" signature="1724:1916" ph="SELECT * FRO... available" />
+            <marker date="1496758659000" expanded="true" signature="2473:2737" ph="INSERT INTO reservation... " />
+            <marker date="1496758659000" expanded="true" signature="3309:3375" ph="SELECT * FRO... reservation" />
           </folding>
         </state>
       </provider>

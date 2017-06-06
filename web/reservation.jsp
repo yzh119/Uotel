@@ -35,7 +35,7 @@
             <h3>All your reservation records</h3>
             <%
                 StringBuilder builder = new StringBuilder();
-                List<List<String>> records = Account.getReservations(username);
+                List<List<String>> records = Reservation.get(username);
                 for (int i = 0; i < records.size(); ++i) {
                     builder.append("<tr>");
                     for (int j = 1; j < records.get(i).size(); ++j) {

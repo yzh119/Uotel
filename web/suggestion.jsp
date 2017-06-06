@@ -1,5 +1,6 @@
 <%@ page import="acmdb.Account" %>
 <%@ page import="java.util.List" %>
+<%@ page import="acmdb.Suggestion" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -23,7 +24,7 @@
 
         <%
             StringBuilder builder = new StringBuilder();
-            List<List<String>> records = Account.getRecommendations(username);
+            List<List<String>> records = Suggestion.get(username);
             for (int i = 0; i < records.size(); ++i) {
                 builder.append("<tr>");
                 for (int j = 1; j < records.get(i).size(); ++j) {

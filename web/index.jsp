@@ -50,7 +50,7 @@
                     <td><a href="favorite.jsp">Functionality 5 | Favorite recordings</a></td>
                 </tr>
                 <tr>
-                    <td><a href="suggestions.jsp">Functionality 11 | TH suggestions</a></td>
+                    <td><a href="suggestion.jsp">Functionality 11 | TH suggestions</a></td>
                 </tr>
                 <tr>
                     <td><a href="distance.jsp">Functionality 12 | Two degrees of separation</a></td>

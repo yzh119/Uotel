@@ -1,5 +1,7 @@
 package acmdb;
 
+import sun.security.x509.AVA;
+
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
@@ -54,12 +56,12 @@ public class Reservation {
             String t1 = Utility.yesterday(start.get(i)), t2 = Utility.tomorrow(end.get(i));
             String start = rs.getString("start_date");
             String end = rs.getString("end_date");
-            House.removeAvailable(indices.get(i), start, end);
+            Available.remove(indices.get(i), start, end);
             if (start.compareTo(t1) < 0) {
-                House.addAvailable(indices.get(i), start, t1);
+                Available.add(indices.get(i), start, t1);
             }
             if (t2.compareTo(end.substring(0, 10)) < 0) {
-                House.addAvailable(indices.get(i), t2, end);
+                Available.add(indices.get(i), t2, end);
             }
             statement.execute("INSERT INTO reservation values(" +
                 id + "," +
@@ -71,6 +73,10 @@ public class Reservation {
             ++id;
         }
         connector.close();
+    }
+
+    public static List<List<String>> get(String username) throws Exception{
+        return Utility.query("SELECT r.rid, h.name, h.owner, h.address, h.url, h.phone_number, r.start_date, r.end_date FROM reservation r, TH h WHERE r.uid = h.uid AND user_name = \"" + username + "\"");
     }
 
     public static Map<String, String> get(int id) throws Exception {

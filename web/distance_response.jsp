@@ -1,4 +1,5 @@
 <%@ page import="acmdb.Account" %>
+<%@ page import="acmdb.Distance" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -19,7 +20,7 @@
         <%
             int distance = -1;
             try {
-                distance = Account.getDistance(
+                distance = Distance.get(
                     request.getParameter("username1"),
                     request.getParameter("username2")
                 );

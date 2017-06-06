@@ -1,8 +1,8 @@
-<%@ page import="acmdb.Account" %>
+<%@ page import="acmdb.Favorite" %>
 
 <%
     try {
-        Account.addFavorite(
+        Favorite.add(
             session.getAttribute("username").toString(),
             Integer.valueOf(request.getParameter("id"))
         );
