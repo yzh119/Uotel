@@ -1,7 +1,8 @@
 <%@ page import="acmdb.Reserve" %>
 <%@ page import="acmdb.Account" %>
 <%@ page import="java.util.List" %>
-<%@ page import="acmdb.Account" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="acmdb.House" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -109,7 +110,7 @@
                         </tr>
                     </table>
 
-                    <button type="submit">Add to the temporary reservation cart</button>
+                    <button type="submit">Add to the temporary reservation stack</button>
                 </form>
             <%
                 }
@@ -118,25 +119,28 @@
             <%
                 if (session.getAttribute("reservation") != null) {
                     Reserve reservation = (Reserve) session.getAttribute("reservation");
-                    if (!reservation.selectTH.isEmpty()) {
+                    if (!reservation.indices.isEmpty()) {
             %>
                 <form>
-                    <h3>Temporary reservation cart</h3>
+                    <h3>Temporary reservation stack</h3>
                     <%
                         builder = new StringBuilder();
-                        for (int i = 0; i < reservation.selectTH.size(); ++i) {
+                        for (int i = 0; i < reservation.indices.size(); ++i) {
+                            Map<String, String> record = House.get(reservation.indices.get(i));
                             builder.append("<tr>");
-                            builder.append("<td>").append(reservation.selectTH.get(i)).append("</td>");
-                            builder.append("<td>").append(reservation.startDate.get(i).substring(0, 10)).append("</td>");
-                            builder.append("<td>").append(reservation.endDate.get(i).substring(0, 10)).append("</td>");
+                            builder.append("<td align=\"center\">").append(record.get("name")).append("</td>");
+                            builder.append("<td align=\"center\">").append(record.get("owner")).append("</td>");
+                            builder.append("<td align=\"center\">").append(reservation.start.get(i).substring(0, 10)).append("</td>");
+                            builder.append("<td align=\"center\">").append(reservation.end.get(i).substring(0, 10)).append("</td>");
                             builder.append("</tr>");
                         }
                     %>
                     <table align="center" cellspacing="2" cellpadding="2" border="1">
                         <tr>
-                            <th>UID</th>
-                            <th>Start date</th>
-                            <th>End date</th>
+                            <th>House Name</th>
+                            <th>Owner</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
                         </tr>
                         <%= builder.toString() %>
                     </table>

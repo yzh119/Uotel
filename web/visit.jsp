@@ -115,7 +115,7 @@
                         </tr>
                     </table>
 
-                    <button type="submit">Add to the stacked visit list</button>
+                    <button type="submit">Add to the temporary visit stack</button>
                 </form>
             <%
                 }
@@ -124,29 +124,29 @@
             <%
                 if (session.getAttribute("stay") != null) {
                     Visit visit = (Visit) session.getAttribute("stay");
-                    if (!visit.selectRID.isEmpty()) {
+                    if (!visit.indices.isEmpty()) {
             %>
                 <form>
-                    <h3>Temporary visit cart</h3>
+                    <h3>Temporary visit stack</h3>
                     <%
                         builder = new StringBuilder();
-                        for (int i = 0; i < visit.selectRID.size(); ++i) {
+                        for (int i = 0; i < visit.indices.size(); ++i) {
                             builder.append("<tr>");
-                            builder.append("<td>").append(visit.selectRID.get(i)).append("</td>");
-                            builder.append("<td>").append(visit.startDate.get(i)).append("</td>");
-                            builder.append("<td>").append(visit.endDate.get(i)).append("</td>");
-                            builder.append("<td>").append(visit.spent.get(i)).append("</td>");
-                            builder.append("<td>").append(visit.number.get(i)).append("</td>");
+                            builder.append("<td align=\"center\">").append(visit.indices.get(i)).append("</td>");
+                            builder.append("<td align=\"center\">").append(visit.start.get(i)).append("</td>");
+                            builder.append("<td align=\"center\">").append(visit.end.get(i)).append("</td>");
+                            builder.append("<td align=\"center\">").append(visit.people.get(i)).append("</td>");
+                            builder.append("<td align=\"center\">").append(visit.cost.get(i)).append("</td>");
                             builder.append("</tr>");
                         }
                     %>
                     <table align="center" cellspacing="2" cellpadding="2" border="1">
                         <tr>
                             <th>RID</th>
-                            <th>Start date</th>
-                            <th>End date</th>
-                            <th>Total spent</th>
-                            <th>Number of people</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Number of People</th>
+                            <th>Total Cost</th>
                         </tr>
                         <%= builder.toString() %>
                     </table>

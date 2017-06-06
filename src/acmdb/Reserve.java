@@ -16,9 +16,9 @@ public class Reserve {
         this.username = username;
         this.rid = getInitRidFromSQL();
     }
-    public ArrayList<Integer> selectTH = new ArrayList<>();
-    public ArrayList<String> startDate = new ArrayList<>();
-    public ArrayList<String> endDate = new ArrayList<>();
+    public ArrayList<Integer> indices = new ArrayList<>();
+    public ArrayList<String> start = new ArrayList<>();
+    public ArrayList<String> end = new ArrayList<>();
 
     public int getInitRidFromSQL() throws Exception {
         Connector connector = new Connector();
@@ -43,9 +43,9 @@ public class Reserve {
         return ret;
     }
     public void addToList(int uid, String start, String end) {
-        selectTH.add(uid);
-        startDate.add(start);
-        endDate.add(end);
+        indices.add(uid);
+        this.start.add(start);
+        this.end.add(end);
     }
 
     public String yesterday(String today) throws ParseException {
@@ -74,40 +74,40 @@ public class Reserve {
 
         ++rid;
 
-        for (int i = 0; i < selectTH.size(); ++i) {
+        for (int i = 0; i < indices.size(); ++i) {
             String query;
             query = "SELECT * FROM available a WHERE a.uid = " +
-                    selectTH.get(i) + " and a.start_date<=\"" +
-                    startDate.get(i) + "\" and a.end_date>= \"" +
-                    endDate.get(i) + "\"";
+                    indices.get(i) + " and a.start_date<=\"" +
+                    start.get(i) + "\" and a.end_date>= \"" +
+                    end.get(i) + "\"";
             ResultSet rs = stmt.executeQuery(query);
             if (!rs.next()) {
                 throw new Exception("Reserve conflict!");
             }
         }
 
-        for (int i = 0; i < selectTH.size(); ++i) {
+        for (int i = 0; i < indices.size(); ++i) {
             String query;
             query = "SELECT * FROM available a WHERE a.uid = " +
-                    selectTH.get(i) + " and a.start_date<=\"" +
-                    startDate.get(i) + "\" and a.end_date>= \"" +
-                    endDate.get(i) + "\"";
+                    indices.get(i) + " and a.start_date<=\"" +
+                    start.get(i) + "\" and a.end_date>= \"" +
+                    end.get(i) + "\"";
             ResultSet rs = stmt.executeQuery(query);
             rs.next();
-            String t1 = yesterday(startDate.get(i)), t2 = tomorrow(endDate.get(i));
+            String t1 = yesterday(start.get(i)), t2 = tomorrow(end.get(i));
             String start = rs.getString("start_date"),
                     end = rs.getString("end_date");
-            Available.removeAvailable(selectTH.get(i), start, end);
-            if (start.compareTo(t1) < 0) Available.addAvailable(selectTH.get(i), start, t1);
-            if (t2.compareTo(end.substring(0, 10)) < 0) Available.addAvailable(selectTH.get(i), t2, end);
+            Available.removeAvailable(indices.get(i), start, end);
+            if (start.compareTo(t1) < 0) Available.addAvailable(indices.get(i), start, t1);
+            if (t2.compareTo(end.substring(0, 10)) < 0) Available.addAvailable(indices.get(i), t2, end);
 
             String statement;
             statement = "INSERT INTO reservation values(" +
                     rid + "," +
-                    selectTH.get(i) + "," +
+                    indices.get(i) + "," +
                     "'" + username + "'" + "," +
-                    "'" + startDate.get(i) + "'" + "," +
-                    "'" + endDate.get(i) + "'" +
+                    "'" + this.start.get(i) + "'" + "," +
+                    "'" + this.end.get(i) + "'" +
                     ")";
             stmt.execute(statement);
             ++rid;

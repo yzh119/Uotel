@@ -71,10 +71,10 @@ public class Main {
                 resultStr.append("All possible houses and their available dates\n");
                 resultStr.append(formatChart(Account.getHouses()) + "\n");
                 resultStr.append("Your stacked reservation list\n");
-                for (int i = 0; i < reserve.selectTH.size(); ++i) {
-                    resultStr.append(reserve.selectTH.get(i) + "\t");
-                    resultStr.append(reserve.startDate.get(i) + "\t");
-                    resultStr.append(reserve.endDate.get(i) + "\n");
+                for (int i = 0; i < reserve.indices.size(); ++i) {
+                    resultStr.append(reserve.indices.get(i) + "\t");
+                    resultStr.append(reserve.start.get(i) + "\t");
+                    resultStr.append(reserve.end.get(i) + "\n");
                 }
                 resultStr.append("\nTo reserve a new house, fill the chart with format below: \n");
                 resultStr.append("\t UID | Start date(yyyy-mm-dd) | End date(yyyy-mm-dd)\n");
@@ -91,12 +91,12 @@ public class Main {
                 resultStr.append("All your reservations\n");
                 resultStr.append(formatChart(Account.getReservations(username)) + "\n");
                 resultStr.append("Your stacked visit list\n");
-                for (int i = 0; i < visit.selectRID.size(); ++i) {
-                    resultStr.append(visit.selectRID.get(i) + "\t");
-                    resultStr.append(visit.startDate.get(i) + "\t");
-                    resultStr.append(visit.endDate.get(i) + "\t");
-                    resultStr.append(visit.spent.get(i) + "\t");
-                    resultStr.append(visit.number.get(i) + "\n");
+                for (int i = 0; i < visit.indices.size(); ++i) {
+                    resultStr.append(visit.indices.get(i) + "\t");
+                    resultStr.append(visit.start.get(i) + "\t");
+                    resultStr.append(visit.end.get(i) + "\t");
+                    resultStr.append(visit.cost.get(i) + "\t");
+                    resultStr.append(visit.people.get(i) + "\n");
                 }
                 resultStr.append("\nTo record a new stay, fill the chart with the format below:\n");
                 resultStr.append("\t RID | Start date(yyyy-mm-dd) | End date(yyyy-mm-dd) | Total spent | Number of people\n");
