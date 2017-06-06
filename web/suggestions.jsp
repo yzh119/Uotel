@@ -41,7 +41,7 @@
                 <th>Address</th>
                 <th>Website</th>
                 <th>Telephone</th>
-                <th>Year of Built</th>
+                <th>Year of Build</th>
                 <th>Rental</th>
                 <th>Total Visits</th>
                 <th>Common Visits</th>

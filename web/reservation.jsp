@@ -62,7 +62,7 @@
             <h3>All possible houses and their available dates</h3>
             <%
                 builder = new StringBuilder();
-                records = Account.getHouses();
+                records = House.get();
                 for (int i = 0; i < records.size(); ++i) {
                     builder.append("<tr>");
                     for (int j = 1; j < records.get(i).size(); ++j) {

@@ -69,7 +69,7 @@ public class Main {
                 resultStr.append("All your reservations\n");
                 resultStr.append(formatChart(Account.getReservations(username)) + "\n");
                 resultStr.append("All possible houses and their available dates\n");
-                resultStr.append(formatChart(Account.getHouses()) + "\n");
+                resultStr.append(formatChart(House.get()) + "\n");
                 resultStr.append("Your stacked reservation list\n");
                 for (int i = 0; i < reservation.indices.size(); ++i) {
                     resultStr.append(reservation.indices.get(i) + "\t");

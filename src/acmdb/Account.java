@@ -49,10 +49,6 @@ public class Account {
         connector.close();
     }
 
-    public static List<List<String>> getHouses() throws Exception {
-        return Utility.query("SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, h.year_built, a.start_date, a.end_date, h.price, h.visit_count FROM TH h, available a WHERE h.uid = a.uid");
-    }
-
     public static List<List<String>> getHouses(String username) throws Exception {
         return Utility.query("SELECT h.uid, h.name, h.address, h.url, h.phone_number, h.year_built, h.price, h.visit_count FROM TH h WHERE h.owner = \"" + username + "\"");
     }
@@ -135,19 +131,5 @@ public class Account {
         }
         connector.close();
         return distance;
-    }
-
-    public static String list2Table(List<List<String>> records) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < records.size(); ++i) {
-            builder.append("<tr>");
-            for (int j = 0; j < records.get(i).size(); ++j) {
-                builder.append("<td>");
-                builder.append(records.get(i).get(j));
-                builder.append("</td>");
-            }
-            builder.append("</tr>");
-        }
-        return builder.toString();
     }
 }
