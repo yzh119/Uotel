@@ -50,49 +50,11 @@ public class Account {
     }
 
     public static List<List<String>> getHouses() throws Exception {
-        Connector connector = new Connector();
-        Statement statement = connector.statement;
-
-        List<List<String>> records = new ArrayList<>();
-        ResultSet result = statement.executeQuery("SELECT * FROM TH t, available a WHERE t.uid = a.uid");
-        while (result.next()) {
-            records.add(new ArrayList<>());
-            for (int i = 1; i <= 12; ++i) {
-                String record = result.getString(i);
-                if (record.endsWith("00:00:00.0")) {
-                    record = record.substring(0, 10);
-                }
-                if (i == 10) {
-                    continue;
-                }
-                records.get(records.size() - 1).add(record);
-            }
-        }
-        return records;
+        return Utility.query("SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, h.year_built, a.start_date, a.end_date, h.price, h.visit_count FROM TH h, available a WHERE h.uid = a.uid");
     }
 
     public static List<List<String>> getHouses(String username) throws Exception {
-        Connector connector = new Connector();
-        Statement statement = connector.statement;
-
-        ResultSet result = statement.executeQuery("SELECT * FROM TH t WHERE t.owner = \"" + username + "\"");
-        ResultSetMetaData meta = result.getMetaData();
-
-        List<List<String>> records = new ArrayList<>();
-        while (result.next()) {
-            records.add(new ArrayList<>());
-            for (int i = 1; i <= meta.getColumnCount(); ++i) {
-                String record = result.getString(i);
-                if (record.endsWith("00:00:00.0")) {
-                    record = record.substring(0, 10);
-                }
-                if (i == 2) {
-                    continue;
-                }
-                records.get(records.size() - 1).add(record);
-            }
-        }
-        return records;
+        return Utility.query("SELECT h.uid, h.owner, h.address, h.url, h.phone_number, h.year_built, h.price, h.visit_count FROM TH h WHERE h.owner = \"" + username + "\"");
     }
 
     public static List<List<String>> getReservations(String username) throws Exception{

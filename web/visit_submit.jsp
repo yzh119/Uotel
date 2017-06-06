@@ -4,7 +4,7 @@
     try {
         Visit stay = (Visit) session.getAttribute("stay");
         stay.addToList(
-                Integer.valueOf(request.getParameter("rid")),
+                Integer.valueOf(request.getParameter("id")),
                 request.getParameter("start_date"),
                 request.getParameter("end_date"),
                 Integer.valueOf(request.getParameter("spent")),

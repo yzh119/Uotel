@@ -17,6 +17,9 @@
 
         <%
             String username = session.getAttribute("username").toString();
+            String state = request.getParameter("state") != null ? request.getParameter("state") : "add_visit";
+            String id = request.getParameter("id");
+
             if (session.getAttribute("stay") == null) {
                 Visit stay = new Visit(session.getAttribute("username").toString());
                 session.setAttribute("stay", stay);
@@ -24,7 +27,7 @@
         %>
 
         <div align="center">
-            <h3>All your visits</h3>
+            <h3>All your visit records</h3>
             <%
                 StringBuilder builder = new StringBuilder();
                 List<List<String>> records = Account.getVisits(username);
@@ -53,11 +56,25 @@
                 <%= builder.toString() %>
             </table>
 
-            <h3>All your reservations</h3>
-
+            <h3>All your reservation records</h3>
+            <%
+                builder = new StringBuilder();
+                records = Account.getReservations(username);
+                for (int i = 0; i < records.size(); ++i) {
+                    builder.append("<tr>");
+                    for (int j = 1; j < records.get(i).size(); ++j) {
+                        builder.append("<td align=\"center\">");
+                        builder.append(records.get(i).get(j));
+                        builder.append("</td>");
+                    }
+                    builder.append("<td align=\"center\">");
+                    builder.append("<input type=\"button\" value=\"visit\" onclick=\"location.href='visit.jsp?state=add_date&id=").append(records.get(i).get(0)).append("'\">");
+                    builder.append("</td>");
+                    builder.append("</tr>");
+                }
+            %>
             <table align="center" cellspacing="2" cellpadding="2" border="1">
                 <tr>
-                    <th>RID</th>
                     <th>House Name</th>
                     <th>Owner</th>
                     <th>Address</th>
@@ -65,45 +82,49 @@
                     <th>Telephone</th>
                     <th>Start Date</th>
                     <th>End Date</th>
+                    <th>Action</th>
                 </tr>
-                <%= Account.list2Table(Account.getReservations(username)) %>
+                <%= builder.toString() %>
             </table>
 
-            <h3>Temporary visit cart</h3>
+            <%
+                if (state.equals("add_date")) {
+            %>
+                <h3>Add start and end date</h3>
 
-            <form method="post" action="visit_submit.jsp">
-                <table>
-                    <tr>
-                        <td><label><b>RID</b></label></td>
-                        <td><input type="text" placeholder="Enter RID of the reservation" name="rid" required></td>
-                    </tr>
-                    <tr>
-                        <td><label><b>Start date</b></label></td>
-                        <td><input type="text" placeholder="Enter start date" name="start_date" required></td>
-                    </tr>
-                    <tr>
-                        <td><label><b>End date</b></label></td>
-                        <td><input type="text" placeholder="Enter end date" name="end_date" required></td>
-                    </tr>
-                    <tr>
-                        <td><label><b>Total spent</b></label></td>
-                        <td><input type="text" placeholder="Enter total spent" name="spent" required></td>
-                    </tr>
-                    <tr>
-                        <td><label><b>Number of people</b></label></td>
-                        <td><input type="text" placeholder="Enter number of people" name="number" required></td>
-                    </tr>
-                </table>
+                <form method="post" action="visit_submit.jsp?id=<%= id %>">
+                    <table>
+                        <tr>
+                            <td><label><b>Start date</b></label></td>
+                            <td><input type="text" placeholder="Enter start date (required)" name="start_date" required></td>
+                        </tr>
+                        <tr>
+                            <td><label><b>End date</b></label></td>
+                            <td><input type="text" placeholder="Enter end date (required)" name="end_date" required></td>
+                        </tr>
+                        <tr>
+                            <td><label><b>Total Cost</b></label></td>
+                            <td><input type="text" placeholder="Enter total cost (required)" name="spent" required></td>
+                        </tr>
+                        <tr>
+                            <td><label><b>Number of People</b></label></td>
+                            <td><input type="text" placeholder="Enter number of people (required)" name="number" required></td>
+                        </tr>
+                    </table>
 
-                <button type="submit">Add to the stacked stay list</button>
+                    <button type="submit">Add to the stacked visit list</button>
+                </form>
+            <%
+                }
+            %>
 
-                <%
-                    if (session.getAttribute("stay") != null) {
-                        Visit visit = (Visit) session.getAttribute("stay");
-                        if (!visit.selectRID.isEmpty()) {
-                %>
-                    <br><br>
-
+            <%
+                if (session.getAttribute("stay") != null) {
+                    Visit visit = (Visit) session.getAttribute("stay");
+                    if (!visit.selectRID.isEmpty()) {
+            %>
+                <form>
+                    <h3>Temporary visit cart</h3>
                     <%
                         builder = new StringBuilder();
                         for (int i = 0; i < visit.selectRID.size(); ++i) {
@@ -126,14 +147,12 @@
                         </tr>
                         <%= builder.toString() %>
                     </table>
-
-                    <input type="button" value="Confirm the above stays" onclick="location.href='visit_complete.jsp'">
-                <%
-                        }
+                    <input type="button" value="Confirm the above visit records" onclick="location.href='visit_complete.jsp'">
+                </form>
+            <%
                     }
-                %>
-            </form>
-
+                }
+            %>
         </div>
 
         <div align="right">

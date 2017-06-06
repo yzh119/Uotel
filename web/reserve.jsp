@@ -18,10 +18,17 @@
 
         <%
             String username = session.getAttribute("username").toString();
+            String state = request.getParameter("state") != null ? request.getParameter("state") : "add_reserve";
+            String id = request.getParameter("id");
+
+            if (session.getAttribute("reservation") == null) {
+                Reserve reservation = new Reserve(session.getAttribute("username").toString());
+                session.setAttribute("reservation", reservation);
+            }
         %>
 
         <div align="center">
-            <h3>All your reservations</h3>
+            <h3>All your reservation records</h3>
             <%
                 StringBuilder builder = new StringBuilder();
                 List<List<String>> records = Account.getReservations(username);
@@ -49,59 +56,69 @@
             </table>
 
             <h3>All possible houses and their available dates</h3>
-
+            <%
+                builder = new StringBuilder();
+                records = Account.getHouses();
+                for (int i = 0; i < records.size(); ++i) {
+                    builder.append("<tr>");
+                    for (int j = 1; j < records.get(i).size(); ++j) {
+                        builder.append("<td align=\"center\">");
+                        builder.append(records.get(i).get(j));
+                        builder.append("</td>");
+                    }
+                    builder.append("<td align=\"center\">");
+                    builder.append("<input type=\"button\" value=\"reserve\" onclick=\"location.href='reserve.jsp?state=add_date&id=").append(records.get(i).get(0)).append("'\">");
+                    builder.append("</td>");
+                    builder.append("</tr>");
+                }
+            %>
             <table align="center" cellspacing="2" cellpadding="2" border="1">
                 <tr>
-                    <th>UID</th>
-                    <th>Owner Name</th>
                     <th>House Name</th>
-                    <th>House Address</th>
+                    <th>Owner</th>
+                    <th>Address</th>
                     <th>Website</th>
-                    <th>Phone number</th>
-                    <th>Year built</th>
-                    <th>Price</th>
-                    <th>Total visits</th>
-                    <th>Start date</th>
-                    <th>End date</th>
+                    <th>Telephone</th>
+                    <th>Year of Build</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Rental</th>
+                    <th>Total Visits</th>
+                    <th>Action</th>
                 </tr>
-                <%= Account.list2Table(Account.getHouses()) %>
+                <%= builder.toString() %>
             </table>
-        </div>
 
-        <%
-            if (session.getAttribute("reservation") == null) {
-                Reserve reservation = new Reserve(session.getAttribute("username").toString());
-                session.setAttribute("reservation", reservation);
-            }
-        %>
+            <%
+                if (state.equals("add_date")) {
+            %>
+                <h3>Add start and end date</h3>
 
-        <div align="center">
-            <h3>Temporary reservation cart</h3>
+                <form method="post" action="reserve_submit.jsp?id=<%= id %>">
+                    <table>
+                        <tr>
+                            <td><label><b>Start date</b></label></td>
+                            <td><input type="text" placeholder="Enter start date (required)" name="start_date" required></td>
+                        </tr>
+                        <tr>
+                            <td><label><b>End date</b></label></td>
+                            <td><input type="text" placeholder="Enter end date (required)" name="end_date" required></td>
+                        </tr>
+                    </table>
 
-            <form method="post" action="reserve_submit.jsp">
-                <table>
-                    <tr>
-                        <td><label><b>UID</b></label></td>
-                        <td><input type="text" placeholder="Enter UID of the house" name="uid" required></td>
-                    </tr>
-                    <tr>
-                        <td><label><b>Start date</b></label></td>
-                        <td><input type="text" placeholder="Enter start date" name="start_date" required></td>
-                    </tr>
-                    <tr>
-                        <td><label><b>End date</b></label></td>
-                        <td><input type="text" placeholder="Enter end date" name="end_date" required></td>
-                    </tr>
-                </table>
+                    <button type="submit">Add to the temporary reservation cart</button>
+                </form>
+            <%
+                }
+            %>
 
-                <button type="submit">Add to the temporary reservation cart</button>
-
-                <%
-                    if (session.getAttribute("reservation") != null) {
-                        Reserve reservation = (Reserve) session.getAttribute("reservation");
-                        if (!reservation.selectTH.isEmpty()) {
-                %>
-                    <br><br>
+            <%
+                if (session.getAttribute("reservation") != null) {
+                    Reserve reservation = (Reserve) session.getAttribute("reservation");
+                    if (!reservation.selectTH.isEmpty()) {
+            %>
+                <form>
+                    <h3>Temporary reservation cart</h3>
                     <%
                         builder = new StringBuilder();
                         for (int i = 0; i < reservation.selectTH.size(); ++i) {
@@ -120,13 +137,12 @@
                         </tr>
                         <%= builder.toString() %>
                     </table>
-
-                    <input type="button" value="Confirm the above reservations" onclick="location.href='reserve_complete.jsp'">
-                <%
-                        }
+                    <input type="button" value="Confirm the above reservation records" onclick="location.href='reserve_complete.jsp'">
+                </form>
+            <%
                     }
-                %>
-            </form>
+                }
+            %>
         </div>
 
         <div align="right">
