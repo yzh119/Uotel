@@ -3,7 +3,7 @@
 <%
     try {
         Visit stay = (Visit) session.getAttribute("stay");
-        stay.pushList();
+        stay.push();
         session.removeAttribute("stay");
         response.sendRedirect("visit.jsp");
     } catch (Exception e) {

@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Reserve {
+public class Reservation {
     public int rid;
     public String username;
-    public Reserve(String username) throws Exception {
+    public Reservation(String username) throws Exception {
         this.username = username;
         this.rid = getInitRidFromSQL();
     }
@@ -42,10 +42,58 @@ public class Reserve {
         }
         return ret;
     }
-    public void addToList(int uid, String start, String end) {
-        indices.add(uid);
+
+    public void add(int uid, String start, String end) {
+        this.indices.add(uid);
         this.start.add(start);
         this.end.add(end);
+    }
+
+    public void push() throws Exception {
+        Connector connector = new Connector();
+        Statement stmt = connector.statement;
+
+        ++rid;
+
+        for (int i = 0; i < indices.size(); ++i) {
+            String query;
+            query = "SELECT * FROM available a WHERE a.uid = " +
+                indices.get(i) + " and a.start_date<=\"" +
+                start.get(i) + "\" and a.end_date>= \"" +
+                end.get(i) + "\"";
+            ResultSet rs = stmt.executeQuery(query);
+            if (!rs.next()) {
+                throw new Exception("Reservation conflict!");
+            }
+        }
+
+        for (int i = 0; i < indices.size(); ++i) {
+            String query;
+            query = "SELECT * FROM available a WHERE a.uid = " +
+                indices.get(i) + " and a.start_date<=\"" +
+                start.get(i) + "\" and a.end_date>= \"" +
+                end.get(i) + "\"";
+            ResultSet rs = stmt.executeQuery(query);
+            rs.next();
+            String t1 = yesterday(start.get(i)), t2 = tomorrow(end.get(i));
+            String start = rs.getString("start_date"),
+                end = rs.getString("end_date");
+            Available.removeAvailable(indices.get(i), start, end);
+            if (start.compareTo(t1) < 0) Available.addAvailable(indices.get(i), start, t1);
+            if (t2.compareTo(end.substring(0, 10)) < 0) Available.addAvailable(indices.get(i), t2, end);
+
+            String statement;
+            statement = "INSERT INTO reservation values(" +
+                rid + "," +
+                indices.get(i) + "," +
+                "'" + username + "'" + "," +
+                "'" + this.start.get(i) + "'" + "," +
+                "'" + this.end.get(i) + "'" +
+                ")";
+            stmt.execute(statement);
+            ++rid;
+        }
+        connector.close();
     }
 
     public String yesterday(String today) throws ParseException {
@@ -66,52 +114,5 @@ public class Reserve {
         cal.add(Calendar.DATE, +1);
         Date yesterday = cal.getTime();
         return df.format(yesterday);
-    }
-
-    public void pushList() throws Exception {
-        Connector connector = new Connector();
-        Statement stmt = connector.statement;
-
-        ++rid;
-
-        for (int i = 0; i < indices.size(); ++i) {
-            String query;
-            query = "SELECT * FROM available a WHERE a.uid = " +
-                    indices.get(i) + " and a.start_date<=\"" +
-                    start.get(i) + "\" and a.end_date>= \"" +
-                    end.get(i) + "\"";
-            ResultSet rs = stmt.executeQuery(query);
-            if (!rs.next()) {
-                throw new Exception("Reserve conflict!");
-            }
-        }
-
-        for (int i = 0; i < indices.size(); ++i) {
-            String query;
-            query = "SELECT * FROM available a WHERE a.uid = " +
-                    indices.get(i) + " and a.start_date<=\"" +
-                    start.get(i) + "\" and a.end_date>= \"" +
-                    end.get(i) + "\"";
-            ResultSet rs = stmt.executeQuery(query);
-            rs.next();
-            String t1 = yesterday(start.get(i)), t2 = tomorrow(end.get(i));
-            String start = rs.getString("start_date"),
-                    end = rs.getString("end_date");
-            Available.removeAvailable(indices.get(i), start, end);
-            if (start.compareTo(t1) < 0) Available.addAvailable(indices.get(i), start, t1);
-            if (t2.compareTo(end.substring(0, 10)) < 0) Available.addAvailable(indices.get(i), t2, end);
-
-            String statement;
-            statement = "INSERT INTO reservation values(" +
-                    rid + "," +
-                    indices.get(i) + "," +
-                    "'" + username + "'" + "," +
-                    "'" + this.start.get(i) + "'" + "," +
-                    "'" + this.end.get(i) + "'" +
-                    ")";
-            stmt.execute(statement);
-            ++rid;
-        }
-        connector.close();
     }
 }
