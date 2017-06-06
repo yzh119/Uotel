@@ -16,7 +16,7 @@
             if (session.getAttribute("username") != null) {
                 username = session.getAttribute("username").toString();
                 if (session.getAttribute("reservation") == null) {
-                    Reserve reservation = new Reserve(username);
+                    Reservation reservation = new Reservation(username);
                     session.setAttribute("reservation", reservation);
                 }
                 if (session.getAttribute("stay") == null) {
@@ -48,7 +48,7 @@
             <p> Welcome to the Uotel system, <%=username%> <a href="logout.jsp">[logout]</a>.</p>
             <table>
                 <tr>
-                    <td><a href="reserve.jsp">Functionality 2 | Reserve</a></td>
+                    <td><a href="reservation.jsp">Functionality 2 | Reserve</a></td>
                 </tr>
                 <tr>
                     <td><a href="house.jsp">Functionality 3 | New TH</a></td>

@@ -17,7 +17,7 @@ public class Visit {
         this.username = username;
     }
 
-    public void addToList(int rid, String start, String end, int spent, int number) {
+    public void add(int rid, String start, String end, int spent, int number) {
         indices.add(rid);
         this.start.add(start);
         this.end.add(end);
@@ -25,7 +25,7 @@ public class Visit {
         this.people.add(number);
     }
 
-    public void pushList() throws Exception {
+    public void push() throws Exception {
         Connector connector = new Connector();
         Statement stmt = connector.statement;
 

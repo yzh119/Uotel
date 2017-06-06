@@ -3,7 +3,7 @@
 <%
     try {
         Visit stay = (Visit) session.getAttribute("stay");
-        stay.addToList(
+        stay.add(
                 Integer.valueOf(request.getParameter("id")),
                 request.getParameter("start_date"),
                 request.getParameter("end_date"),

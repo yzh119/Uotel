@@ -21,7 +21,7 @@ public class Main {
     public static State currentState;
     public static String username;
     public static int currentTHUid;
-    public static Reserve reserve;
+    public static Reservation reservation;
     public static Visit visit;
 
     public static String formatChart(List<List<String>> raw) {
@@ -61,8 +61,8 @@ public class Main {
                 resultStr.append("\t7:\tLogout\n");
                 break;
             case atReservation:
-                if (reserve == null)
-                    reserve = new Reserve(username);
+                if (reservation == null)
+                    reservation = new Reservation(username);
 
                 resultStr.append("Functionality 2 | Reserve\n\n");
                 resultStr.append("After registration, a user can record a reservation to any TH (the same user may reserve the same TH multiple times from different available dates). Each user session (meaning each time after a user has logged into the system) may add one or more researvations, and all reservations added by a user in a user session are reported to him/her for the ﬁnal review and conﬁrmation, before they are added into the database.\n\n");
@@ -71,10 +71,10 @@ public class Main {
                 resultStr.append("All possible houses and their available dates\n");
                 resultStr.append(formatChart(Account.getHouses()) + "\n");
                 resultStr.append("Your stacked reservation list\n");
-                for (int i = 0; i < reserve.indices.size(); ++i) {
-                    resultStr.append(reserve.indices.get(i) + "\t");
-                    resultStr.append(reserve.start.get(i) + "\t");
-                    resultStr.append(reserve.end.get(i) + "\n");
+                for (int i = 0; i < reservation.indices.size(); ++i) {
+                    resultStr.append(reservation.indices.get(i) + "\t");
+                    resultStr.append(reservation.start.get(i) + "\t");
+                    resultStr.append(reservation.end.get(i) + "\n");
                 }
                 resultStr.append("\nTo reserve a new house, fill the chart with format below: \n");
                 resultStr.append("\t UID | Start date(yyyy-mm-dd) | End date(yyyy-mm-dd)\n");
@@ -192,7 +192,7 @@ public class Main {
                         case 6: currentState = State.atTwoDegreesOfSeperation; break;
                         case 7:
                             username = "";
-                            reserve = null;
+                            reservation = null;
                             visit = null;
                             currentState = State.atLogout;
                             break;
@@ -203,10 +203,10 @@ public class Main {
                     if (tokens[0].equals("back")) {
                         currentState = State.atLogin;
                     } else if (tokens[0].equals("confirm")) {
-                        reserve.pushList();
-                        reserve = null;
+                        reservation.push();
+                        reservation = null;
                     } else {
-                        reserve.addToList(Integer.valueOf(tokens[0]), tokens[1], tokens[2]);
+                        reservation.add(Integer.valueOf(tokens[0]), tokens[1], tokens[2]);
                     }
                     break;
                 case atVisit:
@@ -214,10 +214,10 @@ public class Main {
                     if (tokens[0].equals("back")) {
                         currentState = State.atLogin;
                     } else if (tokens[0].equals("confirm")) {
-                        visit.pushList();
+                        visit.push();
                         visit = null;
                     } else {
-                        visit.addToList(Integer.valueOf(tokens[0]), tokens[1], tokens[2], Integer.valueOf(tokens[3]), Integer.valueOf(tokens[4]));
+                        visit.add(Integer.valueOf(tokens[0]), tokens[1], tokens[2], Integer.valueOf(tokens[3]), Integer.valueOf(tokens[4]));
                     }
                     break;
                 case atRecommendation:
