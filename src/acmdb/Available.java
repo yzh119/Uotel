@@ -31,6 +31,6 @@ public class Available {
     }
 
     public static List<List<String>> get(int id) throws Exception {
-        return Utility.query("SELECT h.name, h.address, a.start_date, a.end_date FROM available a, TH h WHERE a.uid = h.uid");
+        return Utility.query("SELECT h.name, h.address, a.start_date, a.end_date FROM available a, TH h WHERE a.uid = h.uid AND a.uid = " + id);
     }
 }

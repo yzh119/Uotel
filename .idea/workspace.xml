@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f1a83e5f-3eb7-42c1-816b-41e502783156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Account.java" afterPath="$PROJECT_DIR$/src/acmdb/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Main.java" afterPath="$PROJECT_DIR$/src/acmdb/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Reservation.java" afterPath="$PROJECT_DIR$/src/acmdb/Reservation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/distance_response.jsp" afterPath="$PROJECT_DIR$/web/distance_response.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/favorite.jsp" afterPath="$PROJECT_DIR$/web/favorite.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house.jsp" afterPath="$PROJECT_DIR$/web/house.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/house_response.jsp" afterPath="$PROJECT_DIR$/web/house_response.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/reservation.jsp" afterPath="$PROJECT_DIR$/web/reservation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/suggestion.jsp" afterPath="$PROJECT_DIR$/web/suggestion.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/visit.jsp" afterPath="$PROJECT_DIR$/web/visit.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Available.java" afterPath="$PROJECT_DIR$/src/acmdb/Available.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,32 +38,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/login.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="house_response.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/house_response.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="house.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/house.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
+            <state relative-caret-position="224">
               <caret line="68" column="44" lean-forward="false" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Available.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/acmdb/Available.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="33" column="142" lean-forward="false" selection-start-line="33" selection-start-column="142" selection-end-line="33" selection-end-column="142" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1496759007000" expanded="true" signature="349:440" ph="SELECT * FRO... period" />
+                <marker date="1496759007000" expanded="true" signature="505:561" ph="INSERT INTO period... " />
+                <marker date="1496759007000" expanded="true" signature="616:862" ph="SELECT * FRO... available" />
+                <marker date="1496759007000" expanded="true" signature="984:1055" ph="INSERT INTO available... " />
+                <marker date="1496759007000" expanded="true" signature="1301:1447" ph="DELETE a FRO... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,10 +129,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Account.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Account.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/acmdb/Account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="-80">
               <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -153,6 +141,16 @@
                 <marker date="1496758720000" expanded="true" signature="823:877" ph="SELECT * fro... user" />
                 <marker date="1496758720000" expanded="true" signature="1284:1343" ph="SELECT passw... user" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reservation.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/reservation.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="37" column="58" lean-forward="true" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -251,8 +249,6 @@
         <option value="$PROJECT_DIR$/src/acmdb/Favorite.java" />
         <option value="$PROJECT_DIR$/web/favorite_response.jsp" />
         <option value="$PROJECT_DIR$/src/acmdb/House.java" />
-        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
-        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
         <option value="$PROJECT_DIR$/src/acmdb/Main.java" />
         <option value="$PROJECT_DIR$/web/visit.jsp" />
         <option value="$PROJECT_DIR$/web/house_response.jsp" />
@@ -260,6 +256,8 @@
         <option value="$PROJECT_DIR$/web/favorite.jsp" />
         <option value="$PROJECT_DIR$/src/acmdb/Reservation.java" />
         <option value="$PROJECT_DIR$/src/acmdb/Account.java" />
+        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
+        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
       </list>
     </option>
   </component>
@@ -1051,14 +1049,7 @@
       <workItem from="1496667455527" duration="1481000" />
       <workItem from="1496670530102" duration="86000" />
       <workItem from="1496674032393" duration="802000" />
-      <workItem from="1496725375579" duration="20868000" />
-    </task>
-    <task id="LOCAL-00003" summary="-">
-      <created>1496640615636</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1496640615636</updated>
+      <workItem from="1496725375579" duration="21158000" />
     </task>
     <task id="LOCAL-00004" summary="-">
       <created>1496642266084</created>
@@ -1396,14 +1387,22 @@
       <option name="project" value="LOCAL" />
       <updated>1496758686831</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="-">
+      <created>1496758726160</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1496758726160</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132393000" />
+    <option name="totallyTimeSpent" value="132683000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="31" y="22" width="1386" height="878" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1430,7 +1429,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32951653" sideWeight="0.49853802" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30059522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30059522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1581,42 +1580,42 @@
         <state relative-caret-position="145">
           <caret line="2014" column="19" lean-forward="true" selection-start-line="2014" selection-start-column="19" selection-end-line="2014" selection-end-column="19" />
           <folding>
-            <marker date="1496758693000" expanded="true" signature="102145:102162" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102145:102180" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102145:102193" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102145:102208" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102243:104520" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102256:104505" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102310:102700" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102329:102685" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102448:102665" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102488:102631" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102509:102609" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102750:103068" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102769:103053" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102855:103033" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102895:102999" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="102916:102977" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103119:103384" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103138:103369" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103171:103349" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103211:103315" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103232:103293" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103427:103733" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103446:103718" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103520:103698" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103560:103664" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103581:103642" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103784:104131" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103803:104116" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103879:104096" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103919:104062" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="103940:104040" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="104183:104491" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="104202:104476" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="104278:104456" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="104318:104422" ph="..." />
-            <marker date="1496758693000" expanded="true" signature="104339:104400" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101425:101442" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101425:101460" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101425:101473" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101425:101488" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101523:103800" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101536:103785" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101590:101980" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101609:101965" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101728:101945" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101768:101911" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="101789:101889" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102030:102348" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102049:102333" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102135:102313" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102175:102279" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102196:102257" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102399:102664" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102418:102649" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102451:102629" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102491:102595" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102512:102573" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102707:103013" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102726:102998" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102800:102978" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102840:102944" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="102861:102922" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="103064:103411" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="103083:103396" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="103159:103376" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="103199:103342" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="103220:103320" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="103463:103771" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="103482:103756" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="103558:103736" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="103598:103702" ph="..." />
+            <marker date="1496759009000" expanded="true" signature="103619:103680" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1741,21 +1740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Available.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1496758528000" expanded="true" signature="349:440" ph="SELECT * FRO... period" />
-            <marker date="1496758528000" expanded="true" signature="505:561" ph="INSERT INTO period... " />
-            <marker date="1496758528000" expanded="true" signature="616:862" ph="SELECT * FRO... available" />
-            <marker date="1496758528000" expanded="true" signature="984:1055" ph="INSERT INTO available... " />
-            <marker date="1496758528000" expanded="true" signature="1301:1447" ph="DELETE a FRO... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/acmdb/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -1784,14 +1768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/reservation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="37" column="60" lean-forward="false" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -1832,14 +1808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/house.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="68" column="44" lean-forward="false" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1908,7 +1876,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/acmdb/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="-80">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1916,6 +1884,37 @@
             <marker date="1496758720000" expanded="true" signature="823:860" ph="SELECT * fro... user" />
             <marker date="1496758720000" expanded="true" signature="823:877" ph="SELECT * fro... user" />
             <marker date="1496758720000" expanded="true" signature="1284:1343" ph="SELECT passw... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/reservation.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="37" column="58" lean-forward="true" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/house.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="68" column="44" lean-forward="false" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Available.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="33" column="142" lean-forward="false" selection-start-line="33" selection-start-column="142" selection-end-line="33" selection-end-column="142" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1496759007000" expanded="true" signature="349:440" ph="SELECT * FRO... period" />
+            <marker date="1496759007000" expanded="true" signature="505:561" ph="INSERT INTO period... " />
+            <marker date="1496759007000" expanded="true" signature="616:862" ph="SELECT * FRO... available" />
+            <marker date="1496759007000" expanded="true" signature="984:1055" ph="INSERT INTO available... " />
+            <marker date="1496759007000" expanded="true" signature="1301:1447" ph="DELETE a FRO... " />
           </folding>
         </state>
       </provider>
