@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f1a83e5f-3eb7-42c1-816b-41e502783156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Available.java" afterPath="$PROJECT_DIR$/src/acmdb/Available.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Distance.java" afterPath="$PROJECT_DIR$/src/acmdb/Distance.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Reservation.java" afterPath="$PROJECT_DIR$/src/acmdb/Reservation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Visit.java" afterPath="$PROJECT_DIR$/src/acmdb/Visit.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -111,8 +107,8 @@
       <file leaf-file-name="Distance.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/acmdb/Distance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+            <state relative-caret-position="195">
+              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -993,14 +989,7 @@
       <workItem from="1496725375579" duration="22618000" />
       <workItem from="1496762070012" duration="6292000" />
       <workItem from="1496768825371" duration="1513000" />
-      <workItem from="1496771458650" duration="2686000" />
-    </task>
-    <task id="LOCAL-00012" summary="-">
-      <created>1496651388524</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1496651388524</updated>
+      <workItem from="1496771458650" duration="2722000" />
     </task>
     <task id="LOCAL-00013" summary="-">
       <created>1496651647930</created>
@@ -1338,11 +1327,18 @@
       <option name="project" value="LOCAL" />
       <updated>1496775967046</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="-">
+      <created>1496776049616</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1496776049616</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144634000" />
+    <option name="totallyTimeSpent" value="144670000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1782,8 +1778,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/acmdb/Distance.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="40" lean-forward="true" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        <state relative-caret-position="195">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding />
         </state>
       </provider>
