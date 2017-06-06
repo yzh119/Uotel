@@ -98,7 +98,7 @@
             %>
                 <h3>Add start and end date</h3>
 
-                <form method="post" action="reserve_submit.jsp?id=<%= id %>">
+                <form method="post" action="reserve_response.jsp?state=stack&id=<%= id %>">
                     <table>
                         <tr>
                             <td><label><b>Start date</b></label></td>
@@ -144,7 +144,7 @@
                         </tr>
                         <%= builder.toString() %>
                     </table>
-                    <input type="button" value="Confirm the above reservation records" onclick="location.href='reserve_complete.jsp'">
+                    <input type="button" value="Confirm the above reservation records" onclick="location.href='reserve_response.jsp?state=complete'">
                 </form>
             <%
                     }

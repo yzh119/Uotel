@@ -30,7 +30,7 @@
             if (session.getAttribute("username") == null) {
         %>
         <div align="center">
-            <form action="login_submit.jsp">
+            <form action="login.jsp">
                 <label><b>Username</b></label>
                 <input type="text" placeholder="Enter username" name="username" required>
 
