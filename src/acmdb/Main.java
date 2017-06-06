@@ -113,10 +113,14 @@ public class Main {
             case atTemporaryHousing:
                 resultStr.append("Functionality 3 | New TH\n\n");
                 resultStr.append("A user may record the details of a new TH, and may update the information regarding an existing TH he/she owns.\n");
+                resultStr.append("All your Houses:\n");
+                resultStr.append(formatChart(Account.getHouses(username)));
                 resultStr.append("To add a new TH, fill the chart with the format below to continue:\n");
                 resultStr.append("\t Name | Address | Website | Telephone | Year built | Price \n");
                 resultStr.append("To add an available period to current TH, fill the chart with the format below to continue:\n");
                 resultStr.append("\t start_date(yyyy-mm-dd) | end_date(yyyy-mm-dd) \n");
+                resultStr.append("To update an existing TH, fill the chart with the format below:\n");
+                resultStr.append("\t uid | Name | Address | Website | Telephone | Year built | Price\n");
                 resultStr.append("Type in 'back' to return to homepage.\n");
                 break;
             case atTwoDegreesOfSeperation:
@@ -226,11 +230,12 @@ public class Main {
                     if (tokens[0].equals("back")) {
                         currentState = State.atLogin;
                     } else if (tokens.length == 6){
-//                        Account.uid++;
-//                        currentTHUid = Account.uid;
-//                        Account.createHouse(Account.uid, tokens[0], username, tokens[1], tokens[2], tokens[3], tokens[4], tokens[5]);
-                    } else {
+                        currentTHUid =
+                            House.add(tokens[0], username, tokens[1], tokens[2], tokens[3], tokens[4], tokens[5]);
+                    } else if (tokens.length == 2){
                         Available.addAvailable(currentTHUid, tokens[0], tokens[1]);
+                    } else if (tokens.length == 7){
+                        House.update(Integer.valueOf(tokens[0]), tokens[1], username, tokens[2], tokens[3], tokens[4], tokens[5], tokens[6]);
                     }
                     break;
                 case atFavorite:
