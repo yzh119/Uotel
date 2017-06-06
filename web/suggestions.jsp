@@ -1,4 +1,5 @@
 <%@ page import="acmdb.Account" %>
+<%@ page import="java.util.List" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -20,19 +21,32 @@
             String username = session.getAttribute("username").toString();
         %>
 
+        <%
+            StringBuilder builder = new StringBuilder();
+            List<List<String>> records = Account.getRecommendations(username);
+            for (int i = 0; i < records.size(); ++i) {
+                builder.append("<tr>");
+                for (int j = 1; j < records.get(i).size(); ++j) {
+                    builder.append("<td align=\"center\">");
+                    builder.append(records.get(i).get(j));
+                    builder.append("</td>");
+                }
+                builder.append("</tr>");
+            }
+        %>
         <table align="center" cellspacing="2" cellpadding="2" border="1">
             <tr>
-                <th>UID</th>
-                <th>Owner Name</th>
+                <th>Owner</th>
                 <th>House Name</th>
                 <th>Address</th>
                 <th>Website</th>
                 <th>Telephone</th>
-                <th>Year built</th>
-                <th>Price</th>
-                <th>Total visits</th>
+                <th>Year of Built</th>
+                <th>Rental</th>
+                <th>Total Visits</th>
+                <th>Common Visits</th>
             </tr>
-            <%= Account.list2Table(Account.getRecommendations(username)) %>
+            <%= builder.toString() %>
         </table>
     </body>
 </html>
