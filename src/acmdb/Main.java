@@ -232,7 +232,7 @@ public class Main {
                         currentTHUid =
                             House.add(tokens[0], username, tokens[1], tokens[2], tokens[3], tokens[4], tokens[5]);
                     } else if (tokens.length == 2){
-                        Available.add(currentTHUid, tokens[0], tokens[1]);
+                        House.addAvailable(currentTHUid, tokens[0], tokens[1]);
                     } else if (tokens.length == 7){
                         House.update(Integer.valueOf(tokens[0]), tokens[1], username, tokens[2], tokens[3], tokens[4], tokens[5], tokens[6]);
                     }

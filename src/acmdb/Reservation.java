@@ -53,12 +53,12 @@ public class Reservation {
             String t1 = Utility.yesterday(start.get(i)), t2 = Utility.tomorrow(end.get(i));
             String start = rs.getString("start_date");
             String end = rs.getString("end_date");
-            Available.remove(indices.get(i), start, end);
+            House.removeAvailable(indices.get(i), start, end);
             if (start.compareTo(t1) < 0) {
-                Available.add(indices.get(i), start, t1);
+                House.addAvailable(indices.get(i), start, t1);
             }
             if (t2.compareTo(end.substring(0, 10)) < 0) {
-                Available.add(indices.get(i), t2, end);
+                House.addAvailable(indices.get(i), t2, end);
             }
             statement.execute("INSERT INTO reservation values(" +
                 id + "," +
