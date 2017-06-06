@@ -1,7 +1,5 @@
 package acmdb;
 
-import sun.security.x509.AVA;
-
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;

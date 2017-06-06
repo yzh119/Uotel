@@ -2,7 +2,6 @@ package acmdb;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.List;
 
 public class Account {
     public static void add(String username, String password, String name, String address, String phone) throws Exception {

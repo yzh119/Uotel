@@ -1,6 +1,5 @@
-<%@ page import="acmdb.Account" %>
-<%@ page import="java.util.List" %>
 <%@ page import="acmdb.Suggestion" %>
+<%@ page import="java.util.List" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

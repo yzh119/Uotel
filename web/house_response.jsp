@@ -1,5 +1,5 @@
-<%@ page import="acmdb.House" %>
 <%@ page import="acmdb.Available" %>
+<%@ page import="acmdb.House" %>
 
 <%
     try {

@@ -1,7 +1,6 @@
-<%@ page import="acmdb.Account" %>
-<%@ page import="java.util.List" %>
 <%@ page import="acmdb.Favorite" %>
 <%@ page import="acmdb.Visit" %>
+<%@ page import="java.util.List" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

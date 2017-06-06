@@ -1,4 +1,3 @@
-<%@ page import="acmdb.Account" %>
 <%@ page import="acmdb.Reservation" %>
 <%@ page import="acmdb.Visit" %>
 <%@ page import="java.util.List" %>

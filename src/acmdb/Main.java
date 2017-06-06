@@ -1,7 +1,5 @@
 package acmdb;
 
-import sun.security.x509.AVA;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

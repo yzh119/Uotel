@@ -1,4 +1,3 @@
-<%@ page import="acmdb.Account" %>
 <%@ page import="acmdb.Distance" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
