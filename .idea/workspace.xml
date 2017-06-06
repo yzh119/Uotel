@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f1a83e5f-3eb7-42c1-816b-41e502783156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Account.java" afterPath="$PROJECT_DIR$/src/acmdb/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/House.java" afterPath="$PROJECT_DIR$/src/acmdb/House.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Main.java" afterPath="$PROJECT_DIR$/src/acmdb/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/reservation.jsp" afterPath="$PROJECT_DIR$/web/reservation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/suggestions.jsp" afterPath="$PROJECT_DIR$/web/suggestions.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Available.java" afterPath="$PROJECT_DIR$/src/acmdb/Available.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Connector.java" afterPath="$PROJECT_DIR$/src/acmdb/Connector.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,39 +42,45 @@
       <file leaf-file-name="visit.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/visit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="-1515">
               <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reservation.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reservation.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/reservation.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="61" column="66" lean-forward="true" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
+            <state relative-caret-position="244">
+              <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visit_response.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/visit_response.jsp">
+      <file leaf-file-name="Connector.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/acmdb/Connector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="70">
+              <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <file leaf-file-name="Available.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/acmdb/Available.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-46">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="405">
+              <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+              <folding>
+                <marker date="1496755682000" expanded="true" signature="304:450" ph="DELETE a FRO... " />
+                <marker date="1496755682000" expanded="true" signature="735:826" ph="SELECT * FRO... period" />
+                <marker date="1496755682000" expanded="true" signature="891:947" ph="INSERT INTO period... " />
+                <marker date="1496755682000" expanded="true" signature="1002:1248" ph="SELECT * FRO... available" />
+                <marker date="1496755682000" expanded="true" signature="1370:1441" ph="INSERT INTO available... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -249,12 +252,9 @@
         <option value="$PROJECT_DIR$/web/house_time.jsp" />
         <option value="$PROJECT_DIR$/web/favorite_response.jsp" />
         <option value="$PROJECT_DIR$/web/reserve_submit.jsp" />
-        <option value="$PROJECT_DIR$/src/acmdb/Connector.java" />
         <option value="$PROJECT_DIR$/web/register.jsp" />
         <option value="$PROJECT_DIR$/web/error.jsp" />
         <option value="$PROJECT_DIR$/web/favorite.jsp" />
-        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
-        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
         <option value="$PROJECT_DIR$/web/distance_response.jsp" />
         <option value="$PROJECT_DIR$/web/distance.jsp" />
         <option value="$PROJECT_DIR$/web/house_time_complete.jsp" />
@@ -279,6 +279,9 @@
         <option value="$PROJECT_DIR$/src/acmdb/House.java" />
         <option value="$PROJECT_DIR$/src/acmdb/Main.java" />
         <option value="$PROJECT_DIR$/web/reservation.jsp" />
+        <option value="$PROJECT_DIR$/src/acmdb/Connector.java" />
+        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
+        <option value="$PROJECT_DIR$/src/acmdb/Available.java" />
       </list>
     </option>
   </component>
@@ -299,8 +302,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="52" />
-    <option name="y" value="137" />
+    <option name="x" value="54" />
+    <option name="y" value="22" />
     <option name="width" value="1386" />
     <option name="height" value="878" />
   </component>
@@ -1099,7 +1102,7 @@
       <workItem from="1496667455527" duration="1481000" />
       <workItem from="1496670530102" duration="86000" />
       <workItem from="1496674032393" duration="802000" />
-      <workItem from="1496725375579" duration="17485000" />
+      <workItem from="1496725375579" duration="17845000" />
     </task>
     <task id="LOCAL-00001" summary="-">
       <created>1496626842694</created>
@@ -1381,14 +1384,21 @@
       <option name="project" value="LOCAL" />
       <updated>1496755214968</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="-">
+      <created>1496755331074</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1496755331074</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129010000" />
+    <option name="totallyTimeSpent" value="129370000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="52" y="137" width="1386" height="878" extended-state="0" />
+    <frame x="54" y="22" width="1386" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1559,14 +1569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Connector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/house_time_complete.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1620,20 +1622,6 @@
         <state relative-caret-position="100">
           <caret line="26" column="77" lean-forward="true" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/acmdb/Available.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <marker date="1496754798000" expanded="true" signature="309:485" ph="DELETE a FRO... " />
-            <marker date="1496754798000" expanded="true" signature="794:885" ph="SELECT * FRO... period" />
-            <marker date="1496754798000" expanded="true" signature="969:1025" ph="INSERT INTO period... " />
-            <marker date="1496754798000" expanded="true" signature="1189:1435" ph="SELECT * FRO... available" />
-            <marker date="1496754798000" expanded="true" signature="1555:1626" ph="INSERT INTO available... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1706,14 +1694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/visit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -1820,8 +1800,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/reservation.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="61" column="66" lean-forward="true" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
+        <state relative-caret-position="244">
+          <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/visit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1515">
+          <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Available.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding>
+            <marker date="1496755682000" expanded="true" signature="304:450" ph="DELETE a FRO... " />
+            <marker date="1496755682000" expanded="true" signature="735:826" ph="SELECT * FRO... period" />
+            <marker date="1496755682000" expanded="true" signature="891:947" ph="INSERT INTO period... " />
+            <marker date="1496755682000" expanded="true" signature="1002:1248" ph="SELECT * FRO... available" />
+            <marker date="1496755682000" expanded="true" signature="1370:1441" ph="INSERT INTO available... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/acmdb/Connector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
           <folding />
         </state>
       </provider>
