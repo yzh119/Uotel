@@ -77,4 +77,8 @@ public class House {
         statement.execute("DELETE a FROM available a WHERE a.uid = " + id + " AND a.start_date='" + start.substring(0, 10) + "' AND a.end_date='" + end.substring(0, 10) + "'");
         connector.close();
     }
+
+    public static List<List<String>> getAvailable(int id) throws Exception {
+        return Utility.query("SELECT h.name, h.address, a.start_date, a.end_date FROM available a, TH h WHERE a.uid = h.uid");
+    }
 }

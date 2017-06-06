@@ -2,6 +2,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="acmdb.House" %>
+<%@ page import="sun.util.locale.provider.AvailableLanguageTags" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -59,6 +60,36 @@
                     <%= builder.toString() %>
                 </table>
             </form>
+
+            <%
+                if (state.equals("add_date")) {
+            %>
+                <h3>Available dates</h3>
+                <%
+                    builder = new StringBuilder();
+                    records = House.getAvailable(Integer.valueOf(id));
+                    for (int i = 0; i < records.size(); ++i) {
+                        builder.append("<tr>");
+                        for (int j = 1; j < records.get(i).size(); ++j) {
+                            builder.append("<td align=\"center\">");
+                            builder.append(records.get(i).get(j));
+                            builder.append("</td>");
+                        }
+                        builder.append("</tr>");
+                    }
+                %>
+                <table align="center" cellspacing="2" cellpadding="2" border="1">
+                    <tr>
+                        <th>House Name</th>
+                        <th>Address</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                    </tr>
+                    <%= builder.toString() %>
+                </table>
+            <%
+                }
+            %>
 
             <%
                 if (state.equals("add_information")) {
@@ -141,15 +172,20 @@
                 if (state.equals("add_date")) {
             %>
                 <form method="post" action="house_response.jsp?state=add_date&id=<%= id %>">
+                    <h3>Add an available date</h3>
                     <div align="center">
-                        <label><b>Start date</b></label>
-                        <input type="text" placeholder="Enter start date (required)" name="start_date" required>
-
-                        <label><b>End date</b></label>
-                        <input type="text" placeholder="Enter end date (required)" name="end_date" required>
-
-                        <button type="submit">Continue to add available date</button>
-                        <input type="button" value="Complete" onclick="location.href='house.jsp'">
+                        <table>
+                            <tr>
+                                <td><label><b>Start date</b></label></td>
+                                <td><input type="text" placeholder="Enter start date (required)" name="start_date" required></td>
+                            </tr>
+                            <tr>
+                                <td><label><b>End date</b></label></td>
+                                <td><input type="text" placeholder="Enter end date (required)" name="end_date" required></td>
+                            </tr>
+                        </table>
+                        <button type="submit">Add to available dates</button>
+                        <input type="button" value="Return" onclick="location.href='house.jsp'">
                     </div>
                 </form>
             <%
