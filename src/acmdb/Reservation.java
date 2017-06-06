@@ -43,7 +43,6 @@ public class Reservation {
                 throw new Exception("Reservation conflict!");
             }
         }
-
         ++id;
         for (int i = 0; i < indices.size(); ++i) {
             ResultSet rs = statement.executeQuery("SELECT * FROM available a WHERE a.uid = " +

@@ -67,11 +67,19 @@
                 for (int i = 0; i < records.size(); ++i) {
                     builder.append("<tr>");
                     for (int j = 1; j < records.get(i).size(); ++j) {
-                        builder.append("<td align=\"center\">");
+                        if (records.get(i).get(0).equals(id)) {
+                            builder.append("<td align=\"center\" bgcolor=\"#FFD78C\">");
+                        } else {
+                            builder.append("<td align=\"center\">");
+                        }
                         builder.append(records.get(i).get(j));
                         builder.append("</td>");
                     }
-                    builder.append("<td align=\"center\">");
+                    if (records.get(i).get(0).equals(id)) {
+                        builder.append("<td align=\"center\" bgcolor=\"#FFD78C\">");
+                    } else {
+                        builder.append("<td align=\"center\">");
+                    }
                     builder.append("<input type=\"button\" value=\"visit\" onclick=\"location.href='visit.jsp?state=add_date&id=").append(records.get(i).get(0)).append("'\">");
                     builder.append("</td>");
                     builder.append("</tr>");
