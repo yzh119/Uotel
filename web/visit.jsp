@@ -1,8 +1,8 @@
-<%@ page import="acmdb.Visit" %>
 <%@ page import="acmdb.Account" %>
+<%@ page import="acmdb.Reservation" %>
+<%@ page import="acmdb.Visit" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %>
-<%@ page import="acmdb.Reservation" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
