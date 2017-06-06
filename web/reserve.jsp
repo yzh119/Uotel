@@ -1,7 +1,7 @@
-<%@ page import="acmdb.House" %>
 <%@ page import="acmdb.Reserve" %>
-<%@ page import="acmdb.Database" %>
+<%@ page import="acmdb.Account" %>
 <%@ page import="java.util.List" %>
+<%@ page import="acmdb.Account" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -38,7 +38,7 @@
                     <th>Price</th>
                     <th>Total visits</th>
                 </tr>
-                <%= Database.list2Table(Database.getReservations(username)) %>
+                <%= Account.list2Table(Account.getReservations(username)) %>
             </table>
 
             <h3>All possible houses and their available dates</h3>
@@ -57,7 +57,7 @@
                     <th>Start date</th>
                     <th>End date</th>
                 </tr>
-                <%= Database.list2Table(Database.getHouses()) %>
+                <%= Account.list2Table(Account.getHouses()) %>
             </table>
         </div>
 

@@ -1,10 +1,10 @@
-<%@ page import="acmdb.Database" %>
+<%@ page import="acmdb.Account" %>
 
 <%
     try {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        if (Database.checkPassword(username, password)) {
+        if (Account.checkPassword(username, password)) {
             session.setAttribute("username", username);
             response.sendRedirect("index.jsp");
         } else {

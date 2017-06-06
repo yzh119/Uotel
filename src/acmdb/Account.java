@@ -1,22 +1,37 @@
 package acmdb;
 
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database {
-    private static boolean existAccount(String username) throws Exception {
-        Connector connector = new Connector();
-        Statement statement = connector.statement;
-        ResultSet result = statement.executeQuery("SELECT * from user WHERE login_name='" + username + "'");
-        boolean response = result.next();
-        connector.close();
-        return response;
+public class Account {
+    public static int uid;
+
+    static {
+        try {
+            Connector connector = new Connector();
+            Statement statement = connector.statement;
+            ResultSet result = statement.executeQuery("SELECT MAX(th.uid) FROM TH th");
+            if (result.next()) {
+                uid = result.getInt(1);
+            }
+            connector.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public static void createAccount(String username, String password, String name, String address, String phone) throws Exception {
-        if (existAccount(username)) {
+    public static void createHouse(int uid, String name, String owner, String address, String url, String telephone, String yearBuilt, String price) throws Exception{
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+        statement.execute("INSERT INTO TH VALUES (" + uid + ",'" + owner + "','" + name + "','" + address + "','" + url + "','" + telephone + "'," + yearBuilt + "," + price + ",0)");
+        connector.close();
+    }
+
+    public static void add(String username, String password, String name, String address, String phone) throws Exception {
+        if (exist(username)) {
             throw new Exception("Username \"" + username + "\" exists!");
         }
         Connector connector = new Connector();
@@ -25,8 +40,17 @@ public class Database {
         connector.close();
     }
 
+    private static boolean exist(String username) throws Exception {
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+        ResultSet result = statement.executeQuery("SELECT * FROM user WHERE login_name='" + username + "'");
+        boolean response = result.next();
+        connector.close();
+        return response;
+    }
+
     public static boolean checkPassword(String username, String password) throws Exception {
-        if (!existAccount(username)) {
+        if (!exist(username)) {
             return false;
         }
         Connector connector = new Connector();
@@ -58,15 +82,35 @@ public class Database {
             records.add(new ArrayList<>());
             for (int i = 1; i <= 12; ++i) {
                 String record = result.getString(i);
-                //if (i == 3) {
-                //    continue;
-                //}
-
+                if (record.endsWith("00:00:00.0")) {
+                    record = record.substring(0, 10);
+                }
                 if (i == 10) {
                     continue;
                 }
-                if (i == 11 || i == 12) {
+                records.get(records.size() - 1).add(record);
+            }
+        }
+        return records;
+    }
+
+    public static List<List<String>> getHouses(String username) throws Exception {
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+
+        ResultSet result = statement.executeQuery("SELECT * FROM TH t WHERE t.owner = \"" + username + "\"");
+        ResultSetMetaData meta = result.getMetaData();
+
+        List<List<String>> records = new ArrayList<>();
+        while (result.next()) {
+            records.add(new ArrayList<>());
+            for (int i = 1; i <= meta.getColumnCount(); ++i) {
+                String record = result.getString(i);
+                if (record.endsWith("00:00:00.0")) {
                     record = record.substring(0, 10);
+                }
+                if (i == 2) {
+                    continue;
                 }
                 records.get(records.size() - 1).add(record);
             }
@@ -78,17 +122,19 @@ public class Database {
         Connector connector = new Connector();
         Statement statement = connector.statement;
 
-        List<List<String>> records = new ArrayList<>();
         ResultSet result = statement.executeQuery("SELECT * FROM reservation r, TH t WHERE r.uid = t.uid AND user_name = \"" + username + "\"");
+        ResultSetMetaData meta = result.getMetaData();
+
+        List<List<String>> records = new ArrayList<>();
         while (result.next()) {
             records.add(new ArrayList<>());
-            for (int i = 1; i <= 14; ++i) {
+            for (int i = 1; i <= meta.getColumnCount(); ++i) {
                 String record = result.getString(i);
+                if (record.endsWith("00:00:00.0")) {
+                    record = record.substring(0, 10);
+                }
                 if (i == 3 || i == 6) {
                     continue;
-                }
-                if (i == 4 || i == 5) {
-                    record = record.substring(0, 10);
                 }
                 records.get(records.size() - 1).add(record);
             }
@@ -100,17 +146,18 @@ public class Database {
         Connector connector = new Connector();
         Statement statement = connector.statement;
 
-        List<List<String>> records = new ArrayList<>();
         ResultSet result = statement.executeQuery("SELECT * FROM visit v, TH t, reservation r WHERE v.rid = r.rid AND t.uid = r.uid AND v.user_name = r.user_name AND v.user_name = \"" + username + "\"");
+
+        List<List<String>> records = new ArrayList<>();
         while (result.next()) {
             records.add(new ArrayList<>());
             for (int i = 1; i <= 15; ++i) {
                 String record = result.getString(i);
+                if (record.endsWith("00:00:00.0")) {
+                    record = record.substring(0, 10);
+                }
                 if (i == 2) {
                     continue;
-                }
-                if (i == 3 || i == 4) {
-                    record = record.substring(0, 10);
                 }
                 records.get(records.size() - 1).add(record);
             }
@@ -161,10 +208,10 @@ public class Database {
     }
 
     public static int computeDistance(String username1, String username2) throws Exception {
-        if (!existAccount(username1)) {
+        if (!exist(username1)) {
             throw new Exception("Account \"" + username1 + "\" does not exist!");
         }
-        if (!existAccount(username2)) {
+        if (!exist(username2)) {
             throw new Exception("Account \"" + username2 + "\" does not exist!");
         }
         if (username1.equals(username2)) {

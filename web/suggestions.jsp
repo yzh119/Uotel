@@ -1,4 +1,4 @@
-<%@ page import="acmdb.Database" %>
+<%@ page import="acmdb.Account" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -29,7 +29,7 @@
                 <th>Price</th>
                 <th>Total visits</th>
             </tr>
-            <%= Database.list2Table(Database.getRecommendations(username)) %>
+            <%= Account.list2Table(Account.getRecommendations(username)) %>
         </table>
 
         <div align="right">

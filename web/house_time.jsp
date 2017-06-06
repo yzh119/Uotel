@@ -11,7 +11,7 @@
             <p><i>A user may record the details of a new TH, and may update the information regarding an existing TH he/she owns.</i></p>
         </div>
 
-        <form method="post" action="create_time_submit.jsp">
+        <form method="post" action="house_time_submit.jsp">
             <div align="center">
                 <label><b>Start date</b></label>
                 <input type="text" placeholder="Enter start date" name="start_date" required>
@@ -20,7 +20,7 @@
                 <input type="text" placeholder="Enter end date" name="end_date" required>
 
                 <button type="submit">Continue to add available date</button>
-                <input type="button" value="Complete" onclick="location.href='create_time_complete.jsp'">
+                <input type="button" value="Complete" onclick="location.href='house_time_complete.jsp'">
             </div>
         </form>
 

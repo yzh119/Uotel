@@ -51,7 +51,7 @@
                     <td><a href="reserve.jsp">Functionality 2 | Reserve</a></td>
                 </tr>
                 <tr>
-                    <td><a href="create_information.jsp">Functionality 3 | New TH</a></td>
+                    <td><a href="house.jsp">Functionality 3 | New TH</a></td>
                 </tr>
                 <tr>
                     <td><a href="visit.jsp">Functionality 4 | Stays</a></td>

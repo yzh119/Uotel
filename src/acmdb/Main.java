@@ -68,9 +68,9 @@ public class Main {
                 resultStr.append("Functionality 2 | Reserve\n\n");
                 resultStr.append("After registration, a user can record a reservation to any TH (the same user may reserve the same TH multiple times from different available dates). Each user session (meaning each time after a user has logged into the system) may add one or more researvations, and all reservations added by a user in a user session are reported to him/her for the ﬁnal review and conﬁrmation, before they are added into the database.\n\n");
                 resultStr.append("All your reservations\n");
-                resultStr.append(formatChart(Database.getReservations(username)) + "\n");
+                resultStr.append(formatChart(Account.getReservations(username)) + "\n");
                 resultStr.append("All possible houses and their available dates\n");
-                resultStr.append(formatChart(Database.getHouses()) + "\n");
+                resultStr.append(formatChart(Account.getHouses()) + "\n");
                 resultStr.append("Your stacked reservation list\n");
                 for (int i = 0; i < reserve.selectTH.size(); ++i) {
                     resultStr.append(reserve.selectTH.get(i) + "\t");
@@ -88,9 +88,9 @@ public class Main {
                 resultStr.append("Functionality 4 | Stays\n\n");
                 resultStr.append("A user can record a stay at any TH (the same user may stay at the same TH multiple times). Each user session (meaning each time after a user has logged into the system) may add one or more stays, and all stays added by a user in a user session are reported to him/her for the ﬁnal review and conﬁrmation, before they are added into the database. Note that a user may only record a stay at a TH during a period he/she has a reservation.\n\n");
                 resultStr.append("All your visits\n");
-                resultStr.append(formatChart(Database.getVisits(username)) + "\n");
+                resultStr.append(formatChart(Account.getVisits(username)) + "\n");
                 resultStr.append("All your reservations\n");
-                resultStr.append(formatChart(Database.getReservations(username)) + "\n");
+                resultStr.append(formatChart(Account.getReservations(username)) + "\n");
                 resultStr.append("Your stacked visit list\n");
                 for (int i = 0; i < visit.selectRID.size(); ++i) {
                     resultStr.append(visit.selectRID.get(i) + "\t");
@@ -107,7 +107,7 @@ public class Main {
             case atRecommendation:
                 resultStr.append("Functionality 11 | TH suggestions\n\n");
                 resultStr.append("Like most e-commerce websites, when a user records his/her reservations to a TH ‘A’, your system should give a list of other suggested THs. TH ‘B’ is suggested, if there exist a user ‘X’ that visited both ‘A’ and ‘B’. The suggested THs should be sorted on decreasing total visit count (i.e., most popular ﬁrst); count only visits by users like ‘X’.\n");
-                resultStr.append(formatChart(Database.getRecommendations(username)));
+                resultStr.append(formatChart(Account.getRecommendations(username)));
                 resultStr.append("Type in 'back' to return to homepage.\n");
                 break;
             case atTemporaryHousing:
@@ -130,9 +130,9 @@ public class Main {
                 resultStr.append("Functionality 5 | Favorite recordings\n\n");
                 resultStr.append("Users can declare a TH as his/her favorite place to stay.\n");
                 resultStr.append("All your visits\n");
-                resultStr.append(formatChart(Database.getVisits(username)) + "\n");
+                resultStr.append(formatChart(Account.getVisits(username)) + "\n");
                 resultStr.append("All your favorites\n");
-                resultStr.append(formatChart(Database.getFavorites(username)) + "\n");
+                resultStr.append(formatChart(Account.getFavorites(username)) + "\n");
                 resultStr.append("Input UID of your favorite TH:\n");
                 resultStr.append("Type in 'back' to return to homepage.\n");
                 break;
@@ -168,13 +168,13 @@ public class Main {
                 case atLogout:
                     username = tokens[0];
                     if (tokens.length == 2) {
-                        if (Database.checkPassword(username, tokens[1])) {
+                        if (Account.checkPassword(username, tokens[1])) {
                             currentState = State.atLogin;
                         } else {
                             System.out.println("Wrong password!");
                         }
                     } else {
-                        Database.createAccount(username, tokens[1], tokens[2], tokens[3], tokens[4]);
+                        Account.add(username, tokens[1], tokens[2], tokens[3], tokens[4]);
                         currentState = State.atLogin;
                     }
                     break;
@@ -226,9 +226,9 @@ public class Main {
                     if (tokens[0].equals("back")) {
                         currentState = State.atLogin;
                     } else if (tokens.length == 6){
-                        House.uid++;
-                        currentTHUid = House.uid;
-                        House.createHouse(House.uid, tokens[0], username, tokens[1], tokens[2], tokens[3], tokens[4], tokens[5]);
+                        Account.uid++;
+                        currentTHUid = Account.uid;
+                        Account.createHouse(Account.uid, tokens[0], username, tokens[1], tokens[2], tokens[3], tokens[4], tokens[5]);
                     } else {
                         Available.addAvailable(currentTHUid, tokens[0], tokens[1]);
                     }
@@ -237,14 +237,14 @@ public class Main {
                     if (tokens[0].equals("back")) {
                         currentState = State.atLogin;
                     } else {
-                        Database.addFavorite(username, Integer.valueOf(tokens[0]));
+                        Account.addFavorite(username, Integer.valueOf(tokens[0]));
                     }
                     break;
                 case atTwoDegreesOfSeperation:
                     if (tokens[0].equals("back")) {
                         currentState = State.atLogin;
                     } else {
-                        int dis = Database.computeDistance(tokens[0], tokens[1]);
+                        int dis = Account.computeDistance(tokens[0], tokens[1]);
                         if (dis > 0 )
                             System.out.println("The distance between these two users is " + dis + "\n");
                         else

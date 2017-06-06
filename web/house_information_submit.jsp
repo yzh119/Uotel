@@ -1,10 +1,10 @@
-<%@ page import="acmdb.House" %>
+<%@ page import="acmdb.Account" %>
 
 <%
     try {
-        House.uid++;
-        session.setAttribute("currentPH", House.uid);
-        House.createHouse(House.uid,
+        Account.uid++;
+        session.setAttribute("currentPH", Account.uid);
+        Account.createHouse(Account.uid,
                 request.getParameter("name"),
                 session.getAttribute("username").toString(),
                 request.getParameter("address"),
@@ -12,7 +12,7 @@
                 request.getParameter("telephone"),
                 request.getParameter("year_built"),
                 request.getParameter("price"));
-        response.sendRedirect("create_time.jsp");
+        response.sendRedirect("house_time.jsp");
     } catch (Exception e) {
         response.sendRedirect("error.jsp?message=" + e.getMessage());
     }
