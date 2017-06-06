@@ -14,8 +14,8 @@ public class Available {
         }
         result = statement.executeQuery("SELECT * FROM available a " +
             "WHERE  a.uid = " + uid +
-            " AND    ((a.start_date <= '" + start + "' and a.end_date >= '" + start + "')" +
-            " OR     (a.start_date <= '" + end + "' and a.end_date >= '" + end + "'))");
+            " AND    ((a.start_date < '" + start + "' and a.end_date > '" + start + "')" +
+            " OR     (a.start_date < '" + end + "' and a.end_date > '" + end + "'))");
         if (result.next()) {
             throw new Exception("Overlay period!");
         }

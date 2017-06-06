@@ -16,31 +16,21 @@ public class Distance {
         }
         String[] queries = new String[2];
         queries[0] = "SELECT * FROM " +
-            "user u1, user u2, " +
-            "visit s1, visit s2, " +
-            "reservation r1, reservation r2 " +
+            "user u1, favorite f1, user u2, favorite f2 " +
             "WHERE " +
-            "u1.login_name = '" + username1 + "' and u2.login_name = '" + username2 + "' and " +
-            "s1.user_name = u1.login_name and s2.user_name = u2.login_name and " +
-            "r1.rid = s1.rid and r1.user_name = s1.user_name and " +
-            "r2.rid = s1.rid and r2.user_name = s2.user_name and " +
-            "r1.uid = r2.uid";
+            "u1.login_name = '" + username1 + "' AND u2.login_name = '" + username2 + "' AND " +
+            "f1.user_name = u1.login_name AND f2.user_name = u2.login_name AND " +
+            "f1.uid = f2.uid";
         queries[1] = "SELECT * FROM " +
-            "user u1, user u2, user u3,  " +
-            "visit s1, visit s2, visit s3,  " +
-            "reservation r1, reservation r2, reservation r3 " +
+            "user u1, favorite f1, user u2, favorite f2, user u3, favorite f31, favorite f32 " +
             "WHERE " +
-            "u1.login_name = '" + username1 + "' and  " +
-            "s1.user_name = u1.login_name and s3.user_name = u3.login_name and  " +
-            "r1.rid = s1.rid and r1.user_name = s3.user_name and  " +
-            "r3.rid = s1.rid and r3.user_name = s3.user_name and  " +
-            "r1.uid = r3.uid " +
-            "and " +
-            "u2.login_name = '" + username2 + "' and  " +
-            "s2.user_name = u2.login_name and s3.user_name = u3.login_name and  " +
-            "r2.rid = s2.rid and r2.user_name = s3.user_name and  " +
-            "r3.rid = s2.rid and r3.user_name = s3.user_name and  " +
-            "r2.uid = r3.uid";
+            "u1.login_name = '" + username1 + "' AND " +
+            "f1.user_name = u1.login_name AND f31.user_name = u3.login_name AND " +
+            "f1.uid = f31.uid " +
+            "AND " +
+            "u2.login_name = '" + username2 + "' AND " +
+            "f2.user_name = u2.login_name AND f32.user_name = u3.login_name AND " +
+            "f2.uid = f32.uid";
 
         int distance = -1;
         Connector connector = new Connector();

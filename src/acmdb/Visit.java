@@ -35,48 +35,37 @@ public class Visit {
 
     public void push() throws Exception {
         Connector connector = new Connector();
-        Statement stmt = connector.statement;
+        Statement statement = connector.statement;
         for (int i = 0; i < indices.size(); ++i) {
             if (exist(indices.get(i))) {
                 throw new Exception("You may not record two visits for one reservation.");
             }
-            ResultSet result = stmt.executeQuery(
+            ResultSet result = statement.executeQuery(
                 "SELECT * FROM reservation r WHERE " +
                 "r.rid = " + indices.get(i) + " " +
                 "AND (" +
                     "'" + start.get(i) + "' < r.start_date " +
-                    "OR '" + end.get(i) + "' > r.end_date)"
+                    "OR '" + end.get(i) + "' > r.end_date" +
+                ")"
             );
             if (result.next()) {
                 throw new Exception("You may only record the visit during the time period of one reservation.");
             }
         }
         for (int i = 0; i < indices.size(); ++i) {
-            String query;
-            String statement;
             ResultSet rs;
-            statement = "INSERT INTO visit VALUES (" +
-                    indices.get(i) + "," +
-                    "'" + username + "'" + "," +
-                    "'" + start.get(i) + "'" + "," +
-                    "'" + end.get(i) + "'" + "," +
-                    cost.get(i) + "," +
-                    people.get(i) +
-                    ")";
-            stmt.execute(statement);
-
-            query = "SELECT uid FROM reservation r WHERE r.rid = " + indices.get(i);
-            rs = stmt.executeQuery(query);
+            statement.execute(
+                "INSERT INTO visit VALUES (" +
+                    indices.get(i) + ",'" + username + "','" + start.get(i) + "','" + end.get(i) + "'," + cost.get(i) + "," + people.get(i) +
+                ")"
+            );
+            rs = statement.executeQuery("SELECT uid FROM reservation r WHERE r.rid = " + indices.get(i));
             rs.next();
             int currentUid = rs.getInt(1);
-
-            query = "SELECT visit_count FROM TH th WHERE th.uid = " + currentUid;
-            rs = stmt.executeQuery(query);
+            rs = statement.executeQuery("SELECT visit_count FROM TH th WHERE th.uid = " + currentUid);
             rs.next();
             int newCount = rs.getInt(1) + 1;
-
-            statement = "UPDATE TH SET visit_count = " + newCount + " WHERE uid = " + currentUid;
-            stmt.execute(statement);
+            statement.execute("UPDATE TH SET visit_count = " + newCount + " WHERE uid = " + currentUid);
         }
         connector.close();
     }

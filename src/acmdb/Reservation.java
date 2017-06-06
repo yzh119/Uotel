@@ -52,14 +52,15 @@ public class Reservation {
                 end.get(i) + "'"
             );
             rs.next();
-            String t1 = Utility.yesterday(start.get(i)), t2 = Utility.tomorrow(end.get(i));
-            String start = rs.getString("start_date");
-            String end = rs.getString("end_date");
+            String t1 = Utility.yesterday(start.get(i));
+            String t2 = Utility.tomorrow(end.get(i));
+            String start = rs.getString("start_date").substring(0, 10);
+            String end = rs.getString("end_date").substring(0, 10);
             Available.remove(indices.get(i), start, end);
-            if (start.compareTo(t1) < 0) {
+            if (start.compareTo(t1) <= 0) {
                 Available.add(indices.get(i), start, t1);
             }
-            if (t2.compareTo(end.substring(0, 10)) < 0) {
+            if (t2.compareTo(end) <= 0) {
                 Available.add(indices.get(i), t2, end);
             }
             ResultSet result = statement.executeQuery("SELECT MAX(r.rid) FROM reservation r");
