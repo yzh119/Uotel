@@ -18,7 +18,7 @@ public class Favorite {
         if (!result.next()) {
             throw new Exception("You have no stay records for this house yet!");
         }
-        statement.execute("INSERT INTO favorite values(" + id + ",'" + username + "')");
+        statement.execute("INSERT INTO favorite VALUES (" + id + ",'" + username + "')");
         connector.close();
     }
 

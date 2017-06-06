@@ -4,13 +4,6 @@
     <list default="true" id="f1a83e5f-3eb7-42c1-816b-41e502783156" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Favorite.java" afterPath="$PROJECT_DIR$/src/acmdb/Favorite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/House.java" afterPath="$PROJECT_DIR$/src/acmdb/House.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Reservation.java" afterPath="$PROJECT_DIR$/src/acmdb/Reservation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/acmdb/Visit.java" afterPath="$PROJECT_DIR$/src/acmdb/Visit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/reservation.jsp" afterPath="$PROJECT_DIR$/web/reservation.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/reservation_response.jsp" afterPath="$PROJECT_DIR$/web/reservation_response.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/visit.jsp" afterPath="$PROJECT_DIR$/web/visit.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/visit_response.jsp" afterPath="$PROJECT_DIR$/web/visit_response.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,11 +112,11 @@
       <file leaf-file-name="Favorite.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/acmdb/Favorite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
-                <marker date="1496767354000" expanded="true" signature="351:583" ph="SELECT * FRO... visit" />
-                <marker date="1496767354000" expanded="true" signature="749:807" ph="INSERT INTO favorite... " />
+                <marker date="1496767582000" expanded="true" signature="351:583" ph="SELECT * FRO... visit" />
+                <marker date="1496767582000" expanded="true" signature="749:808" ph="INSERT INTO favorite... " />
               </folding>
             </state>
           </provider>
@@ -319,10 +312,8 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="53" />
-    <option name="y" value="22" />
-    <option name="width" value="1386" />
-    <option name="height" value="878" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -416,6 +407,7 @@
     <property name="settings.editor.selected.configurable" value="SQL Dialects" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -994,14 +986,7 @@
       <workItem from="1496670530102" duration="86000" />
       <workItem from="1496674032393" duration="802000" />
       <workItem from="1496725375579" duration="22618000" />
-      <workItem from="1496762070012" duration="5157000" />
-    </task>
-    <task id="LOCAL-00008" summary="-">
-      <created>1496648978167</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1496648978167</updated>
+      <workItem from="1496762070012" duration="5267000" />
     </task>
     <task id="LOCAL-00009" summary="-">
       <created>1496650097584</created>
@@ -1339,14 +1324,21 @@
       <option name="project" value="LOCAL" />
       <updated>1496764682995</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="-">
+      <created>1496767563283</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1496767563283</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139300000" />
+    <option name="totallyTimeSpent" value="139410000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="22" width="1386" height="878" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1371,10 +1363,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32951653" sideWeight="0.49853802" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3120482" sideWeight="0.49853802" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30505952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2932761" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1774,11 +1766,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/acmdb/Favorite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <marker date="1496767354000" expanded="true" signature="351:583" ph="SELECT * FRO... visit" />
-            <marker date="1496767354000" expanded="true" signature="749:807" ph="INSERT INTO favorite... " />
+            <marker date="1496767582000" expanded="true" signature="351:583" ph="SELECT * FRO... visit" />
+            <marker date="1496767582000" expanded="true" signature="749:808" ph="INSERT INTO favorite... " />
           </folding>
         </state>
       </provider>
