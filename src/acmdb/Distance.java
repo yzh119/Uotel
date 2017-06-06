@@ -31,7 +31,6 @@ public class Distance {
             "u2.login_name = '" + username2 + "' AND " +
             "f2.user_name = u2.login_name AND f32.user_name = u3.login_name AND " +
             "f2.uid = f32.uid";
-
         int distance = -1;
         Connector connector = new Connector();
         Statement statement = connector.statement;
