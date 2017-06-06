@@ -226,9 +226,9 @@ public class Main {
                     if (tokens[0].equals("back")) {
                         currentState = State.atLogin;
                     } else if (tokens.length == 6){
-                        Account.uid++;
-                        currentTHUid = Account.uid;
-                        Account.createHouse(Account.uid, tokens[0], username, tokens[1], tokens[2], tokens[3], tokens[4], tokens[5]);
+//                        Account.uid++;
+//                        currentTHUid = Account.uid;
+//                        Account.createHouse(Account.uid, tokens[0], username, tokens[1], tokens[2], tokens[3], tokens[4], tokens[5]);
                     } else {
                         Available.addAvailable(currentTHUid, tokens[0], tokens[1]);
                     }

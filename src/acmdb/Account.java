@@ -7,29 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Account {
-    public static int uid;
-
-    static {
-        try {
-            Connector connector = new Connector();
-            Statement statement = connector.statement;
-            ResultSet result = statement.executeQuery("SELECT MAX(th.uid) FROM TH th");
-            if (result.next()) {
-                uid = result.getInt(1);
-            }
-            connector.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void createHouse(int uid, String name, String owner, String address, String url, String telephone, String yearBuilt, String price) throws Exception{
-        Connector connector = new Connector();
-        Statement statement = connector.statement;
-        statement.execute("INSERT INTO TH VALUES (" + uid + ",'" + owner + "','" + name + "','" + address + "','" + url + "','" + telephone + "'," + yearBuilt + "," + price + ",0)");
-        connector.close();
-    }
-
     public static void add(String username, String password, String name, String address, String phone) throws Exception {
         if (exist(username)) {
             throw new Exception("Username \"" + username + "\" exists!");

@@ -18,14 +18,8 @@
 
         <%
             String username = session.getAttribute("username").toString();
-            String state = "add_information";
-            if (request.getParameter("state") != null) {
-                state = request.getParameter("state");
-            }
-            String id = null;
-            if (request.getParameter("id") != null) {
-                id = request.getParameter("id");
-            }
+            String state = request.getParameter("state") != null ? request.getParameter("state") : "add_information";
+            String id = request.getParameter("id");
         %>
 
         <div align="center">

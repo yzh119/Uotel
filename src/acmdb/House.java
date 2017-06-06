@@ -9,10 +9,14 @@ import java.util.List;
 import java.util.Map;
 
 public class House {
-    public static void createHouse(int uid, String name, String owner, String address, String url, String telephone, String yearBuilt, String price) throws Exception{
+    public static int add(String name, String owner, String address, String website, String phone, String year, String rental) throws Exception{
         Connector connector = new Connector();
         Statement statement = connector.statement;
-        statement.execute("INSERT INTO TH VALUES (" + uid + ",'" + owner + "','" + name + "','" + address + "','" + url + "','" + telephone + "'," + yearBuilt + "," + price + ",0)");
+        ResultSet result = statement.executeQuery("SELECT MAX(h.uid) FROM TH h");
+        int id = result.next() ? result.getInt(1) : 0;
+        statement.execute("INSERT INTO TH VALUES (" + id + ",'" + owner + "','" + name + "','" + address + "','" + website + "','" + phone + "'," + year + "," + rental + ",0)");
+        connector.close();
+        return id;
     }
 
     public static void update(int id, String name, String owner, String address, String website, String phone, String year, String rental) throws Exception {
@@ -20,13 +24,13 @@ public class House {
         Statement statement = connector.statement;
         statement.execute(
             "UPDATE TH SET " +
-            "name = \"" + name + "\", " +
-            "owner = \"" + owner + "\", " +
-            "address = \"" + address + "\", " +
-            "url = \"" + website + "\", " +
-            "phone_number = \"" + phone + "\", " +
-            "year_built = \"" + year + "\", " +
-            "price = \"" + rental + "\" " +
+            "name = '" + name + "', " +
+            "owner = '" + owner + "', " +
+            "address = '" + address + "', " +
+            "url = '" + website + "', " +
+            "phone_number = '" + phone + "', " +
+            "year_built = '" + year + "', " +
+            "price = '" + rental + "' " +
             "WHERE uid = " + String.valueOf(id)
         );
     }
