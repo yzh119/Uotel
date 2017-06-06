@@ -71,7 +71,7 @@ public class Account {
 
     public static List<List<String>> getRecommendations(String username) throws Exception {
         return Utility.query(
-            "SELECT new_th.*, count(*) as like_cnt FROM " +
+                "SELECT * from (SELECT new_th.*, count(*) as like_cnt FROM " +
                 "user u1, user u2, " +
                 "visit v1, visit v2, visit all2, " +
                 "reservation r1, reservation r2, reservation allr2, " +
@@ -81,7 +81,7 @@ public class Account {
                 "v1.user_name = u1.login_name and v1.rid = r1.rid and v1.user_name = r1.user_name and r1.uid = common_th.uid and " +
                 "v2.user_name = u2.login_name and v2.rid = r2.rid and v2.user_name = r2.user_name and r2.uid = common_th.uid and " +
                 "all2.user_name = u2.login_name and all2.rid = allr2.rid and all2.user_name = allr2.user_name and new_th.uid = allr2.uid " +
-                "group by new_th.uid "
+                "group by new_th.uid) as result order by result.like_cnt DESC"
         );
     }
 
