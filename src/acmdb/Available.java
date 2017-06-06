@@ -41,34 +41,4 @@ public class Available {
         statement.execute("INSERT INTO available values(" + uid + ",'" + start + "','" + end + "')");
         connector.close();
     }
-
-    public static String getAvailableTable(int uid) throws Exception {
-        Connector connector = new Connector();
-        Statement stmt = connector.statement;
-        StringBuffer builder = new StringBuffer();
-        builder.append("<table>");
-        builder.append("<tr> " +
-                "<th> start_time </th>" +
-                "<th> end_time </th>" +
-                "</tr>"
-        );
-
-        String query;
-        ResultSet rs;
-        query = "SELECT * FROM available WHERE uid=" + uid;
-
-        rs = stmt.executeQuery(query);
-
-        while (rs.next()) {
-            builder.append("<tr>" +
-                    "<th>" + rs.getString("start_date") + "</th>" +
-                    "<th>" + rs.getString("end_date") + "</th>" +
-                    "</tr>"
-            );
-        }
-
-        builder.append("</table>");
-        connector.close();
-        return builder.toString();
-    }
 }

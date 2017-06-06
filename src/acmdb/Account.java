@@ -54,7 +54,7 @@ public class Account {
     }
 
     public static List<List<String>> getHouses(String username) throws Exception {
-        return Utility.query("SELECT h.uid, h.owner, h.address, h.url, h.phone_number, h.year_built, h.price, h.visit_count FROM TH h WHERE h.owner = \"" + username + "\"");
+        return Utility.query("SELECT h.uid, h.name, h.address, h.url, h.phone_number, h.year_built, h.price, h.visit_count FROM TH h WHERE h.owner = \"" + username + "\"");
     }
 
     public static List<List<String>> getReservations(String username) throws Exception{

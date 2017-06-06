@@ -2,12 +2,13 @@
 
 <%
     try {
+        int id = Integer.valueOf(request.getParameter("id"));
         Available.addAvailable(
-                (Integer) session.getAttribute("currentPH"),
-                request.getParameter("start_date"),
-                request.getParameter("end_date")
+            id,
+            request.getParameter("start_date"),
+            request.getParameter("end_date")
         );
-        response.sendRedirect("house.jsp?state=add_time");
+        response.sendRedirect("house.jsp?state=add_time&id=" + id);
     } catch (Exception e) {
         response.sendRedirect("error.jsp?message=" + e.getMessage());
     }

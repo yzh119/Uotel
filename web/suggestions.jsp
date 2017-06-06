@@ -7,9 +7,12 @@
         <title>Functionality 11 | TH suggestions</title>
     </head>
     <body>
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
+
         <div align="center">
             <h2>Functionality 11 | TH suggestions</h2>
-
             <p><i>Like most e-commerce websites, when a user records his/her reservations to a TH ‘A’, your system should give a list of other suggested THs. TH ‘B’ is suggested, if there exist a user ‘X’ that visited both ‘A’ and ‘B’. The suggested THs should be sorted on decreasing total visit count (i.e., most popular ﬁrst); count only visits by users like ‘X’.</i></p>
         </div>
 
@@ -31,9 +34,5 @@
             </tr>
             <%= Account.list2Table(Account.getRecommendations(username)) %>
         </table>
-
-        <div align="right">
-            <a href="index.jsp">back to the homepage</a>
-        </div>
     </body>
 </html>

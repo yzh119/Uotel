@@ -7,6 +7,15 @@
         <title>Functionality 12 | Two degrees of separation</title>
     </head>
     <body>
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
+
+        <div align="center">
+            <h2>Functionality 12 | Two degrees of separation</h2>
+            <p><i>Given two user names (logins), determine their ‘degree of separation’, defined as follows: Two users ‘A’ and ‘B’ are 1-degree away if they have both favorited at least one common TH; they are 2-degrees away if there exists an user ‘C’ who is 1-degree away from each of ‘A’ and ‘B’, AND ‘A’ and ‘B’ are not 1-degree away at the same time.</i></p>
+        </div>
+
         <%
             int distance = -1;
             try {
@@ -20,10 +29,6 @@
         %>
 
         <div align="center">
-            <h2>Functionality 12 | Two degrees of separation</h2>
-
-            <p><i>Given two user names (logins), determine their ‘degree of separation’, deﬁned as follows: Two users ‘A’ and ‘B’ are 1-degree away if they have both favorited at least one common TH; they are 2-degrees away if there exists an user ‘C’ who is 1-degree away from each of ‘A’ and ‘B’, AND ‘A’ and ‘B’ are not 1-degree away at the same time.</i></p>
-
             <%
                 if (distance == -1) {
             %>
@@ -35,10 +40,6 @@
             <%
                 }
             %>
-        </div>
-
-        <div align="right">
-            <a href="index.jsp">back to the homepage</a>
         </div>
     </body>
 </html>

@@ -9,9 +9,12 @@
         <title>Functionality 4 | Stays</title>
     </head>
     <body>
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
+
         <div align="center">
             <h2>Functionality 4 | Stays</h2>
-
             <p><i>A user can record a stay at any TH (the same user may stay at the same TH multiple times). Each user session (meaning each time after a user has logged into the system) may add one or more stays, and all stays added by a user in a user session are reported to him/her for the ﬁnal review and conﬁrmation, before they are added into the database. Note that a user may only record a stay at a TH during a period he/she has a reservation.</i></p>
         </div>
 
@@ -153,10 +156,6 @@
                     }
                 }
             %>
-        </div>
-
-        <div align="right">
-            <a href="index.jsp">back to the homepage</a>
         </div>
     </body>
 </html>

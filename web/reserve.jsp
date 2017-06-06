@@ -10,9 +10,12 @@
         <title>Functionality 2 | Reserve</title>
     </head>
     <body>
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
+
         <div align="center">
             <h2>Functionality 2 | Reserve</h2>
-
             <p><i>After registration, a user can record a reservation to any TH (the same user may reserve the same TH multiple times from different available dates). Each user session (meaning each time after a user has logged into the system) may add one or more researvations, and all reservations added by a user in a user session are reported to him/her for the ﬁnal review and conﬁrmation, before they are added into the database.</i></p>
         </div>
 
@@ -143,10 +146,6 @@
                     }
                 }
             %>
-        </div>
-
-        <div align="right">
-            <a href="index.jsp">back to the homepage</a>
         </div>
     </body>
 </html>

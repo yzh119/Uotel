@@ -13,8 +13,7 @@
                 request.getParameter("year_built"),
                 request.getParameter("price")
             );
-            session.setAttribute("currentPH", id);
-            response.sendRedirect("house.jsp?state=add_time");
+            response.sendRedirect("house.jsp?state=add_date&id=" + id);
         } else if (state.equals("update_information")) {
             House.update(
                 Integer.valueOf(request.getParameter("id")),

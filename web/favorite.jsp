@@ -8,9 +8,12 @@
         <title>Functionality 5 | Favorite recordings</title>
     </head>
     <body>
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
+
         <div align="center">
             <h2>Functionality 5 | Favorite recordings</h2>
-
             <p><i>Users can declare a TH as his/her favorite place to stay.</i></p>
         </div>
 
@@ -79,10 +82,6 @@
                 </tr>
                 <%= builder.toString() %>
             </table>
-        </div>
-
-        <div align="right">
-            <a href="index.jsp">back to the homepage</a>
         </div>
     </body>
 </html>

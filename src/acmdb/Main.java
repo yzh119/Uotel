@@ -23,7 +23,6 @@ public class Main {
     public static int currentTHUid;
     public static Reserve reserve;
     public static Visit visit;
-    public static int uid;
 
     public static String formatChart(List<List<String>> raw) {
         StringBuffer resultStr = new StringBuffer();

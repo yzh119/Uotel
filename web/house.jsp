@@ -10,9 +10,12 @@
         <title>Functionality 3 | New TH</title>
     </head>
     <body>
+        <div align="right">
+            <a href="index.jsp">back to the homepage</a>
+        </div>
+
         <div align="center">
             <h2>Functionality 3 | New TH</h2>
-
             <p><i>A user may record the details of a new TH, and may update the information regarding an existing TH he/she owns.</i></p>
         </div>
 
@@ -23,44 +26,39 @@
         %>
 
         <div align="center">
-            <%
-                if (state.endsWith("information")) {
-            %>
-                <form>
-                    <h3>All your houses</h3>
-                    <%
-                        StringBuilder builder = new StringBuilder();
-                        List<List<String>> records = Account.getHouses(username);
-                        for (int i = 0; i < records.size(); ++i) {
-                            builder.append("<tr>");
-                            for (int j = 1; j < records.get(i).size(); ++j) {
-                                builder.append("<td align=\"center\">");
-                                builder.append(records.get(i).get(j));
-                                builder.append("</td>");
-                            }
+            <form>
+                <h3>All your houses</h3>
+                <%
+                    StringBuilder builder = new StringBuilder();
+                    List<List<String>> records = Account.getHouses(username);
+                    for (int i = 0; i < records.size(); ++i) {
+                        builder.append("<tr>");
+                        for (int j = 1; j < records.get(i).size(); ++j) {
                             builder.append("<td align=\"center\">");
-                            builder.append("<input type=\"button\" value=\"update\" onclick=\"location.href='house.jsp?state=update_information&id=").append(records.get(i).get(0)).append("'\">");
+                            builder.append(records.get(i).get(j));
                             builder.append("</td>");
-                            builder.append("</tr>");
                         }
-                    %>
-                    <table align="center" cellspacing="2" cellpadding="2" border="1">
-                        <tr>
-                            <th>House Name</th>
-                            <th>Address</th>
-                            <th>Website</th>
-                            <th>Telephone</th>
-                            <th>Year of Build</th>
-                            <th>Rental</th>
-                            <th>Total Visits</th>
-                            <th>Action</th>
-                        </tr>
-                        <%= builder.toString() %>
-                    </table>
-                </form>
-            <%
-                }
-            %>
+                        builder.append("<td align=\"center\">");
+                        builder.append("<input type=\"button\" value=\"update information\" onclick=\"location.href='house.jsp?state=update_information&id=").append(records.get(i).get(0)).append("'\">");
+                        builder.append("<input type=\"button\" value=\"add available date\" onclick=\"location.href='house.jsp?state=add_date&id=").append(records.get(i).get(0)).append("'\">");
+                        builder.append("</td>");
+                        builder.append("</tr>");
+                    }
+                %>
+                <table align="center" cellspacing="2" cellpadding="2" border="1">
+                    <tr>
+                        <th>House Name</th>
+                        <th>Address</th>
+                        <th>Website</th>
+                        <th>Telephone</th>
+                        <th>Year of Build</th>
+                        <th>Rental</th>
+                        <th>Total Visits</th>
+                        <th>Action</th>
+                    </tr>
+                    <%= builder.toString() %>
+                </table>
+            </form>
 
             <%
                 if (state.equals("add_information")) {
@@ -132,9 +130,9 @@
                     <button type="submit">Update information of selected house</button>
                 </form>
             <%
-                } else if (state.equals("add_time")) {
+                } else if (state.equals("add_date")) {
             %>
-                <form method="post" action="house_time_submit.jsp">
+                <form method="post" action="house_time_submit.jsp?id=<%= id %>">
                     <div align="center">
                         <label><b>Start date</b></label>
                         <input type="text" placeholder="Enter start date" name="start_date" required>
@@ -149,10 +147,6 @@
             <%
                 }
             %>
-        </div>
-
-        <div align="right">
-            <a href="index.jsp">back to the homepage</a>
         </div>
     </body>
 </html>
