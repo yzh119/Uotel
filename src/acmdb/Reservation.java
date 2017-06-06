@@ -73,7 +73,13 @@ public class Reservation {
     }
 
     public static List<List<String>> get(String username) throws Exception{
-        return Utility.query("SELECT r.rid, h.name, h.owner, h.address, h.url, h.phone_number, r.start_date, r.end_date FROM reservation r, TH h WHERE r.uid = h.uid AND user_name = \"" + username + "\"");
+        return Utility.query(
+            "SELECT r.rid, h.name, h.owner, h.address, h.url, h.phone_number, r.start_date, r.end_date " +
+            "FROM reservation r, TH h " +
+            "WHERE r.uid = h.uid " +
+                "AND user_name = '" + username + "' " +
+                "AND r.rid NOT IN (SELECT rid FROM visit)"
+        );
     }
 
     public static Map<String, String> get(int id) throws Exception {
