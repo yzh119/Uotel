@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 public class Reservation {
-    public int id;
     public String username;
     public List<Integer> indices = new ArrayList<>();
     public List<String> start = new ArrayList<>();
@@ -17,16 +16,18 @@ public class Reservation {
 
     public Reservation(String username) throws Exception {
         this.username = username;
-        Connector connector = new Connector();
-        Statement statement = connector.statement;
-        ResultSet result = statement.executeQuery("SELECT MAX(r.rid) FROM reservation r WHERE r.user_name = '" + username + "'");
-        this.id = result.next() ? result.getInt(1) : 0;
     }
 
     public void add(int id, String start, String end) {
         this.indices.add(id);
         this.start.add(start);
         this.end.add(end);
+    }
+
+    public void remove(int index) {
+        this.indices.remove(index);
+        this.start.remove(index);
+        this.end.remove(index);
     }
 
     public void push() throws Exception {
@@ -43,12 +44,13 @@ public class Reservation {
                 throw new Exception("Reservation conflict!");
             }
         }
-        ++id;
         for (int i = 0; i < indices.size(); ++i) {
-            ResultSet rs = statement.executeQuery("SELECT * FROM available a WHERE a.uid = " +
+            ResultSet rs = statement.executeQuery(
+                "SELECT * FROM available a WHERE a.uid = " +
                 indices.get(i) + " AND a.start_date <= '" +
                 start.get(i) + "' AND a.end_date >= '" +
-                end.get(i) + "'");
+                end.get(i) + "'"
+            );
             rs.next();
             String t1 = Utility.yesterday(start.get(i)), t2 = Utility.tomorrow(end.get(i));
             String start = rs.getString("start_date");
@@ -60,14 +62,17 @@ public class Reservation {
             if (t2.compareTo(end.substring(0, 10)) < 0) {
                 Available.add(indices.get(i), t2, end);
             }
-            statement.execute("INSERT INTO reservation values(" +
+            ResultSet result = statement.executeQuery("SELECT MAX(r.rid) FROM reservation r");
+            int id = result.next() ? result.getInt(1) + 1 : 1;
+            statement.execute(
+                "INSERT INTO reservation values(" +
                 id + "," +
                 indices.get(i) + "," +
                 "'" + username + "'" + "," +
                 "'" + this.start.get(i) + "'" + "," +
                 "'" + this.end.get(i) + "'" +
-                ")");
-            ++id;
+                ")"
+            );
         }
         connector.close();
     }
@@ -77,15 +82,21 @@ public class Reservation {
             "SELECT r.rid, h.name, h.owner, h.address, h.url, h.phone_number, r.start_date, r.end_date " +
             "FROM reservation r, TH h " +
             "WHERE r.uid = h.uid " +
-                "AND user_name = '" + username + "' " +
-                "AND r.rid NOT IN (SELECT rid FROM visit)"
+                "AND r.user_name = '" + username + "' " +
+                "AND r.rid NOT IN (SELECT rid user_name FROM visit)"
         );
     }
 
     public static Map<String, String> get(int id) throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
-        ResultSet result = statement.executeQuery("SELECT * FROM reservation r, TH h WHERE r.uid = h.uid AND r.rid = " + id);
+        ResultSet result = statement.executeQuery(
+            "SELECT * " +
+                "FROM reservation r, TH h " +
+                "WHERE r.uid = h.uid " +
+                    "AND r.rid = " + id + " " +
+                    "AND r.rid NOT IN (SELECT rid FROM visit)"
+        );
         ResultSetMetaData meta = result.getMetaData();
         if (!result.next()) {
             throw new Exception("The reservation does not exist!");

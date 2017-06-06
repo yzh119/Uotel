@@ -35,7 +35,11 @@ public class House {
     }
 
     public static List<List<String>> get() throws Exception {
-        return Utility.query("SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, h.year_built, a.start_date, a.end_date, h.price, h.visit_count FROM TH h, available a WHERE h.uid = a.uid");
+        return Utility.query(
+            "SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, h.year_built, a.start_date, a.end_date, h.price, h.visit_count " +
+            "FROM TH h, available a " +
+            "WHERE h.uid = a.uid"
+        );
     }
 
     public static Map<String, String> get(int id) throws Exception {
@@ -54,6 +58,10 @@ public class House {
     }
 
     public static List<List<String>> get(String username) throws Exception {
-        return Utility.query("SELECT h.uid, h.name, h.address, h.url, h.phone_number, h.year_built, h.price, h.visit_count FROM TH h WHERE h.owner = \"" + username + "\"");
+        return Utility.query(
+            "SELECT h.uid, h.name, h.address, h.url, h.phone_number, h.year_built, h.price, h.visit_count " +
+            "FROM TH h " +
+            "WHERE h.owner = '" + username + "'"
+        );
     }
 }

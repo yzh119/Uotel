@@ -103,8 +103,7 @@
                 if (state.equals("add_date")) {
             %>
                 <h3>Add start and end date</h3>
-
-                <form method="post" action="visit_response.jsp?state=stack&id=<%= id %>">
+                <form method="post" action="visit_response.jsp?state=add_stack&id=<%= id %>">
                     <table>
                         <tr>
                             <td><label><b>Start Date</b></label></td>
@@ -148,6 +147,7 @@
                             builder.append("<td align=\"center\">").append(visit.end.get(i)).append("</td>");
                             builder.append("<td align=\"center\">").append(visit.people.get(i)).append("</td>");
                             builder.append("<td align=\"center\">").append(visit.cost.get(i)).append("</td>");
+                            builder.append("<td align=\"center\">").append("<input type=\"button\" value=\"remove\" onclick=\"location.href='visit_response.jsp?state=remove_stack&id=").append(i).append("'\">").append("</td>");
                             builder.append("</tr>");
                         }
                     %>
@@ -159,10 +159,11 @@
                             <th>End Date</th>
                             <th>Number of People</th>
                             <th>Total Cost</th>
+                            <th>Action</th>
                         </tr>
                         <%= builder.toString() %>
                     </table>
-                    <input type="button" value="Confirm the above visit records" onclick="location.href='visit_response.jsp?state=complete'">
+                    <input type="button" value="Confirm the above visit records" onclick="location.href='visit_response.jsp?state=push_stack'">
                 </form>
             <%
                     }

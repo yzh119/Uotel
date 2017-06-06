@@ -10,19 +10,27 @@ public class Visit {
     public List<Integer> indices = new ArrayList<>();
     public List<String> start = new ArrayList<>();
     public List<String> end = new ArrayList<>();
-    public List<Integer> cost = new ArrayList<>();
     public List<Integer> people = new ArrayList<>();
+    public List<Integer> cost = new ArrayList<>();
 
     public Visit(String username) {
         this.username = username;
     }
 
-    public void add(int rid, String start, String end, int spent, int number) {
-        indices.add(rid);
+    public void add(int id, String start, String end, int spent, int number) {
+        this.indices.add(id);
         this.start.add(start);
         this.end.add(end);
-        this.cost.add(spent);
         this.people.add(number);
+        this.cost.add(spent);
+    }
+
+    public void remove(int index) {
+        this.indices.remove(index);
+        this.start.remove(index);
+        this.end.remove(index);
+        this.people.remove(index);
+        this.cost.remove(index);
     }
 
     public void push() throws Exception {

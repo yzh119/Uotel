@@ -105,7 +105,7 @@
             %>
                 <h3>Add start and end date</h3>
 
-                <form method="post" action="reservation_response.jsp?state=stack&id=<%= id %>">
+                <form method="post" action="reservation_response.jsp?state=add_stack&id=<%= id %>">
                     <table>
                         <tr>
                             <td><label><b>Start date</b></label></td>
@@ -139,6 +139,7 @@
                             builder.append("<td align=\"center\">").append(record.get("owner")).append("</td>");
                             builder.append("<td align=\"center\">").append(reservation.start.get(i).substring(0, 10)).append("</td>");
                             builder.append("<td align=\"center\">").append(reservation.end.get(i).substring(0, 10)).append("</td>");
+                            builder.append("<td align=\"center\">").append("<input type=\"button\" value=\"remove\" onclick=\"location.href='reservation_response.jsp?state=remove_stack&id=").append(i).append("'\">").append("</td>");
                             builder.append("</tr>");
                         }
                     %>
@@ -148,10 +149,11 @@
                             <th>Owner</th>
                             <th>Start Date</th>
                             <th>End Date</th>
+                            <th>Action</th>
                         </tr>
                         <%= builder.toString() %>
                     </table>
-                    <input type="button" value="Confirm the above reservation records" onclick="location.href='reservation_response.jsp?state=complete'">
+                    <input type="button" value="Confirm the above reservation records" onclick="location.href='reservation_response.jsp?state=push_stack'">
                 </form>
             <%
                     }
