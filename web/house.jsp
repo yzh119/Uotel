@@ -70,7 +70,7 @@
                     records = House.getAvailable(Integer.valueOf(id));
                     for (int i = 0; i < records.size(); ++i) {
                         builder.append("<tr>");
-                        for (int j = 1; j < records.get(i).size(); ++j) {
+                        for (int j = 0; j < records.get(i).size(); ++j) {
                             builder.append("<td align=\"center\">");
                             builder.append(records.get(i).get(j));
                             builder.append("</td>");
