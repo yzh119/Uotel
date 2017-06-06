@@ -19,12 +19,12 @@ public class Reservation {
         this.username = username;
         Connector connector = new Connector();
         Statement statement = connector.statement;
-        ResultSet result = statement.executeQuery("SELECT MAX(rs.rid) FROM reservation rs WHERE rs.user_name = '" + username + "'");
+        ResultSet result = statement.executeQuery("SELECT MAX(rs.rid) FROM reservation r WHERE r.user_name = '" + username + "'");
         this.id = result.next() ? result.getInt(1) : 0;
     }
 
-    public void add(int uid, String start, String end) {
-        this.indices.add(uid);
+    public void add(int id, String start, String end) {
+        this.indices.add(id);
         this.start.add(start);
         this.end.add(end);
     }
@@ -32,19 +32,19 @@ public class Reservation {
     public void push() throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
-
-        ++id;
-
         for (int i = 0; i < indices.size(); ++i) {
-            ResultSet rs = statement.executeQuery("SELECT * FROM available a WHERE a.uid = " +
-                indices.get(i) + " AND a.start_date<=\"" +
-                start.get(i) + "\" AND a.end_date>= \"" +
-                end.get(i) + "\"");
-            if (!rs.next()) {
+            ResultSet result = statement.executeQuery(
+                "SELECT * FROM available a WHERE " +
+                "a.uid = " + indices.get(i) + " AND " +
+                "a.start_date <= '" + start.get(i) + "' AND " +
+                "a.end_date >= '" + end.get(i) + "'"
+            );
+            if (!result.next()) {
                 throw new Exception("Reservation conflict!");
             }
         }
 
+        ++id;
         for (int i = 0; i < indices.size(); ++i) {
             ResultSet rs = statement.executeQuery("SELECT * FROM available a WHERE a.uid = " +
                 indices.get(i) + " AND a.start_date <= '" +
