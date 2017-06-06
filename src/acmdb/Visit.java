@@ -40,23 +40,13 @@ public class Visit {
             if (exist(indices.get(i))) {
                 throw new Exception("You may not record two visits for one reservation.");
             }
-            ResultSet result = stmt.executeQuery("SELECT * FROM reservation r, visit v WHERE " +
-                "r.rid = " + indices.get(i) + " and " +
-                "r.user_name = '" + username + "' and " +
-                "v.user_name = '" + username + "'" +
-                " AND (" +
-                "'" + start.get(i) + "'" + " < r.start_date or " +
-                "'" + end.get(i) + "'" + " > r.end_date or " +
-                "(" +
-                "(" +
-                "'" + start.get(i) + "'" + " >= v.start_date and " +
-                "'" + start.get(i) + "'" + " <= v.end_date" +
-                ") or" +
-                "(" +
-                "'" + end.get(i) + "'" + " >= v.start_date and " +
-                "'" + end.get(i) + "'" + " <= v.end_date" +
-                ")" +
-                "))");
+            ResultSet result = stmt.executeQuery(
+                "SELECT * FROM reservation r WHERE " +
+                "r.rid = " + indices.get(i) + " " +
+                "AND (" +
+                    "'" + start.get(i) + "' < r.start_date " +
+                    "OR '" + end.get(i) + "' > r.end_date)"
+            );
             if (result.next()) {
                 throw new Exception("You may only record the visit during the time period of one reservation.");
             }
