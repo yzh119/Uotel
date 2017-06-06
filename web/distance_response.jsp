@@ -19,7 +19,7 @@
         <%
             int distance = -1;
             try {
-                distance = Account.computeDistance(
+                distance = Account.getDistance(
                     request.getParameter("username1"),
                     request.getParameter("username2")
                 );

@@ -4,7 +4,7 @@
     try {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        if (Account.checkPassword(username, password)) {
+        if (Account.check(username, password)) {
             session.setAttribute("username", username);
             response.sendRedirect("index.jsp");
         } else {

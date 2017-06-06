@@ -171,7 +171,7 @@ public class Main {
                 case atLogout:
                     username = tokens[0];
                     if (tokens.length == 2) {
-                        if (Account.checkPassword(username, tokens[1])) {
+                        if (Account.check(username, tokens[1])) {
                             currentState = State.atLogin;
                         } else {
                             System.out.println("Wrong password!");
@@ -248,7 +248,7 @@ public class Main {
                     if (tokens[0].equals("back")) {
                         currentState = State.atLogin;
                     } else {
-                        int dis = Account.computeDistance(tokens[0], tokens[1]);
+                        int dis = Account.getDistance(tokens[0], tokens[1]);
                         if (dis > 0 )
                             System.out.println("The distance between these two users is " + dis + "\n");
                         else

@@ -3,7 +3,6 @@ package acmdb;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +34,25 @@ public class House {
         );
     }
 
+    public static List<List<String>> get() throws Exception {
+        return Utility.query("SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, h.year_built, a.start_date, a.end_date, h.price, h.visit_count FROM TH h, available a WHERE h.uid = a.uid");
+    }
+
+    public static Map<String, String> get(int id) throws Exception {
+        Connector connector = new Connector();
+        Statement statement = connector.statement;
+        ResultSet result = statement.executeQuery("SELECT * FROM TH t WHERE t.uid = " + id);
+        ResultSetMetaData meta = result.getMetaData();
+        if (!result.next()) {
+            throw new Exception("The house does not exist!");
+        }
+        Map<String, String> record = new HashMap<>();
+        for (int i = 1; i <= meta.getColumnCount(); ++i) {
+            record.put(meta.getColumnName(i), result.getString(i));
+        }
+        return record;
+    }
+
     public static void addAvailable(int uid, String start, String end) throws Exception {
         Connector connector = new Connector();
         Statement statement = connector.statement;
@@ -58,24 +76,5 @@ public class House {
         Statement statement = connector.statement;
         statement.execute("DELETE a FROM available a WHERE a.uid = " + id + " AND a.start_date='" + start.substring(0, 10) + "' AND a.end_date='" + end.substring(0, 10) + "'");
         connector.close();
-    }
-
-    public static List<List<String>> get() throws Exception {
-        return Utility.query("SELECT h.uid, h.name, h.owner, h.address, h.url, h.phone_number, h.year_built, a.start_date, a.end_date, h.price, h.visit_count FROM TH h, available a WHERE h.uid = a.uid");
-    }
-
-    public static Map<String, String> get(int id) throws Exception {
-        Connector connector = new Connector();
-        Statement statement = connector.statement;
-        ResultSet result = statement.executeQuery("SELECT * FROM TH t WHERE t.uid = " + id);
-        ResultSetMetaData meta = result.getMetaData();
-        if (!result.next()) {
-            throw new Exception("The house does not exist!");
-        }
-        Map<String, String> record = new HashMap<>();
-        for (int i = 1; i <= meta.getColumnCount(); ++i) {
-            record.put(meta.getColumnName(i), result.getString(i));
-        }
-        return record;
     }
 }

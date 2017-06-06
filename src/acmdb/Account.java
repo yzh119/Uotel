@@ -1,9 +1,7 @@
 package acmdb;
 
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Account {
@@ -26,7 +24,7 @@ public class Account {
         return response;
     }
 
-    public static boolean checkPassword(String username, String password) throws Exception {
+    public static boolean check(String username, String password) throws Exception {
         if (!exist(username)) {
             return false;
         }
@@ -81,7 +79,7 @@ public class Account {
         );
     }
 
-    public static int computeDistance(String username1, String username2) throws Exception {
+    public static int getDistance(String username1, String username2) throws Exception {
         if (!exist(username1)) {
             throw new Exception("Account \"" + username1 + "\" does not exist!");
         }
